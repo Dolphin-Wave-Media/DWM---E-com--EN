@@ -4,39 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #000000;
+  --background: #050a1a;
   --foreground: #ffffff;
-  --card: #0a0a0a;
+  --card: #0a1128;
   --card-foreground: #ffffff;
-  --popover: #0a0a0a;
+  --popover: #0a1128;
   --popover-foreground: #ffffff;
-  --primary: #7456f1;
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
-  --secondary: #1a1a1a;
+  --secondary: #0f1a36;
   --secondary-foreground: #ffffff;
-  --muted: #1a1a1a;
-  --muted-foreground: #a1a1a1;
-  --accent: #7456f1;
+  --muted: #0f1a36;
+  --muted-foreground: #94a3b8;
+  --accent: #3b82f6;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #262626;
-  --input: #262626;
-  --ring: #7456f1;
+  --border: #1e3a5f;
+  --input: #1e3a5f;
+  --ring: #3b82f6;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --sidebar: #0a0a0a;
+  --sidebar: #0a1128;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #7456f1;
+  --sidebar-primary: #3b82f6;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1a1a1a;
+  --sidebar-accent: #0f1a36;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #262626;
-  --sidebar-ring: #7456f1;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #3b82f6;
 }
 
 @keyframes marquee {

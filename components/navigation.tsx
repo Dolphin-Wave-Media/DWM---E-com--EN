@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
@@ -29,17 +30,22 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/80 backdrop-blur-lg border-b border-border"
+          ? "bg-background/90 backdrop-blur-lg border-b border-border"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-foreground">
-              Dolphin<span className="text-primary">Wave</span> Media
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.svg"
+              alt="Dolphin Wave Media"
+              width={160}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
