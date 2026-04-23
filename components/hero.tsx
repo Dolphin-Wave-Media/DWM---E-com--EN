@@ -131,6 +131,22 @@ export function Hero() {
                 />
               </div>
             </div>
+            
+            {/* Small CTA below video */}
+            <div className="mt-6 flex justify-center">
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"
+              >
+                {t("hero.cta")}
+                <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
           {/* Client Logos */}
