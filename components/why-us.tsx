@@ -1,19 +1,19 @@
 const points = [
   {
+    title: "We've Got the Drive",
+    description: "We like this work, we care about doing it properly, and we're always looking for ways to improve and get better results.",
+  },
+  {
     title: "We See the Full Picture",
-    description: "Most agencies only look at the ads manager. We analyze your entire customer journey — from first impression to checkout and beyond.",
+    description: "We don't focus only on ads. We look at the whole system around them to understand what's working and what needs to change.",
   },
   {
-    title: "Creative is King",
-    description: "Great ads start with great creative. We write hooks, scripts, and concepts that actually stop the scroll and drive action.",
+    title: "We Save You Hours",
+    description: "We help you save time on strategy, content, and execution, so you can focus on the bigger picture.",
   },
   {
-    title: "Data Drives Everything",
-    description: "No guessing. Every decision is backed by data. We track, test, and optimize relentlessly.",
-  },
-  {
-    title: "System Thinking",
-    description: "Ads are just one piece. We optimize landing pages, offers, funnels, and messaging to maximize every dollar spent.",
+    title: "We Get Actual Results",
+    description: "We care about what really matters — performance, sales, and growth that makes sense for your brand.",
   },
 ]
 
