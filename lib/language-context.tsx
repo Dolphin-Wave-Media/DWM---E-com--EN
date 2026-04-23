@@ -37,7 +37,7 @@ const translations = {
     "hero.stat3.value": "20+",
     "hero.stat3.label": "Brands Scaled",
     "hero.stat4.value": "12+",
-    "hero.stat4.label": "Years Experience",
+    "hero.stat4.label": "Years of Team Experience",
     "hero.viewCaseStudies": "View Case Studies",
     "hero.microcopy": "15-minute discovery call. Custom strategy in presentation format. Built around your brand.",
 
@@ -177,7 +177,7 @@ const translations = {
     "hero.stat3.value": "20+",
     "hero.stat3.label": "Škálovaných značiek",
     "hero.stat4.value": "12+",
-    "hero.stat4.label": "Rokov skúseností",
+    "hero.stat4.label": "Rokov tímových skúseností",
     "hero.viewCaseStudies": "Pozrieť prípadové štúdie",
     "hero.microcopy": "15-minútový discovery hovor. Stratégia na mieru v prezentačnom formáte. Postavená okolo vašej značky.",
 
