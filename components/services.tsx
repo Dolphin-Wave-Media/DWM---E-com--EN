@@ -52,7 +52,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 scroll-mt-16 bg-card/50">
+    <section id="services" className="py-24 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           {/* Headline */}
@@ -71,10 +71,10 @@ export function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative rounded-2xl border border-[#2d2440] bg-[#12101f]/80 backdrop-blur-sm p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#1a1525] border border-[#2d2440] text-muted-foreground mb-4">
                 {service.icon}
               </div>
 
