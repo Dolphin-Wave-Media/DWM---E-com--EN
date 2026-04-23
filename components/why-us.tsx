@@ -56,24 +56,17 @@ export function WhyUs() {
             </div>
           </div>
 
-          {/* Visual */}
-          <div className="relative hidden lg:block">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-card to-card/50 border border-border p-8 flex items-center justify-center">
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-primary mb-6">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                    <path d="m9 12 2 2 4-4"/>
-                  </svg>
-                </div>
-                <p className="text-2xl font-bold text-foreground mb-2">Growth First</p>
-                <p className="text-muted-foreground">
-                  Every strategy built to scale
-                </p>
-              </div>
+          {/* Visual - Results Image */}
+          <div className="relative mt-8 lg:mt-0 order-first lg:order-last">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+              <img 
+                src="/results-data.png" 
+                alt="Performance results and data" 
+                className="w-full h-auto"
+              />
             </div>
             {/* Decorative */}
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl blur-2xl" />
+            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl blur-2xl -z-10" />
           </div>
         </div>
       </div>
