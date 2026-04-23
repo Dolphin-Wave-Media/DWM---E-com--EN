@@ -2,16 +2,16 @@ import Link from "next/link"
 import Image from "next/image"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#results", label: "Results" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
+  { href: "#services", label: "Služby" },
+  { href: "#case-studies", label: "Prípadové štúdie" },
+  { href: "#about", label: "O nás" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Kontakt" },
 ]
 
 const socialLinks = [
   {
-    href: "#",
+    href: "https://instagram.com/dolphinwavemedia",
     label: "Instagram",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -22,7 +22,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "#",
+    href: "https://linkedin.com/company/dolphinwavemedia",
     label: "LinkedIn",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -33,7 +33,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "#",
+    href: "https://facebook.com/dolphinwavemedia",
     label: "Facebook",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -45,64 +45,86 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-16 border-t border-[#2d2440] scroll-mt-16">
+    <footer id="contact" className="py-16 border-t border-border scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center mb-4">
-            <Image
-              src="/logo.svg"
-              alt="Dolphin Wave Media"
-              width={140}
-              height={35}
-              className="h-9 w-auto"
-            />
-          </Link>
-
-          {/* Tagline */}
-          <p className="text-muted-foreground mb-8">
-            Performance Marketing for E-Commerce
-          </p>
-
-          {/* Navigation */}
-          <nav className="flex flex-wrap items-center justify-center gap-6 mb-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Email */}
-          <a
-            href="mailto:info@dolphinwave-media.com"
-            className="text-muted-foreground hover:text-primary transition-colors mb-8"
-          >
-            info@dolphinwave-media.com
-          </a>
-
-          {/* Social links */}
-          <div className="flex items-center gap-4 mb-8">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
-              >
-                {social.icon}
-              </a>
-            ))}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Brand column */}
+          <div className="md:col-span-2">
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.svg"
+                alt="Dolphin Wave Media"
+                width={160}
+                height={40}
+                style={{ height: '40px', width: 'auto' }}
+              />
+            </Link>
+            <p className="text-muted-foreground mb-6 max-w-md">
+              Performance marketing agentúra pre e-commerce. Pomáhame značkám škálovať cez Meta Ads, Google Ads a TikTok Ads.
+            </p>
+            {/* Social links */}
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Copyright */}
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Navigácia</h4>
+            <nav className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Kontakt</h4>
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:info@dolphinwave-media.com"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                info@dolphinwave-media.com
+              </a>
+              <p className="text-muted-foreground">
+                Bratislava, Slovakia
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 Dolphin Wave Media. All rights reserved.
+            © 2025 Dolphin Wave Media. Všetky práva vyhradené.
           </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Ochrana súkromia
+            </Link>
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Obchodné podmienky
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

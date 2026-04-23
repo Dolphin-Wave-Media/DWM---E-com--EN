@@ -37,7 +37,7 @@ export function Navigation() {
               alt="Dolphin Wave Media"
               width={140}
               height={35}
-              className="h-8 w-auto"
+              style={{ height: '32px', width: 'auto' }}
               priority
             />
           </Link>

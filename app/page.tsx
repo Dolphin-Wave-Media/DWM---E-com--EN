@@ -1,10 +1,14 @@
 import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/hero"
 import { Features } from "@/components/features"
-import { Results } from "@/components/results"
-import { About } from "@/components/about"
+import { Founder } from "@/components/founder"
 import { Services } from "@/components/services"
-import { Reviews } from "@/components/reviews"
+import { WhyUs } from "@/components/why-us"
+import { HowItWorks } from "@/components/how-it-works"
+import { CaseStudies } from "@/components/case-studies"
+import { Testimonials } from "@/components/testimonials"
+import { WhoItsFor } from "@/components/who-its-for"
+import { FAQ } from "@/components/faq"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 
@@ -15,10 +19,14 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
-        <Results />
+        <Founder />
         <Services />
-        <About />
-        <Reviews />
+        <WhyUs />
+        <HowItWorks />
+        <CaseStudies />
+        <Testimonials />
+        <WhoItsFor />
+        <FAQ />
         <CTASection />
       </main>
       <Footer />
