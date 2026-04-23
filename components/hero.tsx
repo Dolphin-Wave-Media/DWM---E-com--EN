@@ -110,6 +110,22 @@ export function Hero() {
               <p className="text-sm text-muted-foreground mt-1">Years Combined Experience</p>
             </div>
           </div>
+
+          {/* Video Section */}
+          <div className="mt-16 max-w-4xl mx-auto px-4">
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
+              <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1185923081?badge=0&autopause=0&player_id=0&app_id=58479" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  title="Dolphin Wave Media - Website video"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
