@@ -13,8 +13,31 @@ export function WhyUs() {
   ]
 
   return (
-    <section className="py-16 sm:py-24 bg-card/30">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+      {/* Subtle diagonal lines background */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 1440 800"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="whyUsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f5a623" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#c9388c" stopOpacity="0.12" />
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="100" x2="200" y2="0" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="250" x2="350" y2="0" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="400" x2="500" y2="0" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="550" x2="650" y2="0" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="940" y1="800" x2="1440" y2="300" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="1040" y1="800" x2="1440" y2="400" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="1140" y1="800" x2="1440" y2="500" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+        <line x1="1240" y1="800" x2="1440" y2="600" stroke="url(#whyUsGradient)" strokeWidth="1.5" />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content */}
           <div>

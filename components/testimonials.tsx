@@ -28,8 +28,29 @@ export function Testimonials() {
   const { language } = useLanguage()
 
   return (
-    <section id="testimonials" className="py-16 sm:py-24 scroll-mt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
+      {/* Subtle diagonal lines background */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 1440 800"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="testimonialsGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#c9388c" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#f5a623" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <line x1="1200" y1="0" x2="1440" y2="240" stroke="url(#testimonialsGradient)" strokeWidth="1.5" />
+        <line x1="1050" y1="0" x2="1440" y2="390" stroke="url(#testimonialsGradient)" strokeWidth="1.5" />
+        <line x1="900" y1="0" x2="1440" y2="540" stroke="url(#testimonialsGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="500" x2="300" y2="800" stroke="url(#testimonialsGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="350" x2="450" y2="800" stroke="url(#testimonialsGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="200" x2="600" y2="800" stroke="url(#testimonialsGradient)" strokeWidth="1.5" />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
             Testimonials

@@ -46,8 +46,29 @@ export function Services() {
   ]
 
   return (
-    <section id="services" className="py-16 sm:py-24 scroll-mt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
+      {/* Subtle diagonal lines background */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 1440 800"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="servicesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f5a623" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#c9388c" stopOpacity="0.1" />
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="200" x2="300" y2="0" stroke="url(#servicesGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="350" x2="450" y2="0" stroke="url(#servicesGradient)" strokeWidth="1.5" />
+        <line x1="0" y1="500" x2="600" y2="0" stroke="url(#servicesGradient)" strokeWidth="1.5" />
+        <line x1="990" y1="800" x2="1440" y2="350" stroke="url(#servicesGradient)" strokeWidth="1.5" />
+        <line x1="1090" y1="800" x2="1440" y2="450" stroke="url(#servicesGradient)" strokeWidth="1.5" />
+        <line x1="1190" y1="800" x2="1440" y2="550" stroke="url(#servicesGradient)" strokeWidth="1.5" />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
             {t("services.label")}
