@@ -135,7 +135,7 @@ export function CaseStudies() {
           {caseStudies.map((study, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-all"
+              className="group relative rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-white/40 hover:bg-white/10 transition-all"
             >
               {/* Top gradient bar */}
               <div className="h-1 bg-gradient-to-r from-accent via-primary to-[#9b4dca]" />
@@ -161,10 +161,10 @@ export function CaseStudies() {
                 </p>
 
                 {/* Results */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-border">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-white/10">
                   {study.metrics.map((metric, metricIndex) => (
                     <div key={metricIndex}>
-                      <p className="text-lg sm:text-xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                      <p className="text-lg sm:text-xl font-bold text-white">
                         {metric.value}
                       </p>
                       <p className="text-xs text-muted-foreground">{metric.label}</p>

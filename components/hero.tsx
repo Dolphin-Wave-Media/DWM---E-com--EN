@@ -101,19 +101,19 @@ export function Hero() {
           {/* Trust Metrics */}
           <div className="grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-16">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">{t("hero.stat1.value")}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{t("hero.stat1.value")}</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat1.label")}</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t("hero.stat2.value")}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{t("hero.stat2.value")}</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat2.label")}</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">{t("hero.stat3.value")}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{t("hero.stat3.value")}</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat3.label")}</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t("hero.stat4.value")}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{t("hero.stat4.value")}</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat4.label")}</p>
             </div>
           </div>
