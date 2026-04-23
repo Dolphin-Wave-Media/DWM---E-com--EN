@@ -29,14 +29,11 @@ export function HowItWorks() {
             How It Works
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
-            Three Steps to{" "}
+            How we scale brands in{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Growth
+              90-day test drive
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            A simple process designed to get you real results, fast.
-          </p>
         </div>
 
         {/* Steps */}

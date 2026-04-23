@@ -47,18 +47,19 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 px-2">
-            <span className="text-foreground">We Build </span>
-            <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">Marketing Systems</span>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 px-2">
+            <span className="text-foreground">We help e-commerce brands </span>
+            <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">sell more products</span>
             <br />
-            <span className="text-foreground">That Drive Real </span>
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Growth</span>
+            <span className="text-foreground">with </span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-generated content</span>
+            <span className="text-foreground"> and </span>
+            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Meta ads</span>
           </h1>
 
           {/* Subheadline */}
           <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed px-4">
-            Performance-driven Meta Ads, creative strategy, and funnel optimization 
-            for e-commerce brands ready to scale. Not just ads — a complete growth system.
+            We create the right strategy, save you hours on content production, and handle the execution from start to finish.
           </p>
 
           {/* CTAs */}
@@ -91,11 +92,11 @@ export function Hero() {
           {/* Trust Metrics */}
           <div className="grid grid-cols-2 sm:flex sm:flex-row sm:flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 px-4">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">200K+</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">200,000€+</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">Revenue Generated</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">10K+</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">10,500+</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">Orders Generated</p>
             </div>
             <div className="text-center">

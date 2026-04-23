@@ -34,9 +34,7 @@ export function WhyUs() {
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-              We&apos;re not another agency that just &quot;manages your ads.&quot; We&apos;re growth 
-              partners who understand that real results come from a complete system — 
-              not isolated tactics.
+              We&apos;ve built our experience across many of our own and client projects, which gives us a broad view of what works. We keep learning, testing, and improving — because we genuinely enjoy it.
             </p>
 
             <div className="space-y-5 sm:space-y-6">

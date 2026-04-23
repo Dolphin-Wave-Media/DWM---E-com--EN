@@ -47,12 +47,11 @@ const services = [
     ),
   },
   {
-    title: "Custom Growth Strategy",
-    description: "Tailored roadmap built around your brand, goals, and growth stage.",
+    title: "TikTok Ads",
+    description: "Reach younger audiences with engaging video ads on TikTok. Full campaign management and creative strategy.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3v18h18"/>
-        <path d="m19 9-5 5-4-4-3 3"/>
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
       </svg>
     ),
   },
@@ -67,14 +66,13 @@ export function Services() {
             Our Services
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
-            Everything You Need to{" "}
+            Everything E-Commerce Brands Need to{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Scale
+              Scale in 2026
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty px-4">
-            We don&apos;t just run ads. We build complete marketing systems — creatives, 
-            funnels, strategy — all working together.
+            Running ads is only one part of the puzzle. We build the strategy, creative, and funnel behind it, so everything works together to grow your brand.
           </p>
         </div>
 
