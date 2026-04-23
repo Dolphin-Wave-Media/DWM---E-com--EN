@@ -10,12 +10,14 @@ import { WhoItsFor } from "@/components/who-its-for"
 import { FAQ } from "@/components/faq"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
+import { BackgroundPattern } from "@/components/background-pattern"
 
 export default function Home() {
   return (
     <>
+      <BackgroundPattern />
       <Navigation />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Services />
         <WhyUs />

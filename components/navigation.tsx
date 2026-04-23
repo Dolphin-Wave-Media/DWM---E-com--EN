@@ -34,7 +34,7 @@ export function Navigation() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.svg"
               alt="Dolphin Wave Media"
@@ -43,6 +43,7 @@ export function Navigation() {
               style={{ height: '32px', width: 'auto' }}
               priority
             />
+            <span className="hidden sm:inline-block font-semibold text-foreground">Dolphin Wave Media</span>
           </Link>
 
           {/* Desktop Nav Links */}
