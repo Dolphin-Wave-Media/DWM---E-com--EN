@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import { ClientLogos } from "./client-logos"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
@@ -122,6 +122,9 @@ export function Hero() {
               </div>
             </div>
           </div>
+
+          {/* Client Logos */}
+          <ClientLogos />
         </div>
       </div>
 
