@@ -43,7 +43,7 @@ export function Navigation() {
               style={{ height: '32px', width: 'auto' }}
               priority
             />
-            <span className="hidden sm:inline-block font-semibold text-foreground">Dolphin Wave Media</span>
+            <span className="font-semibold text-foreground text-sm sm:text-base">Dolphin Wave Media</span>
           </Link>
 
           {/* Desktop Nav Links */}
