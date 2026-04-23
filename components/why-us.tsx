@@ -57,12 +57,13 @@ export function WhyUs() {
           </div>
 
           {/* Visual - Results Image */}
-          <div className="relative mt-8 lg:mt-0 order-first lg:order-last">
-            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+          <div className="relative mt-8 lg:mt-0">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border">
               <img 
                 src="/results-data.png" 
-                alt="Performance results and data" 
+                alt="Meta Ads performance results showing 12.73 ROAS" 
                 className="w-full h-auto"
+                loading="eager"
               />
             </div>
             {/* Decorative */}
