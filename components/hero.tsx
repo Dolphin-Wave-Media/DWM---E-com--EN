@@ -47,11 +47,10 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 px-2">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-6 px-2 max-w-5xl mx-auto">
             <span className="text-foreground">We help e-commerce brands </span>
             <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">sell more products</span>
-            <br />
-            <span className="text-foreground">with </span>
+            <span className="text-foreground"> with </span>
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-generated content</span>
             <span className="text-foreground"> and </span>
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Meta ads</span>
