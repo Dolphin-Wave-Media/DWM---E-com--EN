@@ -1,35 +1,58 @@
-const forYou = [
-  "E-commerce brands doing €10K+ monthly revenue",
-  "Brands ready to scale with paid advertising",
-  "Businesses with good product margins",
-  "Teams looking for a growth partner, not just an agency",
-  "Brands willing to invest in creative and strategy",
-]
+"use client"
 
-const notForYou = [
-  "Brands expecting overnight results",
-  "Businesses with no budget for testing",
-  "Companies unwilling to invest in creative",
-  "Those looking for the cheapest option",
-  "Brands not ready to scale",
-]
+import { useLanguage } from "@/lib/language-context"
 
 export function WhoItsFor() {
+  const { t } = useLanguage()
+
+  const forYou = [
+    t("whoItsFor.good1"),
+    t("whoItsFor.good2"),
+    t("whoItsFor.good3"),
+    t("whoItsFor.good4"),
+  ]
+
+  const notForYou = [
+    t("whoItsFor.bad1"),
+    t("whoItsFor.bad2"),
+    t("whoItsFor.bad3"),
+    t("whoItsFor.bad4"),
+  ]
+
   return (
-    <section className="py-16 sm:py-24 bg-card/30">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+      {/* Subtle background pattern */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+        viewBox="0 0 1440 700"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="whoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="150" x2="250" y2="0" stroke="url(#whoGradient)" strokeWidth="1" />
+        <line x1="0" y1="250" x2="350" y2="0" stroke="url(#whoGradient)" strokeWidth="1" />
+        <line x1="1190" y1="700" x2="1440" y2="550" stroke="url(#whoGradient)" strokeWidth="1" />
+        <line x1="1090" y1="700" x2="1440" y2="450" stroke="url(#whoGradient)" strokeWidth="1" />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-            Is This For You?
+            {t("whoItsFor.label")}
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
-            We&apos;re Not For{" "}
+            {t("whoItsFor.title1")}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Everyone
+              {t("whoItsFor.title2")}
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            We work best with brands that are serious about growth and ready to invest in a real system.
+            {t("whoItsFor.description")}
           </p>
         </div>
 
@@ -42,7 +65,7 @@ export function WhoItsFor() {
                   <path d="M20 6 9 17l-5-5"/>
                 </svg>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground">This is for you if...</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground">{t("whoItsFor.good.title")}</h3>
             </div>
             <ul className="space-y-3 sm:space-y-4">
               {forYou.map((item, index) => (
@@ -65,7 +88,7 @@ export function WhoItsFor() {
                   <path d="m6 6 12 12"/>
                 </svg>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground">This is NOT for you if...</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground">{t("whoItsFor.bad.title")}</h3>
             </div>
             <ul className="space-y-3 sm:space-y-4">
               {notForYou.map((item, index) => (

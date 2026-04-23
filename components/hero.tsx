@@ -84,13 +84,13 @@ export function Hero() {
               href="#case-studies"
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-border bg-card/50 backdrop-blur-sm px-6 sm:px-8 py-4 text-base font-medium text-foreground hover:bg-card hover:border-primary/50 transition-all"
             >
-              View Case Studies
+              {t("hero.viewCaseStudies")}
             </Link>
           </div>
 
           {/* Microcopy */}
           <p className="text-sm text-muted-foreground mb-16 px-4">
-            15-minute discovery call. Custom strategy in presentation format. Built around your brand.
+            {t("hero.microcopy")}
           </p>
 
           {/* Trust Metrics */}

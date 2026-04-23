@@ -38,6 +38,8 @@ const translations = {
     "hero.stat3.label": "Brands Scaled",
     "hero.stat4.value": "12+",
     "hero.stat4.label": "Years Experience",
+    "hero.viewCaseStudies": "View Case Studies",
+    "hero.microcopy": "15-minute discovery call. Custom strategy in presentation format. Built around your brand.",
 
     // Services
     "services.label": "Our Services",
@@ -78,6 +80,14 @@ const translations = {
     "howItWorks.step3.description": "Campaigns go live. We monitor performance daily and optimize for maximum ROAS.",
     "howItWorks.step4.title": "Scale & Grow",
     "howItWorks.step4.description": "Once we find winning combinations, we scale aggressively while maintaining profitability.",
+    "howItWorks.step1.title": "Book a Free Marketing Strategy",
+    "howItWorks.step1.desc": "Start with a 15-minute discovery call. We'll understand your brand, goals, and current challenges.",
+    "howItWorks.step2.title": "We Prepare Your Custom Strategy",
+    "howItWorks.step2.desc": "Based on our call, we'll create a detailed marketing strategy presentation tailored to your brand.",
+    "howItWorks.step3.title": "Launch, Build & Optimize",
+    "howItWorks.step3.desc": "We implement the strategy, launch campaigns, and continuously optimize. First test-drive is 90 days.",
+    "howItWorks.cta": "Start Your Growth Journey",
+    "howItWorks.note": "First collaboration period: 90 days. Long-term partnership built on results.",
 
     // Case Studies
     "caseStudies.label": "Case Studies",
@@ -168,6 +178,8 @@ const translations = {
     "hero.stat3.label": "Škálovaných značiek",
     "hero.stat4.value": "12+",
     "hero.stat4.label": "Rokov skúseností",
+    "hero.viewCaseStudies": "Pozrieť prípadové štúdie",
+    "hero.microcopy": "15-minútový discovery hovor. Stratégia na mieru v prezentačnom formáte. Postavená okolo vašej značky.",
 
     // Services
     "services.label": "Naše služby",
@@ -208,6 +220,14 @@ const translations = {
     "howItWorks.step3.description": "Kampane sa spustia. Denne monitorujeme výkon a optimalizujeme pre maximálny ROAS.",
     "howItWorks.step4.title": "Škálovanie a rast",
     "howItWorks.step4.description": "Keď nájdeme víťazné kombinácie, agresívne škálujeme pri zachovaní profitability.",
+    "howItWorks.step1.title": "Rezervujte si bezplatnú marketingovú stratégiu",
+    "howItWorks.step1.desc": "Začnite 15-minútovým discovery hovorom. Pochopíme vašu značku, ciele a aktuálne výzvy.",
+    "howItWorks.step2.title": "Pripravíme vám stratégiu na mieru",
+    "howItWorks.step2.desc": "Na základe hovoru vytvoríme detailnú prezentáciu marketingovej stratégie prispôsobenú vašej značke.",
+    "howItWorks.step3.title": "Spustenie, budovanie a optimalizácia",
+    "howItWorks.step3.desc": "Implementujeme stratégiu, spustíme kampane a neustále optimalizujeme. Prvý test trvá 90 dní.",
+    "howItWorks.cta": "Začnite svoju cestu k rastu",
+    "howItWorks.note": "Prvé obdobie spolupráce: 90 dní. Dlhodobé partnerstvo postavené na výsledkoch.",
 
     // Case Studies
     "caseStudies.label": "Prípadové štúdie",
@@ -245,7 +265,7 @@ const translations = {
     "faq.title1": "Často kladené",
     "faq.title2": " otázky",
     "faq.q1": "Koľko potrebujem investovať do reklám na začiatok?",
-    "faq.a1": "Odporúčame minimálne 1 500€/mesiac na reklamný rozpočet, aby sme videli zmysluplné výsledky. To nám umožňuje efektívne testovať rôzne publiká, kreatívy a stratégie. Značky zvyčajne vidia najlepšie výsledky s 3 000-10 000€/mesiac.",
+    "faq.a1": "Odporúčame minimálne 1 500€/mesiac na reklamný rozpočet, aby sme videli zmysluplné výsledky. To nám umožňuje efektívne testovať rôzne publiká, kreat��vy a stratégie. Značky zvyčajne vidia najlepšie výsledky s 3 000-10 000€/mesiac.",
     "faq.q2": "Ako dlho trvá, kým uvidím výsledky?",
     "faq.a2": "Väčšina klientov vidí prvé výsledky v priebehu 2-4 týždňov. Skutočný, udržateľný rast však zvyčajne trvá 2-3 mesiace, počas ktorých optimalizujeme kampane, testujeme kreatívy a hľadáme víťazné kombinácie.",
     "faq.q3": "Na akých platformách pracujete?",

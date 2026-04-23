@@ -17,8 +17,27 @@ export function FAQ() {
   ]
 
   return (
-    <section id="faq" className="py-16 sm:py-24 scroll-mt-16">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
+      {/* Subtle background pattern */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+        viewBox="0 0 1440 800"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="faqGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+        <line x1="1200" y1="0" x2="1440" y2="240" stroke="url(#faqGradient)" strokeWidth="1" />
+        <line x1="1100" y1="0" x2="1440" y2="340" stroke="url(#faqGradient)" strokeWidth="1" />
+        <line x1="0" y1="560" x2="240" y2="800" stroke="url(#faqGradient)" strokeWidth="1" />
+        <line x1="0" y1="460" x2="340" y2="800" stroke="url(#faqGradient)" strokeWidth="1" />
+      </svg>
+
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
