@@ -7,11 +7,11 @@ export function Founder() {
         {/* White card container */}
         <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-xl">
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-            {/* Founder Image - Small in frame */}
+            {/* Founder Image - Bigger */}
             <div className="flex-shrink-0">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 relative rounded-xl overflow-hidden border-2 border-gray-100">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 relative rounded-xl overflow-hidden border-2 border-gray-100 shadow-lg">
                 <Image
-                  src="/founder.jpg"
+                  src="/founder-photo.jpg"
                   alt="Damian - Founder of Dolphin Wave Media"
                   fill
                   className="object-cover"
