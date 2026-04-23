@@ -6,7 +6,7 @@ export function Founder() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Founder Image - Smaller */}
-          <div className="relative mx-auto lg:mx-0 max-w-sm lg:max-w-md">
+          <div className="relative mx-auto lg:mx-0 max-w-[280px] sm:max-w-sm lg:max-w-md">
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
               <Image

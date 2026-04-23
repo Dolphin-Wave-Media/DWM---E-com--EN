@@ -47,7 +47,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 px-2">
             <span className="text-foreground">We Build </span>
             <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">Marketing Systems</span>
             <br />
@@ -89,25 +89,22 @@ export function Hero() {
           </p>
 
           {/* Trust Metrics */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
+          <div className="grid grid-cols-2 sm:flex sm:flex-row sm:flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 px-4">
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">200K+</p>
-              <p className="text-sm text-muted-foreground mt-1">Revenue Generated</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">200K+</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Revenue Generated</p>
             </div>
-            <div className="h-px w-16 sm:h-12 sm:w-px bg-border" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">10K+</p>
-              <p className="text-sm text-muted-foreground mt-1">Orders Generated</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">10K+</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Orders Generated</p>
             </div>
-            <div className="h-px w-16 sm:h-12 sm:w-px bg-border" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">20+</p>
-              <p className="text-sm text-muted-foreground mt-1">Brands Scaled</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">20+</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Brands Scaled</p>
             </div>
-            <div className="h-px w-16 sm:h-12 sm:w-px bg-border" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">12+</p>
-              <p className="text-sm text-muted-foreground mt-1">Years Combined Experience</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">12+</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Years Experience</p>
             </div>
           </div>
 
