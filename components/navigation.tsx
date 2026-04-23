@@ -3,12 +3,15 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
+import { LanguageSwitcher } from "./language-switcher"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +22,11 @@ export function Navigation() {
   }, [])
 
   const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#case-studies", label: "Case Studies" },
-    { href: "#about", label: "About" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#services", labelKey: "nav.services" },
+    { href: "#case-studies", labelKey: "nav.caseStudies" },
+    { href: "#about", labelKey: "nav.about" },
+    { href: "#testimonials", labelKey: "nav.testimonials" },
+    { href: "#faq", labelKey: "nav.faq" },
   ]
 
   return (
@@ -50,21 +53,22 @@ export function Navigation() {
                 href={link.href}
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center">
+          {/* CTA Button + Language Switcher */}
+          <div className="hidden md:flex items-center gap-3">
             <Link
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
             >
-              Book a Free Strategy
+              {t("nav.bookStrategy")}
             </Link>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,17 +103,20 @@ export function Navigation() {
                   className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               ))}
-              <Link
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity mt-2"
-              >
-                Book a Free Strategy
-              </Link>
+              <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                <Link
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                >
+                  {t("nav.bookStrategy")}
+                </Link>
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         )}

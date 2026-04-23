@@ -1,9 +1,14 @@
+"use client"
+
 import Link from "next/link"
 import { ClientLogos } from "./client-logos"
+import { useLanguage } from "@/lib/language-context"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
       {/* Background Effects */}
@@ -41,24 +46,24 @@ export function Hero() {
                 <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
               </svg>
               <span className="text-sm text-foreground font-medium underline decoration-green-500 decoration-2 underline-offset-4">
-                Trusted by 20+ brands across Europe and USA
+                {t("hero.trusted")}
               </span>
             </div>
           </div>
 
           {/* Headline */}
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-6 px-2 max-w-5xl mx-auto">
-            <span className="text-foreground">We help e-commerce brands </span>
-            <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">sell more products</span>
-            <span className="text-foreground"> with </span>
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-generated content</span>
-            <span className="text-foreground"> and </span>
-            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Meta ads</span>
+            <span className="text-foreground">{t("hero.headline1")}</span>
+            <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">{t("hero.headline2")}</span>
+            <span className="text-foreground">{t("hero.headline3")}</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t("hero.headline4")}</span>
+            <span className="text-foreground">{t("hero.headline5")}</span>
+            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">{t("hero.headline6")}</span>
           </h1>
 
           {/* Subheadline */}
           <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed px-4">
-            We create the right strategy, save you hours on content production, and handle the execution from start to finish.
+            {t("hero.subheadline")}
           </p>
 
           {/* CTAs */}
@@ -69,7 +74,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
             >
-              Book a Free Marketing Strategy
+              {t("hero.cta")}
               <svg className="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
@@ -91,20 +96,20 @@ export function Hero() {
           {/* Trust Metrics */}
           <div className="grid grid-cols-2 sm:flex sm:flex-row sm:flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 px-4">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">200,000€+</p>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Revenue Generated</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">{t("hero.stat1.value")}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat1.label")}</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">10,500+</p>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Orders Generated</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t("hero.stat2.value")}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat2.label")}</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">20+</p>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Brands Scaled</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">{t("hero.stat3.value")}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat3.label")}</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">12+</p>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Years Experience</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t("hero.stat4.value")}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat4.label")}</p>
             </div>
           </div>
 

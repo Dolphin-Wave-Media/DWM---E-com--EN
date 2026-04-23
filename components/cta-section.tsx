@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
+import { useLanguage } from "@/lib/language-context"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function CTASection() {
+  const { t } = useLanguage()
+
   return (
     <section className="py-16 sm:py-24 relative overflow-hidden">
       {/* Background gradient */}
@@ -13,12 +18,12 @@ export function CTASection() {
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-6">
-          Ready to Scale Your E-commerce Brand?
+          {t("cta.title")}
         </h2>
 
         {/* Subheadline */}
         <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 text-pretty px-4">
-          Book a free 15-minute consultation. We&apos;ll review your marketing and show you where there&apos;s room for growth.
+          {t("cta.description")}
         </p>
 
         {/* CTA */}
@@ -28,7 +33,7 @@ export function CTASection() {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold text-white hover:opacity-90 transition-all hover:shadow-xl hover:shadow-primary/25 hover:scale-105"
         >
-          Book a Free Consultation
+          {t("cta.button")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -46,28 +51,10 @@ export function CTASection() {
           </svg>
         </Link>
 
-        {/* Trust items */}
-        <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 mt-6 sm:mt-8">
-          {["No commitment", "100% free", "15-minute call"].map((item, index) => (
-            <div key={index} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-accent"
-              >
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-              {item}
-            </div>
-          ))}
-        </div>
+        {/* Trust note */}
+        <p className="mt-6 sm:mt-8 text-sm text-muted-foreground">
+          {t("cta.note")}
+        </p>
       </div>
     </section>
   )

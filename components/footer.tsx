@@ -1,12 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-
-const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#case-studies", label: "Case Studies" },
-  { href: "#about", label: "About" },
-  { href: "#testimonials", label: "Testimonials" },
-]
+import { useLanguage } from "@/lib/language-context"
 
 const socialLinks = [
   {
@@ -32,6 +28,15 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const { t } = useLanguage()
+
+  const navLinks = [
+    { href: "#services", labelKey: "nav.services" },
+    { href: "#case-studies", labelKey: "nav.caseStudies" },
+    { href: "#about", labelKey: "nav.about" },
+    { href: "#testimonials", labelKey: "nav.testimonials" },
+  ]
+
   return (
     <footer id="contact" className="py-12 sm:py-16 border-t border-border scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -48,7 +53,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md text-sm sm:text-base">
-              Performance marketing agency for e-commerce. We help brands scale through Meta Ads, Google Ads, and TikTok Ads.
+              {t("footer.description")}
             </p>
             {/* Social links */}
             <div className="flex items-center gap-3">
@@ -69,7 +74,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t("footer.navigation")}</h4>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
@@ -77,7 +82,7 @@ export function Footer() {
                   href={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               ))}
             </nav>
@@ -85,7 +90,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t("footer.contact")}</h4>
             <div className="flex flex-col gap-3 text-sm sm:text-base">
               <a
                 href="mailto:info@dolphinwave-media.com"
@@ -106,14 +111,14 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
-            © 2026 Dolphin Wave Media. All rights reserved.
+            {t("footer.rights")}
           </p>
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="text-xs sm:text-sm text-muted-foreground">
-              Privacy Policy
+              {t("footer.privacy")}
             </span>
             <span className="text-xs sm:text-sm text-muted-foreground">
-              Terms of Service
+              {t("footer.terms")}
             </span>
           </div>
         </div>

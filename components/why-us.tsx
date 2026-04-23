@@ -1,23 +1,17 @@
-const points = [
-  {
-    title: "We've Got the Drive",
-    description: "We like this work, we care about doing it properly, and we're always looking for ways to improve and get better results.",
-  },
-  {
-    title: "We See the Full Picture",
-    description: "We don't focus only on ads. We look at the whole system around them to understand what's working and what needs to change.",
-  },
-  {
-    title: "We Save You Hours",
-    description: "We help you save time on strategy, content, and execution, so you can focus on the bigger picture.",
-  },
-  {
-    title: "We Get Actual Results",
-    description: "We care about what really matters — performance, sales, and growth that makes sense for your brand.",
-  },
-]
+"use client"
+
+import { useLanguage } from "@/lib/language-context"
 
 export function WhyUs() {
+  const { t } = useLanguage()
+
+  const points = [
+    { titleKey: "whyUs.point1.title", descriptionKey: "whyUs.point1.description" },
+    { titleKey: "whyUs.point2.title", descriptionKey: "whyUs.point2.description" },
+    { titleKey: "whyUs.point3.title", descriptionKey: "whyUs.point3.description" },
+    { titleKey: "whyUs.point4.title", descriptionKey: "whyUs.point4.description" },
+  ]
+
   return (
     <section className="py-16 sm:py-24 bg-card/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,16 +19,15 @@ export function WhyUs() {
           {/* Content */}
           <div>
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-              Our Approach
+              {t("whyUs.label")}
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
-              Why Brands Choose{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                Us
+                {t("whyUs.title1")}
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-              We&apos;ve built our experience across many of our own and client projects, which gives us a broad view of what works. We keep learning, testing, and improving — because we genuinely enjoy it.
+              {t("whyUs.description")}
             </p>
 
             <div className="space-y-5 sm:space-y-6">
@@ -45,10 +38,10 @@ export function WhyUs() {
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1">
-                      {point.title}
+                      {t(point.titleKey)}
                     </h3>
                     <p className="text-sm sm:text-base text-muted-foreground">
-                      {point.description}
+                      {t(point.descriptionKey)}
                     </p>
                   </div>
                 </div>

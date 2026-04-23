@@ -1,6 +1,11 @@
+"use client"
+
 import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
 
 export function Founder() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="py-16 sm:py-24 scroll-mt-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -22,13 +27,13 @@ export function Founder() {
             {/* Content */}
             <div className="text-center sm:text-left">
               <p className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
-                Meet the Founder
+                {t("founder.title")}
               </p>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                &quot;I started this because I saw that many e-commerce brands simply don&apos;t have enough time to create content and manage their marketing properly. I believe we can really help with that.&quot;
+                {t("founder.quote")}
               </p>
-              <p className="mt-4 text-gray-900 font-semibold">Damian</p>
-              <p className="text-sm text-gray-500">Founder, Dolphin Wave Media</p>
+              <p className="mt-4 text-gray-900 font-semibold">{t("founder.name")}</p>
+              <p className="text-sm text-gray-500">{t("founder.role")}</p>
             </div>
           </div>
         </div>
