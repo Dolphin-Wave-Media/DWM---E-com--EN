@@ -48,6 +48,19 @@
   }
 }
 
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-logos {
+  animation: scroll-logos 12s linear infinite;
+}
+
 @theme inline {
   --font-sans: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
