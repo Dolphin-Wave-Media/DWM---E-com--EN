@@ -1,7 +1,29 @@
+import { Navigation } from "@/components/navigation"
+import { Hero } from "@/components/hero"
+import { LogoMarquee } from "@/components/logo-marquee"
+import { Stats } from "@/components/stats"
+import { About } from "@/components/about"
+import { Services } from "@/components/services"
+import { Results } from "@/components/results"
+import { Reviews } from "@/components/reviews"
+import { CTASection } from "@/components/cta-section"
+import { Footer } from "@/components/footer"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background">
-      <h1 className="text-4xl font-bold text-foreground">Dolphin wave media</h1>
-    </main>
+    <>
+      <Navigation />
+      <main>
+        <Hero />
+        <LogoMarquee />
+        <Stats />
+        <About />
+        <Services />
+        <Results />
+        <Reviews />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
   )
 }
