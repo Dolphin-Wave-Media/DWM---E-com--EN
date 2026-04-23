@@ -132,16 +132,16 @@ export function Hero() {
               </div>
             </div>
             
-            {/* Small CTA below video */}
-            <div className="mt-6 flex justify-center">
+            {/* CTA below video */}
+            <div className="mt-8 flex justify-center">
               <Link
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 to-primary/20 border border-primary/30 text-base font-medium text-foreground hover:from-accent/30 hover:to-primary/30 hover:border-primary/50 transition-all"
               >
                 {t("hero.cta")}
-                <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
                 </svg>
