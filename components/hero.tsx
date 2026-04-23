@@ -5,7 +5,7 @@ const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-background">
         {/* Wave pattern */}
@@ -32,7 +32,7 @@ export function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] opacity-50" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="text-center">
           {/* Trust badge with checkmark */}
           <div className="flex items-center justify-center gap-2 mb-6">
