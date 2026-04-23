@@ -60,43 +60,43 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 scroll-mt-16">
+    <section id="services" className="py-16 sm:py-24 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
             Our Services
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
             Everything You Need to{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
               Scale
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty px-4">
             We don&apos;t just run ads. We build complete marketing systems — creatives, 
             funnels, strategy — all working together.
           </p>
         </div>
 
         {/* Service cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-8 transition-all hover:border-primary/50 hover:bg-card"
+              className="group relative rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 sm:p-8 transition-all hover:border-primary/50 hover:bg-card"
             >
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary mb-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary mb-4 sm:mb-6">
                 {service.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
 

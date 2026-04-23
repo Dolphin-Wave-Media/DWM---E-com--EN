@@ -4,28 +4,28 @@ import { useState } from "react"
 
 const faqs = [
   {
-    question: "Aký je minimálny rozpočet na reklamu?",
-    answer: "Odporúčame minimálny mesačný ad spend od 2 000 € pre efektívne testovanie a optimalizáciu. Pri nižších rozpočtoch je ťažké získať dostatočné dáta na správne rozhodnutia."
+    question: "What's the minimum ad budget?",
+    answer: "We recommend a minimum monthly ad spend of €2,000 for effective testing and optimization. With lower budgets, it's difficult to gather enough data for proper decision-making."
   },
   {
-    question: "Ako dlho trvá, kým uvidím výsledky?",
-    answer: "Prvé výsledky zvyčajne vidíme do 2-4 týždňov. Stabilné a škálovateľné výsledky dosahujeme po 2-3 mesiacoch intenzívnej optimalizácie a testovania."
+    question: "How long until I see results?",
+    answer: "You'll typically see first results within 2-4 weeks. Stable and scalable results are achieved after 2-3 months of intensive optimization and testing."
   },
   {
-    question: "Aké platformy používate?",
-    answer: "Špecializujeme sa na Meta Ads (Facebook & Instagram), Google Ads a TikTok Ads. Platformu vyberáme podľa vášho produktu a cieľovej skupiny."
+    question: "Which platforms do you use?",
+    answer: "We specialize in Meta Ads (Facebook & Instagram), Google Ads, and TikTok Ads. We choose the platform based on your product and target audience."
   },
   {
-    question: "Potrebujem mať vlastné kreatívy?",
-    answer: "Nie nevyhnutne. Pomáhame s kreatívnou stratégiou a vieme odporučiť osvedčených partnerov na tvorbu UGC a reklamných materiálov."
+    question: "Do I need to have my own creatives?",
+    answer: "Not necessarily. We help with creative strategy and can recommend proven partners for UGC and advertising materials."
   },
   {
-    question: "Ako vyzerá reporting?",
-    answer: "Dostávate týždenné reporty s kľúčovými metrikami a mesačné strategické review cally. Máte tiež prístup k live dashboardu s real-time dátami."
+    question: "What does reporting look like?",
+    answer: "You receive weekly reports with key metrics and monthly strategic review calls. You also have access to a live dashboard with real-time data."
   },
   {
-    question: "Aká je dĺžka kontraktu?",
-    answer: "Štandardne pracujeme na mesačnej báze s 30-dňovou výpovednou lehotou. Veríme, že výsledky hovoria samy za seba."
+    question: "What's the contract length?",
+    answer: "We typically work on a monthly basis with a 30-day notice period. We believe results speak for themselves."
   }
 ]
 
@@ -33,23 +33,23 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-24 scroll-mt-16">
+    <section id="faq" className="py-16 sm:py-24 scroll-mt-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
             FAQ
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Často kladené otázky
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Odpovede na najčastejšie otázky o našej spolupráci
+          <p className="text-base sm:text-lg text-muted-foreground">
+            Answers to the most common questions about working with us
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -57,9 +57,9 @@ export function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-card/80 transition-colors"
+                className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-card/80 transition-colors"
               >
-                <span className="font-semibold text-foreground pr-4">
+                <span className="font-semibold text-foreground pr-4 text-sm sm:text-base">
                   {faq.question}
                 </span>
                 <svg
@@ -80,8 +80,8 @@ export function FAQ() {
                 </svg>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <p className="text-muted-foreground leading-relaxed">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

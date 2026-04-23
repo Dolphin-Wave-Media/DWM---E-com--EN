@@ -2,11 +2,10 @@ import Link from "next/link"
 import Image from "next/image"
 
 const navLinks = [
-  { href: "#services", label: "Služby" },
-  { href: "#case-studies", label: "Prípadové štúdie" },
-  { href: "#about", label: "O nás" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Kontakt" },
+  { href: "#services", label: "Services" },
+  { href: "#case-studies", label: "Case Studies" },
+  { href: "#about", label: "About" },
+  { href: "#testimonials", label: "Testimonials" },
 ]
 
 const socialLinks = [
@@ -18,17 +17,6 @@ const socialLinks = [
         <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-      </svg>
-    ),
-  },
-  {
-    href: "https://linkedin.com/company/dolphinwavemedia",
-    label: "LinkedIn",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-        <rect width="4" height="12" x="2" y="9"/>
-        <circle cx="4" cy="4" r="2"/>
       </svg>
     ),
   },
@@ -45,11 +33,11 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-16 border-t border-border scroll-mt-16">
+    <footer id="contact" className="py-12 sm:py-16 border-t border-border scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand column */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/logo.svg"
@@ -59,8 +47,8 @@ export function Footer() {
                 style={{ height: '40px', width: 'auto' }}
               />
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Performance marketing agentúra pre e-commerce. Pomáhame značkám škálovať cez Meta Ads, Google Ads a TikTok Ads.
+            <p className="text-muted-foreground mb-6 max-w-md text-sm sm:text-base">
+              Performance marketing agency for e-commerce. We help brands scale through Meta Ads, Google Ads, and TikTok Ads.
             </p>
             {/* Social links */}
             <div className="flex items-center gap-3">
@@ -81,13 +69,13 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Navigácia</h4>
+            <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
                 >
                   {link.label}
                 </Link>
@@ -97,13 +85,19 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Kontakt</h4>
-            <div className="flex flex-col gap-3">
+            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+            <div className="flex flex-col gap-3 text-sm sm:text-base">
               <a
                 href="mailto:info@dolphinwave-media.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors break-all"
               >
                 info@dolphinwave-media.com
+              </a>
+              <a
+                href="tel:+421915327052"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                +421 915 327 052
               </a>
               <p className="text-muted-foreground">
                 Bratislava, Slovakia
@@ -113,16 +107,16 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Dolphin Wave Media. Všetky práva vyhradené.
+        <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
+            © 2026 Dolphin Wave Media. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Ochrana súkromia
+          <div className="flex items-center gap-4 sm:gap-6">
+            <Link href="/privacy" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Obchodné podmienky
+            <Link href="/terms" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Terms of Service
             </Link>
           </div>
         </div>

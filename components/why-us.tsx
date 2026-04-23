@@ -19,37 +19,37 @@ const points = [
 
 export function WhyUs() {
   return (
-    <section className="py-24 bg-card/30">
+    <section className="py-16 sm:py-24 bg-card/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content */}
           <div>
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
               Our Approach
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
               Why Brands Choose{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                 Us
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
               We&apos;re not another agency that just &quot;manages your ads.&quot; We&apos;re growth 
               partners who understand that real results come from a complete system — 
               not isolated tactics.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6">
               {points.map((point, index) => (
                 <div key={index} className="flex gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-semibold text-sm">
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1">
                       {point.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm sm:text-base text-muted-foreground">
                       {point.description}
                     </p>
                   </div>
@@ -59,7 +59,7 @@ export function WhyUs() {
           </div>
 
           {/* Visual */}
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-card to-card/50 border border-border p-8 flex items-center justify-center">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-primary mb-6">

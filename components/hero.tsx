@@ -34,16 +34,16 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/logo.svg"
-              alt="Dolphin Wave Media"
-              width={280}
-              height={70}
-              className="h-16 md:h-20 w-auto"
-              priority
-            />
+          {/* Trust badge with checkmark */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 border border-border backdrop-blur-sm">
+              <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm text-foreground font-medium underline decoration-green-500 decoration-2 underline-offset-4">
+                Trusted by 20+ brands across Europe and USA
+              </span>
+            </div>
           </div>
 
           {/* Headline */}
@@ -56,18 +56,18 @@ export function Hero() {
           </h1>
 
           {/* Subheadline */}
-          <p className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed px-4">
             Performance-driven Meta Ads, creative strategy, and funnel optimization 
             for e-commerce brands ready to scale. Not just ads — a complete growth system.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 px-4">
             <Link
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
             >
               Book a Free Marketing Strategy
               <svg className="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -77,34 +77,34 @@ export function Hero() {
             </Link>
             <Link
               href="#case-studies"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-card/50 backdrop-blur-sm px-8 py-4 text-base font-medium text-foreground hover:bg-card hover:border-primary/50 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-border bg-card/50 backdrop-blur-sm px-6 sm:px-8 py-4 text-base font-medium text-foreground hover:bg-card hover:border-primary/50 transition-all"
             >
               View Case Studies
             </Link>
           </div>
 
           {/* Microcopy */}
-          <p className="text-sm text-muted-foreground mb-16">
+          <p className="text-sm text-muted-foreground mb-16 px-4">
             15-minute discovery call. Custom strategy in presentation format. Built around your brand.
           </p>
 
           {/* Trust Metrics */}
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">200K+</p>
               <p className="text-sm text-muted-foreground mt-1">Revenue Generated</p>
             </div>
-            <div className="h-12 w-px bg-border hidden md:block" />
+            <div className="h-px w-16 sm:h-12 sm:w-px bg-border" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">10K+</p>
               <p className="text-sm text-muted-foreground mt-1">Orders Generated</p>
             </div>
-            <div className="h-12 w-px bg-border hidden md:block" />
+            <div className="h-px w-16 sm:h-12 sm:w-px bg-border" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">20+</p>
               <p className="text-sm text-muted-foreground mt-1">Brands Scaled</p>
             </div>
-            <div className="h-12 w-px bg-border hidden md:block" />
+            <div className="h-px w-16 sm:h-12 sm:w-px bg-border" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">12+</p>
               <p className="text-sm text-muted-foreground mt-1">Years Combined Experience</p>
@@ -114,7 +114,7 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
         <svg className="w-6 h-6 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m6 9 6 6 6-6"/>
         </svg>

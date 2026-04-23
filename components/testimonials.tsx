@@ -1,30 +1,30 @@
 const testimonials = [
   {
     quote: "Finally an agency that actually understands e-commerce. They don't just run ads — they think about the whole funnel. Our ROAS doubled in the first 60 days.",
-    name: "Martin K.",
-    title: "Founder, Pánska Elegancia",
+    name: "Robert Stefanco",
+    title: "Founder, Panska Elegancia",
   },
   {
     quote: "Communication is excellent. They're proactive, transparent, and always come with new ideas. It feels like having an in-house team, not an external agency.",
-    name: "Lucia S.",
+    name: "Alena Janesova",
     title: "Marketing Director, Tentation",
   },
   {
     quote: "The creative strategy changed everything for us. Our ads finally stand out. The results speak for themselves — best decision we made this year.",
-    name: "Tomáš H.",
+    name: "Juraj Habala",
     title: "CEO, Habala",
   },
 ]
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 scroll-mt-16">
+    <section id="testimonials" className="py-16 sm:py-24 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
             Testimonials
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
             What Our Clients{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
               Say
@@ -32,14 +32,14 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative rounded-2xl border border-border bg-card/50 p-8"
+              className="relative rounded-2xl border border-border bg-card/50 p-6 sm:p-8"
             >
               {/* Quote icon */}
-              <div className="absolute -top-4 left-8">
+              <div className="absolute -top-4 left-6 sm:left-8">
                 <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary">
                   <svg className="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.956.76-3.022.66-1.065 1.515-1.867 2.558-2.403L9.373 5c-.8.396-1.56.898-2.26 1.505-.71.607-1.34 1.305-1.9 2.094s-.98 1.68-1.25 2.69-.346 2.04-.217 3.1c.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003zm9.124 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.817-.56-.124-1.074-.13-1.54-.022-.16-.94.09-1.95.75-3.02.66-1.06 1.514-1.86 2.557-2.4L18.49 5c-.8.396-1.555.898-2.26 1.505-.708.607-1.34 1.305-1.894 2.094-.556.79-.97 1.68-1.24 2.69-.273 1-.345 2.04-.217 3.1.165 1.4.615 2.52 1.35 3.35.732.833 1.646 1.25 2.742 1.25.967 0 1.768-.29 2.402-.876.627-.576.942-1.365.942-2.368v.01z"/>
@@ -48,16 +48,16 @@ export function Testimonials() {
               </div>
 
               {/* Stars */}
-              <div className="flex gap-1 mb-6 pt-2">
+              <div className="flex gap-1 mb-4 sm:mb-6 pt-2">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-foreground mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-foreground mb-6 leading-relaxed">
                 &quot;{testimonial.quote}&quot;
               </p>
 

@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/hero"
-import { Features } from "@/components/features"
 import { Founder } from "@/components/founder"
 import { Services } from "@/components/services"
 import { WhyUs } from "@/components/why-us"
@@ -18,7 +17,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <Features />
         <Founder />
         <Services />
         <WhyUs />
