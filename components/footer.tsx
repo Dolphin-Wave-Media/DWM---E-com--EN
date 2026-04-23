@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -48,10 +49,14 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 mb-4">
-            <span className="text-xl font-bold text-foreground">
-              Dolphin<span className="text-primary">Wave</span> Media
-            </span>
+          <Link href="/" className="flex items-center mb-4">
+            <Image
+              src="/logo.svg"
+              alt="Dolphin Wave Media"
+              width={140}
+              height={35}
+              className="h-9 w-auto"
+            />
           </Link>
 
           {/* Tagline */}

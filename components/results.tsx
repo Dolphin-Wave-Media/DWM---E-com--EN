@@ -43,8 +43,8 @@ export function Results() {
               key={index}
               className="relative rounded-xl border border-border bg-card p-6 overflow-hidden"
             >
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary to-primary/50" />
+              {/* Top accent line with logo gradient */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#c9388c] via-[#9b4dca] to-[#f5a623]" />
 
               {/* Category */}
               <p className="text-sm font-medium text-primary mb-3">

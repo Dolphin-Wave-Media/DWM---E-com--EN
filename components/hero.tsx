@@ -8,9 +8,11 @@ export function Hero() {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-background">
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(116,86,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(116,86,241,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
-        {/* Purple glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[128px] opacity-50" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(201,56,140,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(201,56,140,0.05)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        {/* Magenta/Pink glow */}
+        <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-primary/30 rounded-full blur-[128px] opacity-40" />
+        {/* Orange glow */}
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/25 rounded-full blur-[100px] opacity-40" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
