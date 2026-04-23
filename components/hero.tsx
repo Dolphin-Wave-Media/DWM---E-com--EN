@@ -114,7 +114,7 @@ export function Hero() {
           {/* Video Section */}
           <div className="mt-16 max-w-4xl mx-auto px-4">
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
-              <div style={{ padding: '52.63% 0 0 0', position: 'relative' }}>
+              <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe 
                   src="https://drive.google.com/file/d/1NP_t-dOPLwd2ydJhjTS8HjIQQfKOBrDC/preview" 
                   frameBorder="0" 
