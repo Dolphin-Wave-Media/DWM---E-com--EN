@@ -17,23 +17,23 @@ const clients = [
 export function ClientLogos() {
   return (
     <div className="mt-16 w-full">
-      {/* Gradient background strip */}
-      <div className="relative py-8 bg-gradient-to-r from-accent via-primary to-accent overflow-hidden">
+      {/* White background strip for black logos */}
+      <div className="relative py-6 bg-white overflow-hidden">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-accent to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-accent to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10" />
         
-        {/* Scrolling logos */}
-        <div className="flex animate-marquee">
-          {[...clients, ...clients, ...clients].map((client, index) => (
+        {/* Scrolling logos - faster animation */}
+        <div className="flex" style={{ animation: 'marquee 15s linear infinite' }}>
+          {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-6 sm:mx-10"
+              className="flex-shrink-0 mx-8 sm:mx-12"
             >
               <img 
                 src={client.logo} 
                 alt={client.name}
-                className="h-10 sm:h-12 md:h-14 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
               />
             </div>
           ))}
