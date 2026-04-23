@@ -10,7 +10,7 @@ const navLinks = [
 
 const socialLinks = [
   {
-    href: "https://instagram.com/dolphinwavemedia",
+    href: "https://www.instagram.com/damian.drahovsky/",
     label: "Instagram",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -21,7 +21,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://facebook.com/dolphinwavemedia",
+    href: "https://www.facebook.com/share/1CR7q9BBRM/?mibextid=wwXIfr",
     label: "Facebook",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -99,9 +99,6 @@ export function Footer() {
               >
                 +421 915 327 052
               </a>
-              <p className="text-muted-foreground">
-                Bratislava, Slovakia
-              </p>
             </div>
           </div>
         </div>
@@ -112,12 +109,12 @@ export function Footer() {
             © 2026 Dolphin Wave Media. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6">
-            <Link href="/privacy" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <span className="text-xs sm:text-sm text-muted-foreground">
               Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </span>
+            <span className="text-xs sm:text-sm text-muted-foreground">
               Terms of Service
-            </Link>
+            </span>
           </div>
         </div>
       </div>

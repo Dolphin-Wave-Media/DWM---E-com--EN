@@ -60,7 +60,7 @@ export function WhyUs() {
           <div className="relative mt-8 lg:mt-0">
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border">
               <img 
-                src="/results-data.png" 
+                src="/results-table.png" 
                 alt="Meta Ads performance results showing 12.73 ROAS" 
                 className="w-full h-auto"
                 loading="eager"

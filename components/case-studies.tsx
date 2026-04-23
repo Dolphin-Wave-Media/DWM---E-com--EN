@@ -10,7 +10,7 @@ const caseStudies = [
     ],
   },
   {
-    title: "Seasonal E-commerce Brand",
+    title: "Fashion E-commerce Brand",
     description: "The brand had demand, but no time or structure to run growth properly. We took over the campaigns and helped turn the season into real numbers.",
     metrics: [
       { label: "Ad Spend", value: "€7,020" },
@@ -33,8 +33,8 @@ const caseStudies = [
     title: "Google Ads Growth Case",
     description: "We launched and optimized high-intent search campaigns around best-selling products for this e-commerce store.",
     metrics: [
-      { label: "Ad Spend", value: "45K CZK" },
-      { label: "Revenue", value: "284K CZK" },
+      { label: "Ad Spend", value: "€1,847" },
+      { label: "Revenue", value: "€11,656" },
       { label: "Conversions", value: "126" },
       { label: "Return", value: "630%" },
     ],

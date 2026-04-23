@@ -1,18 +1,18 @@
 const testimonials = [
   {
-    quote: "Finally an agency that actually understands e-commerce. They don't just run ads — they think about the whole funnel. Our ROAS doubled in the first 60 days.",
+    quote: "Finally an agency that actually understands e-commerce. They don't just run ads — they think about the whole funnel.",
     name: "Robert Stefanco",
-    title: "Founder, Panska Elegancia",
+    title: "Founder, Pánska Elegancia",
   },
   {
     quote: "Communication is excellent. They're proactive, transparent, and always come with new ideas. It feels like having an in-house team, not an external agency.",
-    name: "Alena Janesova",
-    title: "Marketing Director, Tentation",
+    name: "Matej Časár",
+    title: "Founder, Bomba Zľava",
   },
   {
     quote: "The creative strategy changed everything for us. Our ads finally stand out. The results speak for themselves — best decision we made this year.",
     name: "Juraj Habala",
-    title: "CEO, Habala",
+    title: "Founder, Habala",
   },
 ]
 
@@ -24,11 +24,8 @@ export function Testimonials() {
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
             Testimonials
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
-            What Our Clients{" "}
-            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Say
-            </span>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground tracking-tight text-balance mb-4 max-w-4xl mx-auto px-4 italic">
+            &quot;I can see you&apos;re really putting effort into this and that you genuinely care about the project, which makes me really happy. So far, this is probably the best approach to ads I&apos;ve had.&quot;
           </h2>
         </div>
 

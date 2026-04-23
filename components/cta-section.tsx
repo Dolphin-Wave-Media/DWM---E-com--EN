@@ -18,7 +18,7 @@ export function CTASection() {
 
         {/* Subheadline */}
         <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 text-pretty px-4">
-          Book a free 30-minute consultation. We&apos;ll review your marketing and show you where there&apos;s room for growth.
+          Book a free 15-minute consultation. We&apos;ll review your marketing and show you where there&apos;s room for growth.
         </p>
 
         {/* CTA */}
@@ -48,7 +48,7 @@ export function CTASection() {
 
         {/* Trust items */}
         <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 mt-6 sm:mt-8">
-          {["No commitment", "100% free", "30-minute call"].map((item, index) => (
+          {["No commitment", "100% free", "15-minute call"].map((item, index) => (
             <div key={index} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
