@@ -24,7 +24,7 @@ export function ClientLogos() {
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10" />
         
         {/* Scrolling logos - faster animation */}
-        <div className="flex" style={{ animation: 'marquee 15s linear infinite' }}>
+        <div className="flex" style={{ animation: 'marquee 7s linear infinite' }}>
           {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
             <div
               key={index}
