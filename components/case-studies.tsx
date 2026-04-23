@@ -135,7 +135,7 @@ export function CaseStudies() {
           {caseStudies.map((study, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-white/40 hover:bg-white/10 transition-all"
+              className="group relative rounded-2xl border border-gray-200 bg-white overflow-hidden hover:shadow-lg transition-all"
             >
               {/* Top gradient bar */}
               <div className="h-1 bg-gradient-to-r from-accent via-primary to-[#9b4dca]" />
@@ -143,7 +143,7 @@ export function CaseStudies() {
               <div className="p-5 sm:p-8">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground pr-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 pr-4">
                     {study.title}
                   </h3>
                   <div className="flex items-center gap-1 flex-shrink-0">
@@ -156,18 +156,18 @@ export function CaseStudies() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                   {study.description}
                 </p>
 
                 {/* Results */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-white/10">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200">
                   {study.metrics.map((metric, metricIndex) => (
                     <div key={metricIndex}>
-                      <p className="text-lg sm:text-xl font-bold text-white">
+                      <p className="text-lg sm:text-xl font-bold text-gray-900">
                         {metric.value}
                       </p>
-                      <p className="text-xs text-muted-foreground">{metric.label}</p>
+                      <p className="text-xs text-gray-500">{metric.label}</p>
                     </div>
                   ))}
                 </div>
