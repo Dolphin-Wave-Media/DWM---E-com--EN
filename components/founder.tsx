@@ -9,9 +9,9 @@ export function Founder() {
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
             {/* Founder Image - Bigger */}
             <div className="flex-shrink-0">
-              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 relative rounded-xl overflow-hidden border-2 border-gray-100 shadow-lg">
+              <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 relative rounded-xl overflow-hidden border-2 border-gray-100 shadow-lg">
                 <Image
-                  src="/founder-photo.jpg"
+                  src="/founder-photo.svg"
                   alt="Damian - Founder of Dolphin Wave Media"
                   fill
                   className="object-cover"
