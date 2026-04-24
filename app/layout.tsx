@@ -11,8 +11,11 @@ export const metadata: Metadata = {
   description: 'We help e-commerce brands scale with Meta Ads, Google Ads & TikTok Ads — built on data, sharp creative, and proven strategy.',
   generator: 'v0.app',
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
   },
 }
 
