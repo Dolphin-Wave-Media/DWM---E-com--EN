@@ -50,6 +50,8 @@ export function ClientLogos() {
               <img 
                 src={client.logo} 
                 alt={client.name}
+                loading="lazy"
+                decoding="async"
                 className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
               />
             </div>
@@ -63,6 +65,8 @@ export function ClientLogos() {
               <img 
                 src={client.logo} 
                 alt={client.name}
+                loading="lazy"
+                decoding="async"
                 className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
               />
             </div>

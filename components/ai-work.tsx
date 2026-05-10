@@ -85,6 +85,8 @@ export function AIWork() {
                     alt={banner.alt}
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               </div>
@@ -101,13 +103,15 @@ export function AIWork() {
                 key={index}
                 className="group relative rounded-2xl overflow-hidden border border-border bg-card/30 hover:border-primary/30 transition-all"
               >
-                <div className="aspect-[9/16] relative">
+                <div className="aspect-[9/16] relative bg-black">
                   <iframe
                     src={video.src}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
                     className="absolute inset-0 w-full h-full"
                     title={video.title}
+                    loading="lazy"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
               </div>
