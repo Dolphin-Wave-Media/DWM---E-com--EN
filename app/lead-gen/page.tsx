@@ -95,9 +95,60 @@ export default function LeadGenPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Global Background Effects - Diagonal Lines Throughout */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1440 3000"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.1" />
+            </linearGradient>
+            <linearGradient id="lineGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#c9388c" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#f5a623" stopOpacity="0.08" />
+            </linearGradient>
+          </defs>
+          {/* Top section lines */}
+          <line x1="0" y1="150" x2="250" y2="0" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="0" y1="300" x2="400" y2="0" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="0" y1="450" x2="550" y2="0" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="0" y1="600" x2="700" y2="0" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="890" y1="900" x2="1440" y2="350" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="1040" y1="900" x2="1440" y2="500" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="1190" y1="900" x2="1440" y2="650" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="1340" y1="900" x2="1440" y2="800" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          {/* Middle section lines */}
+          <line x1="0" y1="1100" x2="300" y2="900" stroke="url(#lineGradient2)" strokeWidth="1.5" />
+          <line x1="0" y1="1300" x2="450" y2="1000" stroke="url(#lineGradient2)" strokeWidth="1.5" />
+          <line x1="1100" y1="1500" x2="1440" y2="1100" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="1200" y1="1600" x2="1440" y2="1300" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          {/* Lower middle section lines */}
+          <line x1="0" y1="1800" x2="350" y2="1500" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="0" y1="2000" x2="500" y2="1650" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="1000" y1="2200" x2="1440" y2="1750" stroke="url(#lineGradient2)" strokeWidth="1.5" />
+          <line x1="1150" y1="2300" x2="1440" y2="1950" stroke="url(#lineGradient2)" strokeWidth="1.5" />
+          {/* Bottom section lines */}
+          <line x1="0" y1="2500" x2="400" y2="2150" stroke="url(#lineGradient2)" strokeWidth="1.5" />
+          <line x1="0" y1="2700" x2="550" y2="2300" stroke="url(#lineGradient2)" strokeWidth="1.5" />
+          <line x1="950" y1="2900" x2="1440" y2="2400" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+          <line x1="1100" y1="3000" x2="1440" y2="2600" stroke="url(#lineGradient1)" strokeWidth="1.5" />
+        </svg>
+        {/* Gradient orbs throughout the page */}
+        <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] opacity-40" />
+        <div className="absolute top-[10%] right-[15%] w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] opacity-40" />
+        <div className="absolute top-[35%] right-[25%] w-[450px] h-[450px] bg-primary/12 rounded-full blur-[130px] opacity-35" />
+        <div className="absolute top-[55%] left-[15%] w-[500px] h-[500px] bg-accent/15 rounded-full blur-[140px] opacity-35" />
+        <div className="absolute top-[75%] right-[20%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] opacity-40" />
+        <div className="absolute top-[90%] left-[25%] w-[450px] h-[450px] bg-accent/12 rounded-full blur-[130px] opacity-35" />
+      </div>
       {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3">
@@ -129,7 +180,7 @@ export default function LeadGenPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden pt-16">
         {/* Background Effects - Same as main page */}
         <div className="absolute inset-0 bg-background overflow-hidden">
           <svg
@@ -257,7 +308,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Lead Gen System Problems Section */}
-      <section className="relative py-16 sm:py-24 overflow-hidden">
+      <section className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
           viewBox="0 0 1440 700"
@@ -318,7 +369,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+      <section id="services" className="relative z-10 py-16 sm:py-24 bg-card/30 overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
           viewBox="0 0 1440 800"
@@ -375,7 +426,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* How We Work Section */}
-      <section id="how-we-work" className="relative py-16 sm:py-24 overflow-hidden">
+      <section id="how-we-work" className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
           viewBox="0 0 1440 600"
@@ -444,7 +495,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Who Is It For Section */}
-      <section className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+      <section className="relative z-10 py-16 sm:py-24 bg-card/30 overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
           viewBox="0 0 1440 700"
@@ -530,7 +581,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Founder Section */}
-      <section id="about" className="relative py-16 sm:py-24 overflow-hidden">
+      <section id="about" className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           viewBox="0 0 1440 600"
@@ -601,7 +652,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+      <section id="faq" className="relative z-10 py-16 sm:py-24 bg-card/30 overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
           viewBox="0 0 1440 800"
@@ -678,7 +729,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-16 sm:py-24 overflow-hidden">
+      <section className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <svg
           className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
@@ -721,7 +772,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Footer - Same as main page */}
-      <footer className="py-12 sm:py-16 border-t border-border">
+      <footer className="relative z-10 py-12 sm:py-16 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
             {/* Brand column */}
