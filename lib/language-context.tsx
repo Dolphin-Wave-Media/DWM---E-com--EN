@@ -30,7 +30,7 @@ const translations = {
     "hero.headline6": "Meta ads",
     "hero.subheadline": "We create the right strategy, save you hours on content production, and handle the execution from start to finish.",
     "hero.cta": "Book a Free Strategy Call",
-    "hero.stat1.value": "200,000€+",
+    "hero.stat1.value": "1,435,267€+",
     "hero.stat1.label": "Revenue Generated",
     "hero.stat2.value": "10,500+",
     "hero.stat2.label": "Orders Generated",

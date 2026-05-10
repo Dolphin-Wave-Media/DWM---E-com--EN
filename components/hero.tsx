@@ -103,7 +103,7 @@ export function Hero() {
           <div className="grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-16">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                <AnimatedCounter end={200000} duration={2000} suffix="€+" />
+                <AnimatedCounter end={1435267} duration={2500} suffix="€+" />
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("hero.stat1.label")}</p>
             </div>
@@ -132,7 +132,7 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe 
-                  src="https://drive.google.com/file/d/1NP_t-dOPLwd2ydJhjTS8HjIQQfKOBrDC/preview" 
+                  src="https://drive.google.com/file/d/1-wPMUzkQy2DEHTr9ZdC5l1jp_S7u4A6E/preview" 
                   frameBorder="0" 
                   allow="autoplay; fullscreen"
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}

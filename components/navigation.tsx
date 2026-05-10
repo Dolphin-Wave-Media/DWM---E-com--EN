@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
-import { LanguageSwitcher } from "./language-switcher"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
@@ -30,7 +29,7 @@ export function Navigation() {
   ]
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-lg" : "bg-background/80 backdrop-blur-md"}`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -38,9 +37,9 @@ export function Navigation() {
             <Image
               src="/logo.svg"
               alt="Dolphin Wave Media"
-              width={140}
-              height={35}
-              style={{ height: '32px', width: 'auto' }}
+              width={32}
+              height={32}
+              className="h-8 w-auto"
               priority
             />
             <span className="font-semibold text-foreground text-sm sm:text-base">Dolphin Wave Media</span>
@@ -59,7 +58,7 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button + Language Switcher */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
             <Link
               href={CALENDLY_URL}
@@ -69,7 +68,6 @@ export function Navigation() {
             >
               {t("nav.bookStrategy")}
             </Link>
-            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,16 +105,15 @@ export function Navigation() {
                   {t(link.labelKey)}
                 </Link>
               ))}
-              <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+              <div className="mt-4 pt-4 border-t border-border">
                 <Link
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity w-full"
                 >
                   {t("nav.bookStrategy")}
                 </Link>
-                <LanguageSwitcher />
               </div>
             </div>
           </div>
