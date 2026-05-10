@@ -1,12 +1,10 @@
+"use client"
+
+import { useState } from "react"
 import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle2, X, Target, Sparkles, LayoutTemplate, TrendingUp, Search, Compass, MessageSquare, Layers, MousePointerClick, Cog } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Lead Generation Services | Dolphin Wave Media",
-  description: "We help lead generation brands get more qualified leads through Meta ads, creative strategy, and better funnels. Build marketing systems that generate real inquiries.",
-}
+import { ArrowRight, CheckCircle2, Target, MessageSquare, Layers, MousePointerClick, Search, Compass, AlertCircle, Users, Zap, TrendingUp, Layout, Mail } from "lucide-react"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwavemedia/15min"
 
@@ -43,12 +41,20 @@ const services = [
   },
 ]
 
+const systemProblems = [
+  { icon: AlertCircle, text: "The message is unclear." },
+  { icon: Users, text: "The creative does not build trust." },
+  { icon: Zap, text: "The funnel leaks attention." },
+  { icon: Layout, text: "The landing page does not convert." },
+  { icon: TrendingUp, text: "The offer is not positioned the right way." },
+  { icon: Mail, text: "The follow-up is not strong enough." },
+]
+
 const goodFit = [
   "Service-based businesses that want more qualified leads",
   "Brands that already have demand but need better marketing execution",
   "Businesses that want a stronger funnel, not just more traffic",
   "Founders who want a growth partner, not a generic agency",
-  "Companies that want help with strategy, messaging, and conversion - not only ads",
 ]
 
 const notFit = [
@@ -86,19 +92,12 @@ const faqs = [
 ]
 
 export default function LeadGenPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Top Bar */}
-      <div className="bg-card/50 border-b border-border py-2">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-muted-foreground">
-            Performance-driven marketing for brands that want more qualified leads
-          </p>
-        </div>
-      </div>
-
       {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3">
@@ -130,150 +129,218 @@ export default function LeadGenPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 sm:py-24 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight mb-6 text-balance">
-              We help lead generation brands get more qualified leads through{" "}
-              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                Meta ads, creative strategy, and better funnels.
-              </span>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        {/* Background Effects - Same as main page */}
+        <div className="absolute inset-0 bg-background overflow-hidden">
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="0 0 1440 900"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="heroLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f5a623" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#c9388c" stopOpacity="0.15" />
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="150" x2="250" y2="0" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="0" y1="300" x2="400" y2="0" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="0" y1="450" x2="550" y2="0" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="0" y1="600" x2="700" y2="0" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="890" y1="900" x2="1440" y2="350" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="1040" y1="900" x2="1440" y2="500" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="1190" y1="900" x2="1440" y2="650" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+            <line x1="1340" y1="900" x2="1440" y2="800" stroke="url(#heroLineGradient)" strokeWidth="1.5" />
+          </svg>
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px] opacity-50" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] opacity-50" />
+        </div>
+
+        <div className="relative w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="text-center w-full overflow-hidden">
+            {/* Trust badge */}
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 border border-border backdrop-blur-sm">
+                <svg className="w-5 h-5 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm text-foreground font-medium underline decoration-green-500 decoration-2 underline-offset-4">
+                  Trusted by 10+ lead gen brands
+                </span>
+              </div>
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 max-w-5xl mx-auto leading-tight text-balance">
+              <span className="text-foreground">We help lead generation brands get more </span>
+              <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">qualified leads</span>
+              <span className="text-foreground"> through </span>
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Meta ads, creative strategy, and better funnels.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-balance">
+
+            {/* Subheadline */}
+            <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed text-balance">
               Dolphin Wave Media builds marketing systems that help service-based businesses generate attention, capture demand, and turn traffic into real inquiries, calls, and clients.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-opacity"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
               >
                 Book a Free Marketing Strategy
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <a
                 href="#how-we-work"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-4 text-base font-semibold text-foreground hover:bg-card transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-border bg-card/50 backdrop-blur-sm px-6 sm:px-8 py-4 text-base font-medium text-foreground hover:bg-card hover:border-primary/50 transition-all"
               >
                 See How We Work
               </a>
             </div>
-            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              On a 15-minute discovery call, we&apos;ll understand your current situation, identify your biggest opportunities, and prepare a custom marketing strategy in presentation format tailored to your business.
+
+            {/* Microcopy */}
+            <p className="text-sm text-muted-foreground mb-16 text-balance">
+              15-minute discovery call. Custom strategy in presentation format. Built around your brand.
+            </p>
+
+            {/* Trust Metrics */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-16">
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">12+</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Years Combined Experience</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">10+</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Clients Helped</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">5,342+</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Leads Generated</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">5+</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Active Partners</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Gen System Problems Section */}
+      <section className="relative py-16 sm:py-24 overflow-hidden">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+          viewBox="0 0 1440 700"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="systemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="150" x2="250" y2="0" stroke="url(#systemGradient)" strokeWidth="1" />
+          <line x1="0" y1="250" x2="350" y2="0" stroke="url(#systemGradient)" strokeWidth="1" />
+          <line x1="1190" y1="700" x2="1440" y2="550" stroke="url(#systemGradient)" strokeWidth="1" />
+          <line x1="1090" y1="700" x2="1440" y2="450" stroke="url(#systemGradient)" strokeWidth="1" />
+        </svg>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
+              The Real Problem
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
+              Lead generation is{" "}
+              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                not just about getting traffic
+              </span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+              A lot of businesses think the problem is simple: they just need more ads, more clicks, or a bigger budget. In reality, most lead generation problems come from a weaker system underneath it all.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Proof Strip */}
-      <section className="py-8 border-y border-border bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <p className="text-foreground font-semibold">12+ years</p>
-              <p className="text-sm text-muted-foreground">Combined team experience</p>
-            </div>
-            <div>
-              <p className="text-foreground font-semibold">Modern approach</p>
-              <p className="text-sm text-muted-foreground">Performance-first mindset</p>
-            </div>
-            <div>
-              <p className="text-foreground font-semibold">Lead focused</p>
-              <p className="text-sm text-muted-foreground">Funnels & growth systems</p>
-            </div>
-            <div>
-              <p className="text-foreground font-semibold">Trusted</p>
-              <p className="text-sm text-muted-foreground">By brands across Europe</p>
-            </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto mb-12">
+            {systemProblems.map((problem, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-card/50 border border-border hover:border-primary/30 transition-all"
+              >
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center flex-shrink-0">
+                  <problem.icon className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-sm sm:text-base text-foreground">{problem.text}</span>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Trust Note */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-            We don&apos;t just run ads. We help build the system behind better lead generation.
-          </p>
-        </div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              Lead generation is not just about getting traffic
-            </h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                A lot of businesses think the problem is simple: they just need more ads, more clicks, or a bigger budget.
-              </p>
-              <p>
-                In reality, most lead generation problems come from a weaker system underneath it all.
-              </p>
-              <ul className="space-y-2 my-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1">-</span>
-                  <span>The message is unclear.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1">-</span>
-                  <span>The creative does not build trust.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1">-</span>
-                  <span>The funnel leaks attention.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1">-</span>
-                  <span>The landing page does not convert.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1">-</span>
-                  <span>The offer is not positioned the right way.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1">-</span>
-                  <span>The follow-up is not strong enough.</span>
-                </li>
-              </ul>
-              <p>
-                That is why we do more than launch campaigns.
-              </p>
-              <p className="text-foreground font-medium">
-                At Dolphin Wave Media, we help businesses build a lead generation system that actually makes sense - from the ads and creatives to the funnel, landing page, and overall strategy behind it.
-              </p>
-            </div>
+          <div className="text-center">
+            <p className="text-base sm:text-lg text-muted-foreground mb-4">
+              That is why we do more than launch campaigns.
+            </p>
+            <p className="text-foreground font-medium max-w-3xl mx-auto">
+              At Dolphin Wave Media, we help businesses build a lead generation system that actually makes sense - from the ads and creatives to the funnel, landing page, and overall strategy behind it.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What we help with
+      <section id="services" className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+          viewBox="0 0 1440 800"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="servicesGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <line x1="1200" y1="0" x2="1440" y2="240" stroke="url(#servicesGradient)" strokeWidth="1" />
+          <line x1="1100" y1="0" x2="1440" y2="340" stroke="url(#servicesGradient)" strokeWidth="1" />
+          <line x1="0" y1="560" x2="240" y2="800" stroke="url(#servicesGradient)" strokeWidth="1" />
+          <line x1="0" y1="460" x2="340" y2="800" stroke="url(#servicesGradient)" strokeWidth="1" />
+        </svg>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
+              What We Help With
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
+              Build a{" "}
+              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                Complete Lead Gen System
+              </span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               We lead with paid traffic, but real performance comes from how the whole system works together.
             </p>
           </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl bg-card/50 border border-border hover:border-primary/30 transition-colors"
+                className="p-6 sm:p-8 rounded-2xl bg-card/50 border border-border hover:border-primary/30 transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -282,311 +349,356 @@ export default function LeadGenPage() {
         </div>
       </section>
 
-      {/* Why This Matters Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              More leads do not always mean better growth
-            </h2>
-            <div className="space-y-4 text-muted-foreground mb-8">
-              <p className="text-center">
-                Bad leads waste time. Weak funnels waste budget. Generic marketing attracts the wrong people.
-              </p>
-              <p className="text-center">
-                What most service businesses actually need is not just more traffic - but a better system for attracting, filtering, and converting the right prospects.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {["Better ad messaging", "Stronger trust signals", "More relevant creative", "Clearer landing pages", "Better positioning", "A more intentional customer journey"].map((item, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-foreground font-medium">
-              The goal is not to generate noise. The goal is to generate real business opportunities.
+      {/* How We Work Section */}
+      <section id="how-we-work" className="relative py-16 sm:py-24 overflow-hidden">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="howGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.12" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.08" />
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="150" x2="250" y2="0" stroke="url(#howGradient)" strokeWidth="1.5" />
+          <line x1="0" y1="300" x2="400" y2="0" stroke="url(#howGradient)" strokeWidth="1.5" />
+          <line x1="1140" y1="600" x2="1440" y2="300" stroke="url(#howGradient)" strokeWidth="1.5" />
+          <line x1="1040" y1="600" x2="1440" y2="200" stroke="url(#howGradient)" strokeWidth="1.5" />
+        </svg>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
+              Our Process
             </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
+              How We{" "}
+              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                Work With You
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                step: "01",
+                title: "Discovery Call",
+                description: "We start with a short 15-minute call to understand your business, your current lead generation setup, and your goals.",
+              },
+              {
+                step: "02",
+                title: "Custom Strategy",
+                description: "If there's a strong fit, we prepare a tailored marketing strategy in presentation format - built around your specific situation.",
+              },
+              {
+                step: "03",
+                title: "Execution & Growth",
+                description: "Once approved, we execute the strategy, launch campaigns, and continuously optimize for better lead quality and volume.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative p-6 sm:p-8 rounded-2xl bg-card/50 border border-border">
+                <div className="absolute -top-4 left-6 sm:left-8">
+                  <span className="text-2xl sm:text-3xl font-bold text-white">
+                    {item.step}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mt-4 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Us Section */}
-      <section id="about" className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              Why businesses work with Dolphin Wave Media
-            </h2>
-            <p className="text-muted-foreground text-center mb-8">
-              We bring a modern, performance-focused mindset into lead generation. What matters to us is not just launching campaigns. It is understanding what makes a prospect convert, what creates trust, what improves lead quality, and what helps a business grow with more clarity.
+      {/* Who Is It For Section */}
+      <section className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+          viewBox="0 0 1440 700"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="whoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="150" x2="250" y2="0" stroke="url(#whoGradient)" strokeWidth="1" />
+          <line x1="0" y1="250" x2="350" y2="0" stroke="url(#whoGradient)" strokeWidth="1" />
+          <line x1="1190" y1="700" x2="1440" y2="550" stroke="url(#whoGradient)" strokeWidth="1" />
+          <line x1="1090" y1="700" x2="1440" y2="450" stroke="url(#whoGradient)" strokeWidth="1" />
+        </svg>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
+              Is This Right For You?
             </p>
-            <div className="bg-card/50 rounded-2xl border border-border p-8">
-              <p className="text-muted-foreground mb-6">
-                When clients work with us, they are not just getting someone to manage ads. They are getting a team that thinks about:
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Lead quality, not just lead volume",
-                  "Strategy, not just campaign setup",
-                  "Funnels, not just traffic",
-                  "Conversion, not just clicks",
-                  "Long-term growth, not just short-term activity"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
+              We&apos;re{" "}
+              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                Not for Everyone
+              </span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+              We work best with businesses that are ready to build a real lead generation system.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+            {/* Good Fit */}
+            <div className="rounded-2xl border border-green-500/30 bg-green-500/5 p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">Good Fit</h3>
+              </div>
+              <ul className="space-y-3 sm:space-y-4">
+                {goodFit.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    <span className="text-sm sm:text-base text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-foreground font-medium mt-6">
-                We care about the result, and we care about building the system behind it properly.
-              </p>
+            </div>
+
+            {/* Not a Fit */}
+            <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+                  </svg>
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">Not a Fit</h3>
+              </div>
+              <ul className="space-y-3 sm:space-y-4">
+                {notFit.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 6 6 18"/>
+                      <path d="m6 6 12 12"/>
+                    </svg>
+                    <span className="text-sm sm:text-base text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* Founder Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
-              Built around modern marketing, not outdated agency thinking
-            </h2>
-            <div className="bg-card/50 rounded-2xl border border-border p-8 mb-8">
-              <blockquote className="text-lg text-foreground italic mb-4">
-                &quot;I started with paid media, but quickly realized that real growth never comes from ads alone. The businesses that grow best usually have the right message, the right funnel, the right creative, and the right system behind it all. That&apos;s why we focus on the bigger picture - not just campaign setup.&quot;
-              </blockquote>
-              <p className="text-muted-foreground">
-                - Damian Drahovsky, Founder of Dolphin Wave Media
-              </p>
-            </div>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Dolphin Wave Media was built with a clear mindset: marketing should be practical, modern, and focused on real outcomes.
-              </p>
-              <p>
-                We care about performance, but we also care about how the entire lead generation process works - from the first impression to the final conversion.
-              </p>
-              <p>
-                Our approach is hands-on, strategic, and built around constant learning, better execution, and real partnership.
-              </p>
-              <p className="text-foreground font-medium">
-                We are driven, we move fast, and we take the work seriously.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="about" className="relative py-16 sm:py-24 overflow-hidden">
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="founderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.12" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.08" />
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="150" x2="250" y2="0" stroke="url(#founderGradient)" strokeWidth="1.5" />
+          <line x1="0" y1="300" x2="400" y2="0" stroke="url(#founderGradient)" strokeWidth="1.5" />
+          <line x1="1140" y1="600" x2="1440" y2="300" stroke="url(#founderGradient)" strokeWidth="1.5" />
+          <line x1="1040" y1="600" x2="1440" y2="200" stroke="url(#founderGradient)" strokeWidth="1.5" />
+        </svg>
 
-      {/* How It Works Section */}
-      <section id="how-we-work" className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              How we work
-            </h2>
-            <div className="space-y-8">
-              {[
-                {
-                  step: "01",
-                  title: "Discovery Call",
-                  description: "We start with a short 15-minute call to understand your business, your current marketing, and where the biggest gaps or opportunities are."
-                },
-                {
-                  step: "02",
-                  title: "Custom Strategy Presentation",
-                  description: "If we see a strong fit, we prepare a tailored lead generation strategy in presentation format, showing how we'd approach your growth, what we'd improve, and where we see the most leverage."
-                },
-                {
-                  step: "03",
-                  title: "Build, Launch, Optimize",
-                  description: "From there, we help build and improve the system - campaigns, messaging, funnel structure, landing pages, and performance optimization."
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <span className="text-2xl font-bold text-white">{item.step}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-muted-foreground text-center mt-8 p-6 bg-card/50 rounded-xl border border-border">
-              We prefer long-term collaboration, but the first real test phase is usually the first 90 days, where we focus on building clarity, momentum, and measurable improvement.
+        <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
+              Meet The Founder
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Who This Is For Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Who this is for
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Good Fit */}
-              <div className="bg-card/50 rounded-2xl border border-border p-8">
-                <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-accent" />
-                  Great fit for:
-                </h3>
-                <ul className="space-y-4">
-                  {goodFit.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* Not Fit */}
-              <div className="bg-card/50 rounded-2xl border border-border p-8">
-                <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-                  <X className="w-5 h-5 text-red-400" />
-                  Not the right fit for:
-                </h3>
-                <ul className="space-y-4">
-                  {notFit.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-1" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Educational Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              What actually improves lead generation
-            </h2>
-            <p className="text-muted-foreground text-center mb-12">
-              Better lead generation usually comes from getting a few key things right at the same time:
-            </p>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[
-                { title: "Stronger messaging", description: "People need to quickly understand what you do, why it matters, and why they should trust you." },
-                { title: "Better creative", description: "The right ad creative helps stop attention, explain the offer, and attract more relevant prospects." },
-                { title: "Smarter funnels", description: "A lead gen funnel should guide people clearly from interest to action without friction or confusion." },
-                { title: "Higher-converting landing pages", description: "The page must make the next step easy, clear, and trustworthy." },
-              ].map((item, index) => (
-                <div key={index} className="p-6 rounded-xl bg-card/50 border border-border">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+          {/* White card container - Same as main page */}
+          <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+              {/* Founder Image */}
+              <div className="flex-shrink-0">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 relative rounded-xl overflow-hidden border-2 border-gray-100 shadow-lg">
+                  <Image
+                    src="/founder-photo.svg"
+                    alt="Damian - Founder of Dolphin Wave Media"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              ))}
-            </div>
-            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-primary/20">
-              <h3 className="text-lg font-semibold text-foreground mb-2">A better overall system</h3>
-              <p className="text-muted-foreground">
-                The best results usually come when ads, funnel, message, and offer all work together. That is the difference between &quot;running ads&quot; and building a marketing system that generates opportunities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Ads Matter Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              A great service still needs distribution
-            </h2>
-            <div className="space-y-4 text-muted-foreground mb-8">
-              <p className="text-center">
-                Even if you offer something valuable, the right people still need to see it.
-              </p>
-              <p className="text-center">
-                Paid ads help service businesses create reach, test messaging faster, and generate consistent inbound demand. Instead of waiting for referrals or relying only on organic content, you create a more active path to growth.
-              </p>
-            </div>
-            <div className="bg-card/50 rounded-2xl border border-border p-8">
-              <p className="text-foreground font-medium mb-4">When done properly, ads help you:</p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  "Reach new prospects",
-                  "Validate what messaging works",
-                  "Create predictable lead flow",
-                  "Build a more scalable acquisition system"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
               </div>
-              <p className="text-foreground font-medium mt-6">
-                For many businesses, that is the difference between random growth and controlled growth.
-              </p>
+
+              {/* Content */}
+              <div className="text-center sm:text-left">
+                <p className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
+                  Founder
+                </p>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed italic">
+                  &quot;I started with paid media, but quickly realized that real growth never comes from ads alone. The businesses that grow best usually have the right message, the right funnel, the right creative, and the right system behind it all. That&apos;s why we focus on the bigger picture - not just campaign setup.&quot;
+                </p>
+                <p className="mt-4 text-gray-900 font-semibold">Damian Drahovsky</p>
+                <p className="text-sm text-gray-500">Founder, Dolphin Wave Media</p>
+                
+                {/* Instagram link */}
+                <a
+                  href="https://www.instagram.com/damian.drahovsky/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 text-sm text-primary hover:text-accent transition-colors"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                  @damian.drahovsky
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Frequently asked questions
+      <section id="faq" className="relative py-16 sm:py-24 bg-card/30 overflow-hidden">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
+          viewBox="0 0 1440 800"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="faqGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <line x1="1200" y1="0" x2="1440" y2="240" stroke="url(#faqGradient)" strokeWidth="1" />
+          <line x1="1100" y1="0" x2="1440" y2="340" stroke="url(#faqGradient)" strokeWidth="1" />
+          <line x1="0" y1="560" x2="240" y2="800" stroke="url(#faqGradient)" strokeWidth="1" />
+          <line x1="0" y1="460" x2="340" y2="800" stroke="url(#faqGradient)" strokeWidth="1" />
+        </svg>
+
+        <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
+              FAQ
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Got{" "}
+              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                Questions?
+              </span>
             </h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="p-6 rounded-xl bg-card/50 border border-border">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
+          </div>
+
+          {/* FAQ Accordion */}
+          <div className="space-y-3 sm:space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-border bg-card/50 overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-card/80 transition-colors"
+                >
+                  <span className="font-semibold text-foreground pr-4 text-sm sm:text-base">
+                    {faq.question}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={`flex-shrink-0 text-muted-foreground transition-transform duration-200 ${
+                      openFaqIndex === index ? "rotate-180" : ""
+                    }`}
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                {openFaqIndex === index && (
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 sm:py-24 border-t border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Want a clearer lead generation strategy for your business?
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Book a free strategy call and let&apos;s break down your current marketing, where the biggest opportunities are, and how we&apos;d build a stronger system around your business.
-            </p>
-            <Link
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-opacity"
-            >
-              Book a Free Marketing Strategy
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <p className="text-sm text-muted-foreground mt-6">
-              15-minute discovery call. Custom strategy in presentation format. Built around your business, funnel, and growth potential.
-            </p>
-          </div>
+      <section className="relative py-16 sm:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <svg
+          className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
+          viewBox="0 0 1440 400"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="ctaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f5a623" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#c9388c" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="100" x2="200" y2="0" stroke="url(#ctaGradient)" strokeWidth="1.5" />
+          <line x1="0" y1="200" x2="350" y2="0" stroke="url(#ctaGradient)" strokeWidth="1.5" />
+          <line x1="1090" y1="400" x2="1440" y2="100" stroke="url(#ctaGradient)" strokeWidth="1.5" />
+          <line x1="1240" y1="400" x2="1440" y2="200" stroke="url(#ctaGradient)" strokeWidth="1.5" />
+        </svg>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
+            Ready to Get More{" "}
+            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+              Qualified Leads?
+            </span>
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            Book a free 15-minute discovery call. We&apos;ll review your current setup and show you where there&apos;s room for growth.
+          </p>
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+          >
+            Book a Free Strategy Call
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border">
+      <footer className="border-t border-border py-8 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Image
                 src="/logo.svg"
@@ -595,44 +707,24 @@ export default function LeadGenPage() {
                 height={32}
                 className="h-8 w-auto"
               />
-              <div>
-                <p className="font-semibold text-foreground">Dolphin Wave Media</p>
-                <p className="text-sm text-muted-foreground">
-                  Meta ads, creative strategy, funnels, landing pages, and growth systems
-                </p>
-              </div>
+              <span className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} Dolphin Wave Media. All rights reserved.
+              </span>
             </div>
             <div className="flex items-center gap-6">
-              <a
-                href="https://www.instagram.com/damian.drahovsky/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a
-                href="https://wa.me/421917123456"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-              </a>
-              <Link
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
-                </svg>
+              <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                E-commerce Services
               </Link>
+              <a
+                href="https://www.instagram.com/dolphinwave.media/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
