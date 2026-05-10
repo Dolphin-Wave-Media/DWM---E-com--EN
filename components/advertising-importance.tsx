@@ -3,20 +3,20 @@
 export function AdvertisingImportance() {
   const benefits = [
     {
-      title: "Instant Visibility & Growth",
-      description: "Organic growth takes time. Digital advertising (Meta, Google, TikTok) allows e-commerce brands to generate traffic and sales instantly. For startups, paid search ads have been shown to account for nearly 47% of total sales variance."
+      title: "Okamžitá viditeľnosť a rast",
+      description: "Organický rast trvá roky. Digitálna reklama (Meta, Google, TikTok) vám prinesie traffic a predaje hneď. Pre e-shopy platené reklamy tvoria až 47% celkových predajov."
     },
     {
-      title: "Precision Targeting",
-      description: "We don't just \"show ads\"—we find your ideal buyer. Using data-driven tools, we can target users based on their exact interests, behaviors, and past shopping habits, ensuring your budget is never wasted on the wrong audience."
+      title: "Presné cielenie",
+      description: "Nerobíme len \"reklamy\". Hľadáme vášho ideálneho zákazníka. Cielime podľa záujmov, správania, nákupných zvykov. Rozpočet ide len tam, kde má zmysel."
     },
     {
-      title: "The \"Rule of 7\"",
-      description: "It takes an average of seven \"touches\" before someone buys from a new brand. Retargeting ads keep your brand top-of-mind, bringing back the 98% of visitors who don't buy on their first visit."
+      title: "Pravidlo siedmich",
+      description: "Človek potrebuje v priemere 7 kontaktov so značkou, kým nakúpi. Retargeting drží vašu značku v hlave a vracia 98% ľudí, čo nekúpili na prvýkrát."
     },
     {
-      title: "Scaling Success",
-      description: "Once we find a winning piece of content, ads allow us to \"pour gasoline on the fire,\" scaling your revenue from thousands to millions by reaching a global audience at the click of a button."
+      title: "Škálovanie úspechu",
+      description: "Keď nájdeme víťaznú kreatívu, reklamy nám umožňujú \"liať benzín do ohňa\". Z tisícov na milióny - stačí kliknutie."
     }
   ]
 
@@ -60,16 +60,16 @@ export function AdvertisingImportance() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-            Why Advertising Matters
+            Prečo reklama
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-6 max-w-4xl mx-auto text-balance">
-            Don&apos;t Wait for Customers to Find You.{" "}
+            Nečakajte, kým vás zákazníci nájdu.{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Go Where They Are.
+              Choďte za nimi.
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            If content is the &quot;engine&quot; of your brand, advertising is the &quot;fuel.&quot; Even the best website in the world won&apos;t make money if nobody sees it.
+            Ak je obsah motor vašej značky, reklama je palivo. Aj ten najlepší web na svete nezarobí, keď ho nikto nevidí.
           </p>
         </div>
 

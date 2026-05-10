@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Dolphin Wave Media | Performance Marketing Agency',
-  description: 'We help e-commerce brands scale with Meta Ads, Google Ads & TikTok Ads — built on data, sharp creative, and proven strategy.',
+  title: 'Dolphin Wave Media | Performance Marketing pre E-shopy',
+  description: 'Pomáhame e-shopom predávať viac cez Meta Ads, Google Ads a TikTok Ads. AI obsah, kreatíva a stratégia na mieru.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth bg-background">
+    <html lang="sk" className="scroll-smooth bg-background">
       <body className={`${dmSans.className} antialiased`}>
         <LanguageProvider>
           {children}
