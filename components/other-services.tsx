@@ -55,9 +55,9 @@ export function OtherServices() {
             Beyond Ads
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-            We Look at Growth{" "}
+            You&apos;ll Probably{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Holistically
+              Need This Too
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">

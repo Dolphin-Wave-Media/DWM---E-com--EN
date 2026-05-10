@@ -23,15 +23,15 @@ export default function Home() {
       <main className="relative z-10">
         <Hero />
         <Services />
-        <OtherServices />
         <WhyUs />
         <HowItWorks />
         <CaseStudies />
         <Testimonials />
         <AIWork />
+        <AdvertisingImportance />
+        <OtherServices />
         <WhoItsFor />
         <Founder />
-        <AdvertisingImportance />
         <FAQ />
         <CTASection />
       </main>
