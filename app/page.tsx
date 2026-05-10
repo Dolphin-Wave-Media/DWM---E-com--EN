@@ -27,11 +27,11 @@ export default function Home() {
         <WhyUs />
         <HowItWorks />
         <CaseStudies />
-        <AIWork />
         <Testimonials />
+        <AIWork />
+        <AdvertisingImportance />
         <WhoItsFor />
         <Founder />
-        <AdvertisingImportance />
         <FAQ />
         <CTASection />
       </main>

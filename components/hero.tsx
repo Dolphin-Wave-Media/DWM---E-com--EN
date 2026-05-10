@@ -130,13 +130,14 @@ export function Hero() {
           {/* Video Section */}
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
-              <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+              <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
                 <iframe 
                   src="https://drive.google.com/file/d/1-wPMUzkQy2DEHTr9ZdC5l1jp_S7u4A6E/preview" 
                   frameBorder="0" 
                   allow="autoplay; fullscreen"
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  className="absolute inset-[-2px] w-[calc(100%+4px)] h-[calc(100%+4px)] scale-[1.01]"
                   title="Dolphin Wave Media - Website video"
+                  loading="lazy"
                 />
               </div>
             </div>

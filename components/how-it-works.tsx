@@ -72,7 +72,7 @@ export function HowItWorks() {
               <div className="text-center">
                 {/* Number */}
                 <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-accent/10 to-primary/10 border border-border mb-4 sm:mb-6">
-                  <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  <span className="text-2xl sm:text-3xl font-bold text-white">
                     {step.number}
                   </span>
                 </div>

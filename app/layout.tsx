@@ -1,10 +1,22 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/language-context'
 import './globals.css'
 
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const dmSans = DM_Sans({ 
+  subsets: ["latin"], 
+  weight: ["400", "500", "600", "700"],
+  display: 'swap',
+  preload: true,
+});
+
+export const viewport: Viewport = {
+  themeColor: '#0c0a14',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = {
   title: 'Dolphin Wave Media | Performance Marketing Agency',
