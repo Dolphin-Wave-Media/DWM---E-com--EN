@@ -132,7 +132,7 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe 
-                  src="https://drive.google.com/file/d/1NP_t-dOPLwd2ydJhjTS8HjIQQfKOBrDC/preview" 
+                  src="https://drive.google.com/file/d/1CysPMe24gLnNC58ItJCW1kjfliH4mEuV/preview" 
                   frameBorder="0" 
                   allow="autoplay; fullscreen"
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}

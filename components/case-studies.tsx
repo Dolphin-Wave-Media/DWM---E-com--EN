@@ -2,96 +2,51 @@
 
 import { useLanguage } from "@/lib/language-context"
 
-const caseStudiesData = {
-  en: [
-    {
-      title: "Children's Apparel Brand",
-      description: "Strong product. Loyal audience. No clear paid acquisition system. We built the Meta ad engine and turned existing demand into scalable revenue.",
-      metrics: [
-        { label: "Ad Spend", value: "€1,459" },
-        { label: "Revenue", value: "€18,579" },
-        { label: "ROAS", value: "12.73" },
-        { label: "Cost/Purchase", value: "~€5" },
-      ],
-    },
-    {
-      title: "Fashion E-commerce Brand",
-      description: "The brand had demand, but no time or structure to run growth properly. We took over the campaigns and helped turn the season into real numbers.",
-      metrics: [
-        { label: "Ad Spend", value: "€7,020" },
-        { label: "Revenue", value: "€39,223" },
-        { label: "ROAS", value: "5.59" },
-        { label: "Focus", value: "Meta Ads" },
-      ],
-    },
-    {
-      title: "Powersports E-commerce Store",
-      description: "The owner was managing ads manually, which slowed growth. We improved performance, saved time, and built a stronger acquisition system.",
-      metrics: [
-        { label: "Ad Spend", value: "€1,008" },
-        { label: "Revenue", value: "€19,003" },
-        { label: "ROAS", value: "18.85" },
-        { label: "AOV", value: "€100.63" },
-      ],
-    },
-    {
-      title: "Google Ads Growth Case",
-      description: "We launched and optimized high-intent search campaigns around best-selling products for this e-commerce store.",
-      metrics: [
-        { label: "Ad Spend", value: "€1,847" },
-        { label: "Revenue", value: "€11,656" },
-        { label: "Conversions", value: "126" },
-        { label: "Return", value: "630%" },
-      ],
-    },
-  ],
-  sk: [
-    {
-      title: "Značka detského oblečenia",
-      description: "Silný produkt. Lojálne publikum. Žiadny jasný systém platenej akvizície. Vybudovali sme Meta reklamný motor a pretvorili existujúci dopyt na škálovateľný príjem.",
-      metrics: [
-        { label: "Reklamný rozpočet", value: "€1,459" },
-        { label: "Tržby", value: "€18,579" },
-        { label: "ROAS", value: "12.73" },
-        { label: "Cena/Nákup", value: "~€5" },
-      ],
-    },
-    {
-      title: "Módna e-commerce značka",
-      description: "Značka mala dopyt, ale nemala čas ani štruktúru na správne riadenie rastu. Prevzali sme kampane a pomohli premeniť sezónu na reálne čísla.",
-      metrics: [
-        { label: "Reklamný rozpočet", value: "€7,020" },
-        { label: "Tržby", value: "€39,223" },
-        { label: "ROAS", value: "5.59" },
-        { label: "Zameranie", value: "Meta Ads" },
-      ],
-    },
-    {
-      title: "Powersports e-commerce",
-      description: "Majiteľ spravoval reklamy manuálne, čo spomaľovalo rast. Zlepšili sme výkon, ušetrili čas a vybudovali silnejší akvizičný systém.",
-      metrics: [
-        { label: "Reklamný rozpočet", value: "€1,008" },
-        { label: "Tržby", value: "€19,003" },
-        { label: "ROAS", value: "18.85" },
-        { label: "Priem. objednávka", value: "€100.63" },
-      ],
-    },
-    {
-      title: "Google Ads prípadová štúdia",
-      description: "Spustili a optimalizovali sme vysoko-zámerové vyhľadávacie kampane okolo najpredávanejších produktov pre tento e-commerce obchod.",
-      metrics: [
-        { label: "Reklamný rozpočet", value: "€1,847" },
-        { label: "Tržby", value: "€11,656" },
-        { label: "Konverzie", value: "126" },
-        { label: "Návratnosť", value: "630%" },
-      ],
-    },
-  ],
-}
+const caseStudies = [
+  {
+    title: "Children's Apparel Brand",
+    description: "Strong product. Loyal audience. No clear paid acquisition system. We built the Meta ad engine and turned existing demand into scalable revenue.",
+    metrics: [
+      { label: "Ad Spend", value: "€1,459" },
+      { label: "Revenue", value: "€18,579" },
+      { label: "ROAS", value: "12.73" },
+      { label: "Cost/Purchase", value: "~€5" },
+    ],
+  },
+  {
+    title: "Fashion E-commerce Brand",
+    description: "The brand had demand, but no time or structure to run growth properly. We took over the campaigns and helped turn the season into real numbers.",
+    metrics: [
+      { label: "Ad Spend", value: "€7,020" },
+      { label: "Revenue", value: "€39,223" },
+      { label: "ROAS", value: "5.59" },
+      { label: "Focus", value: "Meta Ads" },
+    ],
+  },
+  {
+    title: "Powersports E-commerce Store",
+    description: "The owner was managing ads manually, which slowed growth. We improved performance, saved time, and built a stronger acquisition system.",
+    metrics: [
+      { label: "Ad Spend", value: "€1,008" },
+      { label: "Revenue", value: "€19,003" },
+      { label: "ROAS", value: "18.85" },
+      { label: "AOV", value: "€100.63" },
+    ],
+  },
+  {
+    title: "Google Ads Growth Case",
+    description: "We launched and optimized high-intent search campaigns around best-selling products for this e-commerce store.",
+    metrics: [
+      { label: "Ad Spend", value: "€1,847" },
+      { label: "Revenue", value: "€11,656" },
+      { label: "Conversions", value: "126" },
+      { label: "Return", value: "630%" },
+    ],
+  },
+]
 
 export function CaseStudies() {
-  const { language, t } = useLanguage()
-  const caseStudies = caseStudiesData[language]
+  const { t } = useLanguage()
 
   return (
     <section id="case-studies" className="relative py-16 sm:py-24 bg-card/30 scroll-mt-16 overflow-hidden">
@@ -131,7 +86,7 @@ export function CaseStudies() {
         </div>
 
         {/* Case study grid */}
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {caseStudies.map((study, index) => (
             <div
               key={index}
@@ -161,13 +116,13 @@ export function CaseStudies() {
                 </p>
 
                 {/* Results */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-4 sm:pt-6 border-t border-gray-200">
                   {study.metrics.map((metric, metricIndex) => (
-                    <div key={metricIndex}>
-                      <p className="text-lg sm:text-xl font-bold text-gray-900">
+                    <div key={metricIndex} className="min-w-0">
+                      <p className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 truncate">
                         {metric.value}
                       </p>
-                      <p className="text-xs text-gray-500">{metric.label}</p>
+                      <p className="text-xs text-gray-500 truncate">{metric.label}</p>
                     </div>
                   ))}
                 </div>
