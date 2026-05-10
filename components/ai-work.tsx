@@ -11,7 +11,7 @@ export function AIWork() {
       title: "AI Video Ad 2"
     },
     {
-      src: "https://drive.google.com/file/d/1uhO0hrv2jHBxMGt2Kt2uXlt36Jb0N2su/preview",
+      src: "https://drive.google.com/file/d/1uhbjPa08zUU_-IxjAVjUGQWeJq9VRUk9/preview",
       title: "AI Video Ad 3"
     }
   ]

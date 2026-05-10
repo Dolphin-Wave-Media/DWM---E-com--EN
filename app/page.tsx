@@ -10,6 +10,7 @@ import { AIWork } from "@/components/ai-work"
 import { Testimonials } from "@/components/testimonials"
 import { WhoItsFor } from "@/components/who-its-for"
 import { FAQ } from "@/components/faq"
+import { AdvertisingImportance } from "@/components/advertising-importance"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { BackgroundPattern } from "@/components/background-pattern"
@@ -31,6 +32,7 @@ export default function Home() {
         <WhoItsFor />
         <Founder />
         <FAQ />
+        <AdvertisingImportance />
         <CTASection />
       </main>
       <Footer />
