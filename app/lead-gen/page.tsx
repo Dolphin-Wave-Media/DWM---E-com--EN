@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle2, Target, MessageSquare, Layers, MousePointerClick, Search, Compass, AlertCircle, Users, Zap, TrendingUp, Layout, Mail } from "lucide-react"
+import { ArrowRight, CheckCircle2, Target, MessageSquare, Layers, MousePointerClick, Search, Compass, AlertCircle, Users, Zap, TrendingUp, Layout, Mail, X } from "lucide-react"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwavemedia/15min"
 
@@ -296,10 +296,10 @@ export default function LeadGenPage() {
             {systemProblems.map((problem, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-card/50 border border-border hover:border-primary/30 transition-all"
+                className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-card/50 border border-border hover:border-red-500/30 transition-all"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center flex-shrink-0">
-                  <problem.icon className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                  <X className="w-7 h-7 text-red-500" strokeWidth={3} />
                 </div>
                 <span className="text-sm sm:text-base text-foreground">{problem.text}</span>
               </div>
