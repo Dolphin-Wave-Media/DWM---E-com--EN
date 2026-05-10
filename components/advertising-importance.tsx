@@ -22,6 +22,9 @@ export function AdvertisingImportance() {
 
   return (
     <section className="relative py-16 sm:py-24 overflow-hidden">
+      {/* Smooth gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent pointer-events-none" />
+      
       {/* Background illustration - abstract lines */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -31,12 +34,12 @@ export function AdvertisingImportance() {
       >
         <defs>
           <linearGradient id="adGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#f5a623" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#c9388c" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#f5a623" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#c9388c" stopOpacity="0.08" />
           </linearGradient>
           <linearGradient id="adGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#c9388c" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#f5a623" stopOpacity="0.08" />
+            <stop offset="0%" stopColor="#c9388c" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#f5a623" stopOpacity="0.06" />
           </linearGradient>
         </defs>
         {/* Upward trending lines - representing growth */}
@@ -45,14 +48,13 @@ export function AdvertisingImportance() {
         <path d="M0 650 Q 180 550, 360 450 T 720 280 T 1080 130 T 1440 30" stroke="url(#adGradient1)" strokeWidth="1" fill="none" opacity="0.7" />
         
         {/* Decorative dots at key points */}
-        <circle cx="400" cy="500" r="4" fill="#f5a623" opacity="0.4" />
-        <circle cx="800" cy="300" r="5" fill="#c9388c" opacity="0.4" />
-        <circle cx="1200" cy="150" r="6" fill="#f5a623" opacity="0.5" />
+        <circle cx="400" cy="500" r="4" fill="#f5a623" opacity="0.3" />
+        <circle cx="800" cy="300" r="5" fill="#c9388c" opacity="0.3" />
+        <circle cx="1200" cy="150" r="6" fill="#f5a623" opacity="0.4" />
         
-        {/* Vertical accent lines */}
-        <line x1="200" y1="0" x2="200" y2="800" stroke="url(#adGradient1)" strokeWidth="0.5" opacity="0.3" />
-        <line x1="600" y1="0" x2="600" y2="800" stroke="url(#adGradient2)" strokeWidth="0.5" opacity="0.3" />
-        <line x1="1000" y1="0" x2="1000" y2="800" stroke="url(#adGradient1)" strokeWidth="0.5" opacity="0.3" />
+        {/* Subtle diagonal lines */}
+        <line x1="0" y1="100" x2="200" y2="0" stroke="url(#adGradient1)" strokeWidth="1" opacity="0.4" />
+        <line x1="1240" y1="800" x2="1440" y2="600" stroke="url(#adGradient2)" strokeWidth="1" opacity="0.4" />
       </svg>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -76,10 +78,10 @@ export function AdvertisingImportance() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="relative p-6 sm:p-8 rounded-2xl border border-border bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all group"
+              className="relative p-6 sm:p-8 rounded-2xl border border-border/50 bg-card/20 backdrop-blur-sm hover:border-primary/30 hover:bg-card/30 transition-all group"
             >
               {/* Number indicator */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-r from-accent to-primary flex items-center justify-center text-white font-bold text-sm">
+              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-r from-accent to-primary flex items-center justify-center text-white font-bold text-sm shadow-lg">
                 {index + 1}
               </div>
               
@@ -93,16 +95,18 @@ export function AdvertisingImportance() {
           ))}
         </div>
 
-        {/* Bottom illustration - growing chart bars */}
-        <div className="mt-12 flex items-end justify-center gap-2 sm:gap-3 opacity-40">
-          <div className="w-6 sm:w-8 h-12 bg-gradient-to-t from-accent/50 to-accent/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-20 bg-gradient-to-t from-primary/50 to-primary/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-16 bg-gradient-to-t from-accent/50 to-accent/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-28 bg-gradient-to-t from-primary/50 to-primary/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-24 bg-gradient-to-t from-accent/50 to-accent/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-36 bg-gradient-to-t from-primary/50 to-primary/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-32 bg-gradient-to-t from-accent/50 to-accent/20 rounded-t-lg" />
-          <div className="w-6 sm:w-8 h-44 bg-gradient-to-t from-primary/60 to-primary/30 rounded-t-lg" />
+        {/* Bottom illustration - smooth gradient bars */}
+        <div className="mt-16 flex items-end justify-center gap-3 sm:gap-4">
+          {[40, 60, 50, 80, 70, 100, 90, 120].map((height, i) => (
+            <div 
+              key={i}
+              className="w-6 sm:w-10 rounded-t-lg transition-all duration-300"
+              style={{ 
+                height: `${height}px`,
+                background: `linear-gradient(to top, ${i % 2 === 0 ? 'rgba(245, 166, 35, 0.4)' : 'rgba(201, 56, 140, 0.4)'}, ${i % 2 === 0 ? 'rgba(245, 166, 35, 0.1)' : 'rgba(201, 56, 140, 0.1)'})`
+              }}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -31,8 +31,8 @@ export default function Home() {
         <Testimonials />
         <WhoItsFor />
         <Founder />
-        <FAQ />
         <AdvertisingImportance />
+        <FAQ />
         <CTASection />
       </main>
       <Footer />

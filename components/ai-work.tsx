@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 export function AIWork() {
   const videos = [
     {
@@ -13,6 +15,21 @@ export function AIWork() {
     {
       src: "https://drive.google.com/file/d/1uhbjPa08zUU_-IxjAVjUGQWeJq9VRUk9/preview",
       title: "AI Video Ad 3"
+    }
+  ]
+
+  const banners = [
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7-XqpAbPUxKWhTrXcQ1hpkkgvw24cc3n.png",
+      alt: "Joda Organika Oil Product Banner"
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5-h1Gp9lgZD5NGm5VWT3uoNCONs5zbrq.png",
+      alt: "Joda Organika Capsules Product Banner"
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8-WEAglGzM1TGpzTC7bBeg6XMfU9fTfV.png",
+      alt: "Joda Organika Minimal Product Banner"
     }
   ]
 
@@ -53,24 +70,49 @@ export function AIWork() {
           </p>
         </div>
 
-        {/* Video grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video, index) => (
-            <div
-              key={index}
-              className="group relative rounded-2xl overflow-hidden border border-border bg-card/30 hover:border-primary/30 transition-all"
-            >
-              <div className="aspect-[9/16] relative">
-                <iframe
-                  src={video.src}
-                  frameBorder="0"
-                  allow="autoplay; fullscreen"
-                  className="absolute inset-0 w-full h-full"
-                  title={video.title}
-                />
+        {/* Banner images grid */}
+        <div className="mb-12">
+          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">Product Banners</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {banners.map((banner, index) => (
+              <div
+                key={index}
+                className="group relative rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-primary/10"
+              >
+                <div className="aspect-[4/5] relative">
+                  <Image
+                    src={banner.src}
+                    alt={banner.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Video grid */}
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">AI Video Ads</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.map((video, index) => (
+              <div
+                key={index}
+                className="group relative rounded-2xl overflow-hidden border border-border bg-card/30 hover:border-primary/30 transition-all"
+              >
+                <div className="aspect-[9/16] relative">
+                  <iframe
+                    src={video.src}
+                    frameBorder="0"
+                    allow="autoplay; fullscreen"
+                    className="absolute inset-0 w-full h-full"
+                    title={video.title}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-8 text-center">
