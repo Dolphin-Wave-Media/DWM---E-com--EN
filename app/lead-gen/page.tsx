@@ -227,6 +227,31 @@ export default function LeadGenPage() {
                 <p className="text-xs sm:text-sm text-muted-foreground mt-1">Active Partners</p>
               </div>
             </div>
+
+            {/* Client logos */}
+            <div className="mt-10 pt-8 border-t border-border/30">
+              <p className="text-sm text-muted-foreground mb-6 text-center">Some brands we&apos;ve worked with:</p>
+              <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
+                <div className="bg-white rounded-xl p-4 sm:p-5">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ambrozia%CC%81da%20logo-oUU8IVJY6AY6YDaWk0vrfKMNUwo5bU.png"
+                    alt="Ambrozia"
+                    width={140}
+                    height={50}
+                    className="h-8 sm:h-10 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4 sm:p-5">
+                  <Image
+                    src="/bodyexpress-logo.svg"
+                    alt="Bodyexpress"
+                    width={140}
+                    height={50}
+                    className="h-8 sm:h-10 w-auto object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -257,9 +282,9 @@ export default function LeadGenPage() {
               The Real Problem
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Lead generation is{" "}
+              This is 99% why your{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                not just about getting traffic
+                lead gen is not working
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -695,36 +720,93 @@ export default function LeadGenPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 sm:py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/logo.svg"
-                alt="Dolphin Wave Media"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
-              />
-              <span className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Dolphin Wave Media. All rights reserved.
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                E-commerce Services
+      {/* Footer - Same as main page */}
+      <footer className="py-12 sm:py-16 border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+            {/* Brand column */}
+            <div className="sm:col-span-2">
+              <Link href="/" className="inline-block mb-4">
+                <Image
+                  src="/logo.svg"
+                  alt="Dolphin Wave Media"
+                  width={160}
+                  height={40}
+                  style={{ height: '40px', width: 'auto' }}
+                />
               </Link>
-              <a
-                href="https://www.instagram.com/dolphinwave.media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
-                </svg>
-              </a>
+              <p className="text-muted-foreground mb-6 max-w-md text-sm sm:text-base">
+                We help lead generation brands build marketing systems that attract qualified leads, capture demand, and turn traffic into real opportunities.
+              </p>
+              {/* Social links */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/damian.drahovsky/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1CR7q9BBRM/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
+              <nav className="flex flex-col gap-3">
+                <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">Services</a>
+                <a href="#how-we-work" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">How We Work</a>
+                <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">About</a>
+                <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">FAQ</a>
+                <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">E-commerce Services</Link>
+              </nav>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+              <div className="flex flex-col gap-3 text-sm sm:text-base">
+                <a
+                  href="mailto:info@dolphinwave-media.com"
+                  className="text-muted-foreground hover:text-primary transition-colors break-all"
+                >
+                  info@dolphinwave-media.com
+                </a>
+                <a
+                  href="tel:+421915327052"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  +421 915 327 052
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
+              © {new Date().getFullYear()} Dolphin Wave Media. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4 sm:gap-6">
+              <span className="text-xs sm:text-sm text-muted-foreground">Privacy Policy</span>
+              <span className="text-xs sm:text-sm text-muted-foreground">Terms of Service</span>
             </div>
           </div>
         </div>
