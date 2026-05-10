@@ -65,9 +65,20 @@ export function AIWork() {
               That Converts
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
             Real examples from our work with a local food supplement brand. They wanted to delegate content creation - here&apos;s what we delivered.
           </p>
+          {/* Client logo */}
+          <div className="flex items-center justify-center gap-3">
+            <span className="text-sm text-muted-foreground">Created for:</span>
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jo%CC%81da%20organika%20logo-o2MsZEohEiVpAA6HSiZ155qfSEsKWf.png"
+              alt="Joda Organika"
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
         </div>
 
         {/* Banner images grid */}
@@ -103,15 +114,14 @@ export function AIWork() {
                 key={index}
                 className="group relative rounded-2xl overflow-hidden border border-border bg-card/30 hover:border-primary/30 transition-all"
               >
-                <div className="aspect-[9/16] relative bg-black">
+                <div className="aspect-[9/16] relative bg-gradient-to-br from-card to-background overflow-hidden">
                   <iframe
                     src={video.src}
                     frameBorder="0"
                     allow="autoplay; fullscreen"
-                    className="absolute inset-0 w-full h-full"
+                    className="absolute inset-[-1px] w-[calc(100%+2px)] h-[calc(100%+2px)] scale-[1.02]"
                     title={video.title}
                     loading="lazy"
-                    style={{ objectFit: 'cover' }}
                   />
                 </div>
               </div>

@@ -27,8 +27,8 @@ export default function Home() {
         <WhyUs />
         <HowItWorks />
         <CaseStudies />
-        <AIWork />
         <Testimonials />
+        <AIWork />
         <WhoItsFor />
         <Founder />
         <AdvertisingImportance />
