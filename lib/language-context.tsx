@@ -319,7 +319,7 @@ const translations = {
     "hero.viewCaseStudies": "Pozrieť výsledky",
     "hero.microcopy": "15-minútový hovor. Stratégia v prezentácii. Na mieru pre vašu značku.",
     "services.label": "Čo robíme",
-    "services.title1": "V��etko čo e-shopy potrebujú na ",
+    "services.title1": "Všetko čo e-shopy potrebujú na ",
     "services.title2": "rast v 2026",
     "services.description": "Reklamy sú len časť skladačky. Staviame celý systém - stratégiu, kreatívu aj funnel. Všetko musí hrať dokopy.",
     "services.meta.title": "Meta Reklamy",
