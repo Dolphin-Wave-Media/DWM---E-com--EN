@@ -288,29 +288,14 @@ export default function LeadGenPage() {
               <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4 text-center">Reálne čísla</p>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Aké výsledky vieme priniesť aj vám?</h3>
               
-              {/* Results Image */}
+              {/* Meta Ads Manager Screenshot */}
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-20%20at%2015.14.28-1xenJLrHq0RYpT3xxLzBLZsOzLQ0LP.png"
-                alt="Výsledky kampanií - tabuľka s investíciami, výsledkami a ROAS"
-                width={1000}
-                height={600}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-20%20at%2015.05.17-zNGcjaF2SBJNNsW1PMpzLtW6cSeQjp.png"
+                alt="Meta Ads Manager - Screenshot s reálnymi metrikami a výsledkami"
+                width={1200}
+                height={400}
                 className="w-full h-auto rounded-lg"
               />
-              
-              <p className="text-sm text-muted-foreground mt-6 text-center">Spolu: 1 657 leadov vygenerovaných za 147 635 Kč investície. Priemerne 3.29 ROAS.</p>
-
-              {/* Meta Ads Manager Screenshot */}
-              <div className="mt-12 pt-12 border-t border-border/30">
-                <p className="text-xs sm:text-sm text-accent uppercase tracking-wider mb-2 text-center">Takto to vyzerá</p>
-                <p className="text-sm sm:text-base text-muted-foreground text-center mb-6">Meta Ads Manager - v skutočnom čase vidíme každú metriku</p>
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-20%20at%2015.05.17-zNGcjaF2SBJNNsW1PMpzLtW6cSeQjp.png"
-                  alt="Meta Ads Manager - Screenshot s reálnymi metrikami a výsledkami"
-                  width={1200}
-                  height={400}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -567,15 +552,15 @@ export default function LeadGenPage() {
               </div>
 
               {/* Content */}
-              <div className="text-center sm:text-left">
-                <p className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
+              <div className="text-center sm:text-left flex-1">
+                <p className="text-xs font-medium text-primary uppercase tracking-wider mb-3">
                   Zakladateľ
                 </p>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed italic">
+                <p className="text-gray-700 text-base sm:text-lg leading-relaxed italic">
                   &quot;Začal som s plateným médiom, ale rýchlo som si uvedomil, že skutočný rast nikdy nepochádza len z reklám. Biznisy, ktoré rastú najlepšie, majú zvyčajne správnu správu, správny funnel, správnu kreatívu a správny systém za tým všetkým. Preto sa zameriavame na väčší obraz - nie len na nastavenie kampaní.&quot;
                 </p>
-                <p className="mt-4 text-gray-900 font-semibold">Damian Drahovsky</p>
-                <p className="text-sm text-gray-500">Zakladateľ, Dolphin Wave Media</p>
+                <p className="mt-6 text-gray-900 font-semibold text-lg">Damian Drahovsky</p>
+                <p className="text-base text-gray-500">Zakladateľ, Dolphin Wave Media</p>
                 
                 {/* Instagram link */}
                 <a
@@ -591,6 +576,23 @@ export default function LeadGenPage() {
                 </a>
               </div>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex justify-center mt-10 sm:mt-12">
+            <Link
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackLead}
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+            >
+              Chcem bezplatnú konzultáciu
+              <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

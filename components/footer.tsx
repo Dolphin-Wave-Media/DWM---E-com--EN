@@ -17,7 +17,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.facebook.com/share/1CR7q9BBRM/?mibextid=wwXIfr",
+    href: "https://www.facebook.com/damian.drahovsky.marketing",
     label: "Facebook",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
