@@ -5,95 +5,103 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Target, MessageSquare, Layers, MousePointerClick, Search, Compass, X } from "lucide-react"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
+import { useLanguage } from "@/lib/language-context"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
-const services = [
+const getServices = (t: any) => [
   {
     icon: Target,
-    title: "Meta Ads pre generovanie leadov",
-    description: "Staviame, spúšťame a optimalizujeme Meta kampane navrhnuté na generovanie kvalitných leadov, zníženie zbytočných výdavkov a zlepšenie kvality prichádzajúcich dopytov.",
+    title: t("leadgen.services.s1.title"),
+    description: t("leadgen.services.s1.description"),
   },
   {
     icon: MessageSquare,
-    title: "Kreatívna stratégia a messaging",
-    description: "Vyvíjame lepšie hooky, silnejšie správy, jasnejšie uhly a koncepty reklám vytvorené tak, aby zastavili pozornosť a pritiahli správny typ záujemcu.",
+    title: t("leadgen.services.s2.title"),
+    description: t("leadgen.services.s2.description"),
   },
   {
     icon: Layers,
-    title: "Stratégia funnelu",
-    description: "Pomáhame štruktúrovať cestu od prvého kliknutia po zarezervovaný hovor alebo odoslaný formulár, aby váš traffic mal lepšiu šancu stať sa reálnou príležitosťou.",
+    title: t("leadgen.services.s3.title"),
+    description: t("leadgen.services.s3.description"),
   },
   {
     icon: MousePointerClick,
-    title: "Optimalizácia landing pages",
-    description: "Vylepšujeme spôsob, akým je vaša ponuka prezentovaná, ako vaša stránka komunikuje dôveru a ako jasne vedie návštevníkov k akcii.",
+    title: t("leadgen.services.s4.title"),
+    description: t("leadgen.services.s4.description"),
   },
   {
     icon: Search,
-    title: "Google Ads podpora",
-    description: "Pre biznisy, ktoré potrebujú dopyt s vysokým zámerom, podporujeme Google Ads stratégie, ktoré zachytávajú ľudí už hľadajúcich vašu službu.",
+    title: t("leadgen.services.s5.title"),
+    description: t("leadgen.services.s5.description"),
   },
   {
     icon: Compass,
-    title: "Celková rastová stratégia",
-    description: "Neveríme v náhodné taktiky. Pomáhame budovať kompletnejší marketingový smer okolo vášho biznisu, publika a cieľov.",
+    title: t("leadgen.services.s6.title"),
+    description: t("leadgen.services.s6.description"),
   },
 ]
 
-const systemProblems = [
-  { text: "Správa je nejasná." },
-  { text: "Kreatíva nebuduje dôveru." },
-  { text: "Funnel stráca pozornosť." },
-  { text: "Landing page nekonvertuje." },
-  { text: "Ponuka nie je správne pozicionovaná." },
-  { text: "Follow-up nie je dostatočne silný." },
+const getSystemProblems = (t: any) => [
+  { text: t("leadgen.problem1") },
+  { text: t("leadgen.problem2") },
+  { text: t("leadgen.problem3") },
+  { text: t("leadgen.problem4") },
+  { text: t("leadgen.problem5") },
+  { text: t("leadgen.problem6") },
 ]
 
-const goodFit = [
-  "Servisné biznisy, ktoré chcú viac kvalitných leadov",
-  "Značky, ktoré už majú dopyt, ale potrebujú lepšiu marketingovú realizáciu",
-  "Biznisy, ktoré chcú silnejší funnel, nie len viac trafficu",
-  "Zakladatelia, ktorí chcú rastového partnera, nie generickú agentúru",
+const getGoodFit = (t: any) => [
+  t("leadgen.fitSection.goodFit1"),
+  t("leadgen.fitSection.goodFit2"),
+  t("leadgen.fitSection.goodFit3"),
+  t("leadgen.fitSection.goodFit4"),
 ]
 
-const notFit = [
-  "Biznisy hľadajúce okamžité výsledky bez testovania",
-  "Firmy bez jasnej ponuky alebo slabého pozicionovania služby",
-  "Značky, ktoré chcú len najlacnejšiu možnú možnosť",
-  "Biznisy, ktoré nie sú pripravené zlepšiť svoj funnel alebo predajný proces",
+const getNotFit = (t: any) => [
+  t("leadgen.fitSection.notFit1"),
+  t("leadgen.fitSection.notFit2"),
+  t("leadgen.fitSection.notFit3"),
+  t("leadgen.fitSection.notFit4"),
 ]
 
-const faqs = [
+const getFaqs = (t: any) => [
   {
-    question: "Čo sa stane po tom, čo si rezervujem bezplatnú stratégiu?",
-    answer: "Začíname krátkym 15-minútovým hovorom. Pozrieme sa na vašu aktuálnu situáciu, ciele, ponuku a proces generovania leadov. Ak je tu silný fit, pripravíme stratégiu na mieru v prezentačnom formáte a prevedieme vás ňou.",
+    question: t("leadgen.faq.q1"),
+    answer: "We start with a quick 15-minute call. We'll look at your current situation, goals, offer, and lead gen process. If it's a strong fit, we'll prepare a custom strategy in presentation format and walk you through it.",
   },
   {
-    question: "Je stratégia naozaj zadarmo?",
-    answer: "Áno. Ak veríme, že vášmu biznisu vieme skutočne pomôcť, pripravíme stratégiu zadarmo.",
+    question: t("leadgen.faq.q2"),
+    answer: "Yes. If we believe we can truly help your business, we'll prepare the strategy for free.",
   },
   {
-    question: "Pracujete len s e-commerce značkami?",
-    answer: "Nie. Pracujeme aj s lead generation biznismi a servisnými značkami, ktoré chcú lepšie marketingové systémy, silnejšie funnely a kvalitnejšie dopyty.",
+    question: t("leadgen.faq.q3"),
+    answer: "No. We work with lead generation businesses and service-based brands that want better marketing systems, stronger funnels, and higher-quality leads.",
   },
   {
-    question: "Spravujete len Meta reklamy?",
-    answer: "Nie. Meta je jeden z našich hlavných kanálov, ale pomáhame aj s messagingom, kreatívnou stratégiou, funnelmi, landing pages, Google Ads podporou a širšou performance stratégiou.",
+    question: t("leadgen.faq.q4"),
+    answer: "No. Meta is one of our primary channels, but we also support messaging, creative strategy, funnels, landing pages, Google Ads support, and broader performance strategy.",
   },
   {
-    question: "Pomáhate aj s landing pages?",
-    answer: "Áno. Pozeráme sa na to, ako vaša stránka komunikuje hodnotu, buduje dôveru a vedie návštevníkov k akcii. V mnohých prípadoch môže lepšia štruktúra landing page výrazne zlepšiť generovanie leadov.",
+    question: t("leadgen.faq.q5"),
+    answer: "Yes. We look at how your page communicates value, builds trust, and guides visitors to action. In many cases, better landing page structure can significantly improve lead generation.",
   },
   {
-    question: "Ako dlho trvá, kým uvidím výsledky?",
-    answer: "Závisí to od trhu, ponuky, rozpočtu, aktuálneho nastavenia a predajného procesu. Zvyčajne sa pozeráme na prvých 90 dní ako na počiatočné obdobie výkonu.",
+    question: t("leadgen.faq.q6"),
+    answer: "It depends on your market, offer, budget, current setup, and sales process. We typically look at the first 90 days as the initial performance period.",
   },
 ]
 
 export default function LeadGenPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
   const { trackLead } = useMetaPixel()
+  const { t } = useLanguage()
+  
+  const services = getServices(t)
+  const systemProblems = getSystemProblems(t)
+  const goodFit = getGoodFit(t)
+  const notFit = getNotFit(t)
+  const faqs = getFaqs(t)
 
   return (
     <div className="min-h-screen bg-background relative">
