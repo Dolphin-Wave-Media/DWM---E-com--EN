@@ -1,6 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
+
+const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 const testimonials = [
   {
@@ -22,6 +26,7 @@ const testimonials = [
 
 export function Testimonials() {
   const { t } = useLanguage()
+  const { trackLead } = useMetaPixel()
 
   return (
     <section id="testimonials" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
@@ -56,7 +61,7 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -92,6 +97,23 @@ export function Testimonials() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackLead}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+          >
+            Chcem bezplatnú konzultáciu
+            <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
