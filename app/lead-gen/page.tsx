@@ -290,13 +290,12 @@ export default function LeadGenPage() {
               
               {/* Meta Ads Manager Results */}
               <div className="w-full flex justify-center">
-                <iframe 
-                  src="https://drive.google.com/file/d/1f_1qXjH-JC7MzHNqRPZxWgZL6v2EZEgd/preview" 
-                  width="640" 
-                  height="480"
-                  className="rounded-lg border border-border"
-                  allowFullScreen
-                  loading="lazy"
+                <Image
+                  src="/ads-manager-results.png"
+                  alt="Meta Ads Manager - Screenshot s reálnymi metrikami a výsledkami"
+                  width={1200}
+                  height={600}
+                  className="w-full h-auto rounded-lg border border-border"
                 />
               </div>
             </div>
