@@ -1,12 +1,16 @@
 "use client"
 
 import Link from "next/link"
+import { useRef } from "react"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function AdvertisingImportance() {
   const { trackLead } = useMetaPixel()
+  const { ref: benefitsRef, isVisible: benefitsVisible } = useScrollReveal({ delay: 100 })
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
   const benefits = [
     {
       title: "Okamžitá viditeľnosť a rast",
@@ -80,7 +84,10 @@ export function AdvertisingImportance() {
         </div>
 
         {/* Benefits grid */}
-        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+        <div 
+          ref={benefitsRef}
+          className={`grid sm:grid-cols-2 gap-6 lg:gap-8 transition-all ${benefitsVisible ? 'reveal-fade-up' : 'opacity-0'}`}
+        >
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -102,7 +109,10 @@ export function AdvertisingImportance() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center mt-12 sm:mt-16">
+        <div 
+          ref={ctaRef}
+          className={`flex justify-center mt-12 sm:mt-16 transition-all ${ctaVisible ? 'reveal-scale' : 'opacity-0'}`}
+        >
           <Link
             href={CALENDLY_URL}
             target="_blank"

@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import { useRef } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
@@ -27,6 +29,8 @@ const testimonials = [
 export function Testimonials() {
   const { t } = useLanguage()
   const { trackLead } = useMetaPixel()
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal({ delay: 100 })
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
 
   return (
     <section id="testimonials" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
@@ -61,7 +65,10 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-10">
+        <div 
+          ref={testimonialsRef}
+          className={`grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-10 transition-all ${testimonialsVisible ? 'reveal-fade-up' : 'opacity-0'}`}
+        >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -100,7 +107,10 @@ export function Testimonials() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
+        <div 
+          ref={ctaRef}
+          className={`flex justify-center transition-all ${ctaVisible ? 'reveal-scale' : 'opacity-0'}`}
+        >
           <Link
             href={CALENDLY_URL}
             target="_blank"
