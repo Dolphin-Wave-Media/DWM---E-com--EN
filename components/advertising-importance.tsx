@@ -4,29 +4,32 @@ import Link from "next/link"
 import { useRef } from "react"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
+import { useLanguage } from "@/lib/language-context"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function AdvertisingImportance() {
+  const { t } = useLanguage()
   const { trackLead } = useMetaPixel()
   const { ref: benefitsRef, isVisible: benefitsVisible } = useScrollReveal({ delay: 100 })
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
+  
   const benefits = [
     {
-      title: "Okamžitá viditeľnosť a rast",
-      description: "Organický rast trvá roky. Digitálna reklama (Meta, Google, TikTok) vám prinesie traffic a predaje hneď. Pre e-shopy platené reklamy tvoria až 47% celkových predajov."
+      title: t("advertising.benefit1.title") || "Instant Visibility & Growth",
+      description: t("advertising.benefit1.description") || "Organic growth takes years. Digital advertising brings traffic and sales instantly."
     },
     {
-      title: "Presné cielenie",
-      description: "Nerobíme len \"reklamy\". Hľadáme vášho ideálneho zákazníka. Cielime podľa záujmov, správania, nákupných zvykov. Rozpočet ide len tam, kde má zmysel."
+      title: t("advertising.benefit2.title") || "Precision Targeting",
+      description: t("advertising.benefit2.description") || "We don't just show ads. We find your ideal customer and target by interests and behavior."
     },
     {
-      title: "Pravidlo siedmich",
-      description: "Človek potrebuje v priemere 7 kontaktov so značkou, kým nakúpi. Retargeting drží vašu značku v hlave a vracia 98% ľudí, čo nekúpili na prvýkrát."
+      title: t("advertising.benefit3.title") || "The Rule of Seven",
+      description: t("advertising.benefit3.description") || "People need 7 touchpoints before buying. Retargeting keeps your brand top-of-mind."
     },
     {
-      title: "Škálovanie úspechu",
-      description: "Keď nájdeme víťaznú kreatívu, reklamy nám umožňujú \"liať benzín do ohňa\". Z tisícov na milióny - stačí kliknutie."
+      title: t("advertising.benefit4.title") || "Scaling Success",
+      description: t("advertising.benefit4.description") || "Once we find winning creative, advertising lets us scale. From thousands to millions."
     }
   ]
 
@@ -70,16 +73,16 @@ export function AdvertisingImportance() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-            Prečo reklama
+            {t("advertising.label") || "Why Advertising Matters"}
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-6 max-w-4xl mx-auto text-balance">
-            Nečakajte, kým vás zákazníci nájdu.{" "}
+            {t("advertising.headline1") || "Don't Wait for Customers to Find You."}{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Choďte za nimi.
+              {t("advertising.headline2") || "Go Where They Are."}
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ak je obsah motor vašej značky, reklama je palivo. Aj ten najlepší web na svete nezarobí, keď ho nikto nevidí.
+            {t("advertising.description") || "If content is the engine of your brand, advertising is the fuel. Even the best website won't make money if nobody sees it."}
           </p>
         </div>
 
@@ -120,7 +123,7 @@ export function AdvertisingImportance() {
             onClick={trackLead}
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
           >
-            Chcem bezplatnú konzultáciu
+            {t("advertising.cta") || "Get My Free Consultation"}
             <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
