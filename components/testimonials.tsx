@@ -4,28 +4,24 @@ import { useLanguage } from "@/lib/language-context"
 
 const testimonials = [
   {
-    quote: "Finally an agency that actually understands e-commerce. They don't just run ads — they think about the whole funnel.",
-    quoteSk: "Konečne agentúra, ktorá naozaj rozumie e-commerce. Nerobia len reklamy — premýšľajú o celom funneli.",
+    quote: "Konečne agentúra, čo rozumie e-commerce. Nerobia len reklamy - premýšľajú nad celým funnelom.",
     name: "Robert Stefanco",
-    title: "Founder, Pánska Elegancia",
+    title: "Zakladateľ, Pánska Elegancia",
   },
   {
-    quote: "Communication is excellent. They're proactive, transparent, and always come with new ideas. It feels like having an in-house team, not an external agency.",
-    quoteSk: "Komunikácia je vynikajúca. Sú proaktívni, transparentní a vždy prídu s novými nápadmi. Pôsobí to ako interný tím, nie externá agentúra.",
+    quote: "Komunikácia je super. Proaktívni, transparentní, vždy prídu s novými nápadmi. Akoby som mal interný tím, nie externú agentúru.",
     name: "Matej Časár",
-    title: "Founder, Bomba Zľava",
+    title: "Zakladateľ, Bomba Zľava",
   },
   {
-    quote: "The creative strategy changed everything for us. Our ads finally stand out. The results speak for themselves — best decision we made this year.",
-    quoteSk: "Kreatívna stratégia nám všetko zmenila. Naše reklamy konečne vyčnievajú. Výsledky hovoria samy za seba — najlepšie rozhodnutie, ktoré sme tento rok urobili.",
+    quote: "Kreatívna stratégia nám zmenila všetko. Naše reklamy konečne vyčnievajú. Výsledky hovoria za seba - najlepšie rozhodnutie tohto roka.",
     name: "Juraj Habala",
-    title: "Founder, Habala",
+    title: "Zakladateľ, Habala",
   },
 ]
 
 export function Testimonials() {
   const { t } = useLanguage()
-  const { language } = useLanguage()
 
   return (
     <section id="testimonials" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
@@ -53,7 +49,7 @@ export function Testimonials() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-            Testimonials
+            Referencie
           </p>
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground tracking-tight text-balance mb-4 max-w-4xl mx-auto px-4 italic">
             {t("testimonials.quote")}
@@ -86,7 +82,7 @@ export function Testimonials() {
 
               {/* Quote */}
               <p className="text-sm sm:text-base text-foreground mb-6 leading-relaxed">
-                &quot;{language === "sk" ? testimonial.quoteSk : testimonial.quote}&quot;
+                &quot;{testimonial.quote}&quot;
               </p>
 
               {/* Author */}

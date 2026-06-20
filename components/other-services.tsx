@@ -9,8 +9,8 @@ const otherServices = [
         <path d="M9 21V9" />
       </svg>
     ),
-    title: "Website Optimization",
-    description: "We improve your website UX and design to maximize conversions. From landing pages to full e-commerce stores - we make sure every visitor counts."
+    title: "Optimalizácia webu",
+    description: "Vylepšíme UX a dizajn vášho webu, aby lepšie konvertoval. Landing pages, e-shopy - postaráme sa, aby každý návštevník počítal."
   },
   {
     icon: (
@@ -19,8 +19,8 @@ const otherServices = [
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
       </svg>
     ),
-    title: "Email Marketing",
-    description: "Automated email flows, newsletters, and campaigns that nurture leads and drive repeat purchases. We build systems that sell while you sleep."
+    title: "Email marketing",
+    description: "Automatizované emaily, newslettre, kampane. Budujeme systémy, ktoré predávajú aj keď spíte."
   },
   {
     icon: (
@@ -28,8 +28,8 @@ const otherServices = [
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
     ),
-    title: "Social Media Content",
-    description: "We create and publish engaging content across your social channels. Strategy, graphics, copy, and scheduling - all handled for you."
+    title: "Obsah na sociálne siete",
+    description: "Tvoríme a publikujeme obsah na vaše sociálne siete. Stratégia, grafiky, texty, plánovanie - všetko vybavíme."
   },
   {
     icon: (
@@ -41,8 +41,8 @@ const otherServices = [
         <circle cx="12" cy="12" r="2" />
       </svg>
     ),
-    title: "Custom AI Solutions",
-    description: "From AI-powered chatbots to automated workflows and custom tools - we build solutions that save time and scale your operations."
+    title: "AI riešenia na mieru",
+    description: "AI chatboty, automatizované workflowy, vlastné nástroje. Šetríme čas a škálujeme operácie."
   }
 ]
 
@@ -52,16 +52,16 @@ export function OtherServices() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
-            Beyond Ads
+            Nielen reklamy
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-            You&apos;ll Probably{" "}
+            Toto budete{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Need This Too
+              tiež potrebovať
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Meta Ads and AI content are our core expertise, but real growth requires a complete system. Here&apos;s what else we bring to the table.
+            Meta reklamy a AI obsah sú naša špecializácia. Ale skutočný rast potrebuje kompletný systém. Tu je, čo ešte vieme.
           </p>
         </div>
 

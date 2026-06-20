@@ -5,7 +5,7 @@ import Image from "next/image"
 export function AIWork() {
   const videos = [
     {
-      src: "https://drive.google.com/file/d/1ExHb7rM5D9BErByZoNuUO8UdPfdKTc3g/preview",
+      src: "https://drive.google.com/file/d/1OZCWc--ZILXFD4899ZPI6HYvJ6HOWOxY/preview",
       title: "AI Video Ad 1"
     },
     {
@@ -57,20 +57,20 @@ export function AIWork() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-            Our AI Work
+            Naša AI práca
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-            AI-Generated Content{" "}
+            AI obsah,{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              That Converts
+              ktorý predáva
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-            Real examples from our work with a local food supplement brand. They wanted to delegate content creation - here&apos;s what we delivered.
+            Reálne príklady zo spolupráce s lokálnou značkou doplnkov výživy. Chceli delegovať tvorbu obsahu - toto sme im dodali.
           </p>
           {/* Client logo */}
           <div className="flex items-center justify-center gap-3">
-            <span className="text-sm text-muted-foreground">Created for:</span>
+            <span className="text-sm text-muted-foreground">Vytvorené pre:</span>
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jo%CC%81da%20organika%20logo-o2MsZEohEiVpAA6HSiZ155qfSEsKWf.png"
               alt="Joda Organika"
@@ -83,7 +83,7 @@ export function AIWork() {
 
         {/* Banner images grid */}
         <div className="mb-12">
-          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">Product Banners</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">Produktové bannery</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {banners.map((banner, index) => (
               <div
@@ -107,7 +107,7 @@ export function AIWork() {
 
         {/* Video grid */}
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">AI Video Ads</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">AI Video reklamy</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {videos.map((video, index) => (
               <div
@@ -131,7 +131,7 @@ export function AIWork() {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            All content created using AI tools, customized for the brand&apos;s voice and audience.
+            Všetok obsah vytvorený pomocou AI nástrojov, prispôsobený hlasu a publiku značky.
           </p>
         </div>
       </div>

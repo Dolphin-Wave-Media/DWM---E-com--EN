@@ -2,11 +2,13 @@
 
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function CTASection() {
   const { t } = useLanguage()
+  const { trackLead } = useMetaPixel()
 
   return (
     <section className="py-16 sm:py-24 relative overflow-hidden">
@@ -52,6 +54,7 @@ export function CTASection() {
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackLead}
           className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold text-white hover:opacity-90 transition-all hover:shadow-xl hover:shadow-primary/25 hover:scale-105"
         >
           {t("cta.button")}

@@ -4,11 +4,13 @@ import Link from "next/link"
 import { ClientLogos } from "./client-logos"
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedCounter } from "./animated-counter"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function Hero() {
   const { t } = useLanguage()
+  const { trackLead } = useMetaPixel()
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
@@ -78,6 +80,7 @@ export function Hero() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackLead}
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
             >
               {t("hero.cta")}
@@ -132,7 +135,7 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
                 <iframe 
-                  src="https://drive.google.com/file/d/1-wPMUzkQy2DEHTr9ZdC5l1jp_S7u4A6E/preview" 
+                  src="https://drive.google.com/file/d/1f_1qXjH-JC7MzHNqRPZxWgZL6v2EZEgd/preview" 
                   frameBorder="0" 
                   allow="autoplay; fullscreen"
                   className="absolute inset-[-2px] w-[calc(100%+4px)] h-[calc(100%+4px)] scale-[1.01]"
@@ -148,6 +151,7 @@ export function Hero() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackLead}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 to-primary/20 border border-primary/30 text-base font-medium text-foreground hover:from-accent/30 hover:to-primary/30 hover:border-primary/50 transition-all"
               >
                 {t("hero.cta")}
