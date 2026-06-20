@@ -23,54 +23,66 @@ export function ClientLogos() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-100%);
           }
         }
         .scroll-container {
           display: flex;
-          width: max-content;
-          animation: scroll 10s linear infinite;
+          width: fit-content;
+          gap: 2.5rem;
+        }
+        .scroll-wrapper {
+          overflow: hidden;
+          width: 100%;
+        }
+        .scroll-container {
+          animation: scroll 25s linear infinite;
+          will-change: transform;
+        }
+        .scroll-container:hover {
+          animation-play-state: paused;
         }
       `}</style>
       
       {/* White background strip for logos */}
-      <div className="relative py-6 bg-white overflow-hidden">
+      <div className="relative py-6 bg-white">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         
-        {/* Scrolling logos container */}
-        <div className="scroll-container">
-          {/* First set */}
-          {clients.map((client, index) => (
-            <div
-              key={`first-${index}`}
-              className="flex-shrink-0 mx-6 sm:mx-10"
-            >
-              <img 
-                src={client.logo} 
-                alt={client.name}
-                loading="lazy"
-                decoding="async"
-                className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
-              />
-            </div>
-          ))}
-          {/* Second set (duplicate for seamless loop) */}
-          {clients.map((client, index) => (
-            <div
-              key={`second-${index}`}
-              className="flex-shrink-0 mx-6 sm:mx-10"
-            >
-              <img 
-                src={client.logo} 
-                alt={client.name}
-                loading="lazy"
-                decoding="async"
-                className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
-              />
-            </div>
-          ))}
+        {/* Scrolling logos container with wrapper */}
+        <div className="scroll-wrapper">
+          <div className="scroll-container">
+            {clients.map((client, index) => (
+              <div
+                key={`${index}`}
+                className="flex-shrink-0"
+              >
+                <img 
+                  src={client.logo} 
+                  alt={client.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
+                />
+              </div>
+            ))}
+            {/* Seamless duplicate for continuous loop */}
+            {clients.map((client, index) => (
+              <div
+                key={`duplicate-${index}`}
+                className="flex-shrink-0"
+              >
+                <img 
+                  src={client.logo} 
+                  alt={client.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

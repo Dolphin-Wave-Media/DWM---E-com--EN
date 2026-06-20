@@ -1,6 +1,16 @@
 "use client"
 
+import Link from "next/link"
+import { useRef } from "react"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
+
+const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
+
 export function AdvertisingImportance() {
+  const { trackLead } = useMetaPixel()
+  const { ref: benefitsRef, isVisible: benefitsVisible } = useScrollReveal({ delay: 100 })
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
   const benefits = [
     {
       title: "Okamžitá viditeľnosť a rast",
@@ -74,7 +84,10 @@ export function AdvertisingImportance() {
         </div>
 
         {/* Benefits grid */}
-        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+        <div 
+          ref={benefitsRef}
+          className={`grid sm:grid-cols-2 gap-6 lg:gap-8 transition-all ${benefitsVisible ? 'reveal-fade-up' : 'opacity-0'}`}
+        >
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -93,6 +106,26 @@ export function AdvertisingImportance() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div 
+          ref={ctaRef}
+          className={`flex justify-center mt-12 sm:mt-16 transition-all ${ctaVisible ? 'reveal-scale' : 'opacity-0'}`}
+        >
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackLead}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+          >
+            Chcem bezplatnú konzultáciu
+            <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
         </div>
 
         {/* Bottom illustration - smooth gradient bars */}

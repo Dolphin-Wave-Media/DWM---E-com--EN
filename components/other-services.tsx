@@ -1,5 +1,13 @@
 "use client"
 
+import Link from "next/link"
+import { useRef } from "react"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
+import { useLanguage } from "@/lib/language-context"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
+
+const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
+
 const otherServices = [
   {
     icon: (
@@ -47,6 +55,11 @@ const otherServices = [
 ]
 
 export function OtherServices() {
+  const { trackLead } = useMetaPixel()
+  const { t } = useLanguage()
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal({ delay: 100 })
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
+
   return (
     <section className="relative py-16 sm:py-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -65,7 +78,10 @@ export function OtherServices() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div 
+          ref={servicesRef}
+          className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 transition-all ${servicesVisible ? 'reveal-fade-up' : 'opacity-0'}`}
+        >
           {otherServices.map((service, index) => (
             <div
               key={index}
@@ -82,6 +98,26 @@ export function OtherServices() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div 
+          ref={ctaRef}
+          className={`flex justify-center transition-all ${ctaVisible ? 'reveal-scale' : 'opacity-0'}`}
+        >
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackLead}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+          >
+            Chcem bezplatnú konzultáciu
+            <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
