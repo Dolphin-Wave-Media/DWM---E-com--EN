@@ -6,7 +6,7 @@ import Image from "next/image"
 import { ArrowRight, Target, MessageSquare, Layers, MousePointerClick, Search, Compass, X } from "lucide-react"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
 
-const CALENDLY_URL = "https://calendly.com/dolphinwavemedia/15min"
+const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 const services = [
   {
@@ -288,14 +288,17 @@ export default function LeadGenPage() {
               <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4 text-center">Reálne čísla</p>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Aké výsledky vieme priniesť aj vám?</h3>
               
-              {/* Meta Ads Manager Screenshot */}
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-20%20at%2015.05.17-zNGcjaF2SBJNNsW1PMpzLtW6cSeQjp.png"
-                alt="Meta Ads Manager - Screenshot s reálnymi metrikami a výsledkami"
-                width={1200}
-                height={400}
-                className="w-full h-auto rounded-lg"
-              />
+              {/* Meta Ads Manager Results */}
+              <div className="w-full flex justify-center">
+                <iframe 
+                  src="https://drive.google.com/file/d/1h3GLDY8-O9XqdURLXjnl_rpL3apnvhbm/preview" 
+                  width="640" 
+                  height="480"
+                  className="rounded-lg border border-border"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -716,7 +719,7 @@ export default function LeadGenPage() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.facebook.com/share/1CR7q9BBRM/?mibextid=wwXIfr"
+                  href="https://www.facebook.com/damian.drahovsky.marketing"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
