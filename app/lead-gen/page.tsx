@@ -353,7 +353,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative z-10 py-16 sm:py-24 bg-card/30 overflow-hidden">
+      <section id="services" className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
@@ -460,7 +460,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* Who Is It For Section */}
-      <section className="relative z-10 py-16 sm:py-24 bg-card/30 overflow-hidden">
+      <section className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
@@ -598,7 +598,7 @@ export default function LeadGenPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="relative z-10 py-16 sm:py-24 bg-card/30 overflow-hidden">
+      <section id="faq" className="relative z-10 py-16 sm:py-24 overflow-hidden">
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
