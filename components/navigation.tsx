@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
@@ -11,6 +12,7 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { t } = useLanguage()
+  const { trackLead } = useMetaPixel()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,6 +66,7 @@ export function Navigation() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackLead}
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
             >
               {t("nav.bookStrategy")}
@@ -110,6 +113,7 @@ export function Navigation() {
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={trackLead}
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity w-full"
                 >
                   {t("nav.bookStrategy")}

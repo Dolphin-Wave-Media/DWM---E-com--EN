@@ -2,11 +2,13 @@
 
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function HowItWorks() {
   const { t } = useLanguage()
+  const { trackLead } = useMetaPixel()
 
   const steps = [
     {
@@ -97,6 +99,7 @@ export function HowItWorks() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackLead}
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all shadow-lg shadow-primary/25"
           >
             {t("howItWorks.cta")}

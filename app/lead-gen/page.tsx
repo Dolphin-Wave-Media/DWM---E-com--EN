@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Target, MessageSquare, Layers, MousePointerClick, Search, Compass, X } from "lucide-react"
+import { useMetaPixel } from "@/hooks/useMetaPixel"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwavemedia/15min"
 
@@ -92,6 +93,7 @@ const faqs = [
 
 export default function LeadGenPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
+  const { trackLead } = useMetaPixel()
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -171,6 +173,7 @@ export default function LeadGenPage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackLead}
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
             >
               Bezplatná stratégia
@@ -241,6 +244,7 @@ export default function LeadGenPage() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackLead}
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
               >
                 Chcem bezplatnú stratégiu
@@ -637,6 +641,7 @@ export default function LeadGenPage() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackLead}
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
           >
             Chcem bezplatnú stratégiu

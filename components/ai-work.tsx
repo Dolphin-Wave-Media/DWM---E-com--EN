@@ -5,7 +5,7 @@ import Image from "next/image"
 export function AIWork() {
   const videos = [
     {
-      src: "https://drive.google.com/file/d/1ExHb7rM5D9BErByZoNuUO8UdPfdKTc3g/preview",
+      src: "https://drive.google.com/file/d/1OZCWc--ZILXFD4899ZPI6HYvJ6HOWOxY/preview",
       title: "AI Video Ad 1"
     },
     {
