@@ -168,7 +168,7 @@ const translations = {
     "whyUs.point2.title": "Vidíme celý obraz",
     "whyUs.point2.description": "Neriešime len reklamy. Pozeráme sa na celý systém - web, ponuku, komunikáciu. Všetko musí sedieť.",
     "whyUs.point3.title": "Šetríme vám čas",
-    "whyUs.point3.description": "Stratégia, obsah, realizácia - to všetko berieme na seba. Vy sa môžete venovať biznisu.",
+    "whyUs.point3.description": "Stratégia, obsah, realizácia - to všetko berieme na seba. Vy sa m��žete venovať biznisu.",
     "whyUs.point4.title": "Reálne výsledky",
     "whyUs.point4.description": "Zaujímajú nás čísla, ktoré majú zmysel. Predaje, obrat, rast. Nie len metriky na papieri.",
     "howItWorks.label": "Ako to funguje",
@@ -238,7 +238,22 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("sk")
+  const [language, setLanguage] = useState<Language>(() => {
+    // Try to get language from cookie set by middleware
+    if (typeof window !== 'undefined') {
+      const cookies = document.cookie.split('; ')
+      const localeCookie = cookies.find(c => c.startsWith('NEXT_LOCALE='))
+      if (localeCookie) {
+        const lang = localeCookie.split('=')[1] as Language
+        return lang === 'sk' ? 'sk' : 'en'
+      }
+      
+      // Fallback: detect from domain
+      const host = window.location.hostname
+      return host.includes('.sk') ? 'sk' : 'en'
+    }
+    return 'sk'
+  })
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key
