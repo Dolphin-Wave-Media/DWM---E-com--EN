@@ -288,66 +288,14 @@ export default function LeadGenPage() {
               <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4 text-center">Reálne čísla</p>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Aké výsledky vieme priniesť aj vám?</h3>
               
-              {/* Results Table */}
-              <div className="bg-background/50 backdrop-blur border border-border/30 rounded-lg overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-border/30 bg-background/50">
-                        <th className="text-left px-3 sm:px-4 py-3 text-muted-foreground font-medium text-xs">Investícia</th>
-                        <th className="text-left px-3 sm:px-4 py-3 text-muted-foreground font-medium text-xs">Výsledky</th>
-                        <th className="text-left px-3 sm:px-4 py-3 text-muted-foreground font-medium text-xs">ROAS</th>
-                        <th className="text-left px-3 sm:px-4 py-3 text-muted-foreground font-medium text-xs">Leads</th>
-                        <th className="text-left px-3 sm:px-4 py-3 text-muted-foreground font-medium text-xs">Cena/Lead</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border/30">
-                      <tr className="hover:bg-background/30 transition">
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">9 671 Kč</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">7 nákupov</td>
-                        <td className="px-3 sm:px-4 py-3"><span className="text-accent font-semibold">5.00</span></td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">35 leadov</td>
-                        <td className="px-3 sm:px-4 py-3 text-accent font-semibold">276 Kč</td>
-                      </tr>
-                      <tr className="hover:bg-background/30 transition">
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">22 266 Kč</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">10 nákupov</td>
-                        <td className="px-3 sm:px-4 py-3"><span className="text-accent font-semibold">3.08</span></td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">140 leadov</td>
-                        <td className="px-3 sm:px-4 py-3 text-accent font-semibold">159 Kč</td>
-                      </tr>
-                      <tr className="hover:bg-background/30 transition">
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">8 585 Kč</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">—</td>
-                        <td className="px-3 sm:px-4 py-3">—</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">20 leadov</td>
-                        <td className="px-3 sm:px-4 py-3 text-accent font-semibold">429 Kč</td>
-                      </tr>
-                      <tr className="hover:bg-background/30 transition">
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">22 143 Kč</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">6 nákupov</td>
-                        <td className="px-3 sm:px-4 py-3"><span className="text-accent font-semibold">2.05</span></td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">302 leadov</td>
-                        <td className="px-3 sm:px-4 py-3 text-accent font-semibold">73 Kč</td>
-                      </tr>
-                      <tr className="hover:bg-background/30 transition">
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">24 234 Kč</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">11 nákupov</td>
-                        <td className="px-3 sm:px-4 py-3"><span className="text-accent font-semibold">3.39</span></td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground">180 leadov</td>
-                        <td className="px-3 sm:px-4 py-3 text-accent font-semibold">134 Kč</td>
-                      </tr>
-                      <tr className="hover:bg-background/30 transition bg-background/20">
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">147 635 Kč</td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">69 nákupov</td>
-                        <td className="px-3 sm:px-4 py-3"><span className="text-accent font-semibold">3.29</span></td>
-                        <td className="px-3 sm:px-4 py-3 text-foreground font-semibold">1 657 leadov</td>
-                        <td className="px-3 sm:px-4 py-3 text-accent font-semibold">89 Kč</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              {/* Results Image */}
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-20%20at%2015.14.28-1xenJLrHq0RYpT3xxLzBLZsOzLQ0LP.png"
+                alt="Výsledky kampanií - tabuľka s investíciami, výsledkami a ROAS"
+                width={1000}
+                height={600}
+                className="w-full h-auto rounded-lg"
+              />
               
               <p className="text-sm text-muted-foreground mt-6 text-center">Spolu: 1 657 leadov vygenerovaných za 147 635 Kč investície. Priemerne 3.29 ROAS.</p>
             </div>
