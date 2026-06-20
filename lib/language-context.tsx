@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, ReactNode, useEffect } from "react"
 
 type Language = "en" | "sk"
 
@@ -213,7 +213,7 @@ const translations = {
     "hero.viewCaseStudies": "Pozrieť výsledky",
     "hero.microcopy": "15-minútový hovor. Stratégia v prezentácii. Na mieru pre vašu značku.",
     "services.label": "Čo robíme",
-    "services.title1": "Všetko čo e-shopy potrebujú na ",
+    "services.title1": "V��etko čo e-shopy potrebujú na ",
     "services.title2": "rast v 2026",
     "services.description": "Reklamy sú len časť skladačky. Staviame celý systém - stratégiu, kreatívu aj funnel. Všetko musí hrať dokopy.",
     "services.meta.title": "Meta Reklamy",
@@ -302,22 +302,26 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => {
-    // Try to get language from cookie set by middleware
-    if (typeof window !== 'undefined') {
-      const cookies = document.cookie.split('; ')
-      const localeCookie = cookies.find(c => c.startsWith('NEXT_LOCALE='))
-      if (localeCookie) {
-        const lang = localeCookie.split('=')[1] as Language
-        return lang === 'sk' ? 'sk' : 'en'
-      }
-      
+  // Initialize with 'sk' as default to match server rendering
+  const [language, setLanguage] = useState<Language>('sk')
+  const [mounted, setMounted] = useState(false)
+
+  // Only on client side, detect language from cookie or domain
+  useEffect(() => {
+    const cookies = document.cookie.split('; ')
+    const localeCookie = cookies.find(c => c.startsWith('NEXT_LOCALE='))
+    
+    if (localeCookie) {
+      const lang = localeCookie.split('=')[1] as Language
+      setLanguage(lang === 'sk' ? 'sk' : 'en')
+    } else {
       // Fallback: detect from domain
       const host = window.location.hostname
-      return host.includes('.sk') ? 'sk' : 'en'
+      setLanguage(host.includes('.sk') ? 'sk' : 'en')
     }
-    return 'sk'
-  })
+    
+    setMounted(true)
+  }, [])
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key
