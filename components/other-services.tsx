@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import { useRef } from "react"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
 import { useLanguage } from "@/lib/language-context"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
@@ -55,6 +57,8 @@ const otherServices = [
 export function OtherServices() {
   const { trackLead } = useMetaPixel()
   const { t } = useLanguage()
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal({ delay: 100 })
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
 
   return (
     <section className="relative py-16 sm:py-20 overflow-hidden">
@@ -74,7 +78,10 @@ export function OtherServices() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div 
+          ref={servicesRef}
+          className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 transition-all ${servicesVisible ? 'reveal-fade-up' : 'opacity-0'}`}
+        >
           {otherServices.map((service, index) => (
             <div
               key={index}
@@ -94,7 +101,10 @@ export function OtherServices() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
+        <div 
+          ref={ctaRef}
+          className={`flex justify-center transition-all ${ctaVisible ? 'reveal-scale' : 'opacity-0'}`}
+        >
           <Link
             href={CALENDLY_URL}
             target="_blank"

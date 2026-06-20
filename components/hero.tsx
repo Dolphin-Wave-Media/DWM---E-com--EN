@@ -1,16 +1,20 @@
 "use client"
 
 import Link from "next/link"
+import { useRef } from "react"
 import { ClientLogos } from "./client-logos"
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedCounter } from "./animated-counter"
 import { useMetaPixel } from "@/hooks/useMetaPixel"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
 export function Hero() {
   const { t } = useLanguage()
   const { trackLead } = useMetaPixel()
+  const { ref: statsRef, isVisible: statsVisible } = useScrollReveal({ delay: 100 })
+  const { ref: videoRef, isVisible: videoVisible } = useScrollReveal({ delay: 200 })
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8">
@@ -103,7 +107,10 @@ export function Hero() {
           </p>
 
           {/* Trust Metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-16">
+          <div 
+            ref={statsRef}
+            className={`grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-16 transition-all ${statsVisible ? 'reveal-fade-up' : 'opacity-0'}`}
+          >
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                 <AnimatedCounter end={1435267} duration={2500} suffix="€+" />
@@ -131,7 +138,10 @@ export function Hero() {
           </div>
 
           {/* Video Section */}
-          <div className="max-w-4xl mx-auto">
+          <div 
+            ref={videoRef}
+            className={`max-w-4xl mx-auto transition-all ${videoVisible ? 'reveal-scale' : 'opacity-0'}`}
+          >
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
                 <iframe 
