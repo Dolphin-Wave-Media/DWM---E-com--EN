@@ -172,9 +172,9 @@ export default function LeadGenPage() {
               <span className="font-semibold text-foreground hidden sm:block">Dolphin Wave Media</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Služby</a>
-              <a href="#how-we-work" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Ako pracujeme</a>
-              <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">O nás</a>
+              <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Services</a>
+              <a href="#how-we-work" className="text-sm text-muted-foreground hover:text-foreground transition-colors">How We Work</a>
+              <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
               <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
             </nav>
             <Link
@@ -353,7 +353,7 @@ export default function LeadGenPage() {
               onClick={trackLead}
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
             >
-              Chcem bezplatnú konzultáciu
+              Get My Free Consultation
               <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />

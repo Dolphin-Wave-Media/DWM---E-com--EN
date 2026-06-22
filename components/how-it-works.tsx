@@ -14,17 +14,17 @@ export function HowItWorks() {
     {
       number: "01",
       title: t("howItWorks.step1.title"),
-      description: t("howItWorks.step1.desc"),
+      description: t("howItWorks.step1.description"),
     },
     {
       number: "02",
       title: t("howItWorks.step2.title"),
-      description: t("howItWorks.step2.desc"),
+      description: t("howItWorks.step2.description"),
     },
     {
       number: "03",
       title: t("howItWorks.step3.title"),
-      description: t("howItWorks.step3.desc"),
+      description: t("howItWorks.step3.description"),
     },
   ]
 
