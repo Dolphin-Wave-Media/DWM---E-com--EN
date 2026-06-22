@@ -8,7 +8,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
-const otherServices = [
+const getOtherServices = (t: any) => [
   {
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -17,8 +17,8 @@ const otherServices = [
         <path d="M9 21V9" />
       </svg>
     ),
-    title: "Optimalizácia webu",
-    description: "Vylepšíme UX a dizajn vášho webu, aby lepšie konvertoval. Landing pages, e-shopy - postaráme sa, aby každý návštevník počítal."
+    title: t("otherServices.service1.title"),
+    description: t("otherServices.service1.description")
   },
   {
     icon: (
@@ -27,8 +27,8 @@ const otherServices = [
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
       </svg>
     ),
-    title: "Email marketing",
-    description: "Automatizované emaily, newslettre, kampane. Budujeme systémy, ktoré predávajú aj keď spíte."
+    title: t("otherServices.service2.title"),
+    description: t("otherServices.service2.description")
   },
   {
     icon: (
@@ -36,8 +36,8 @@ const otherServices = [
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
     ),
-    title: "Obsah na sociálne siete",
-    description: "Tvoríme a publikujeme obsah na vaše sociálne siete. Stratégia, grafiky, texty, plánovanie - všetko vybavíme."
+    title: t("otherServices.service3.title"),
+    description: t("otherServices.service3.description")
   },
   {
     icon: (
@@ -49,8 +49,8 @@ const otherServices = [
         <circle cx="12" cy="12" r="2" />
       </svg>
     ),
-    title: "AI riešenia na mieru",
-    description: "AI chatboty, automatizované workflowy, vlastné nástroje. Šetríme čas a škálujeme operácie."
+    title: t("otherServices.service4.title"),
+    description: t("otherServices.service4.description")
   }
 ]
 
@@ -59,22 +59,23 @@ export function OtherServices() {
   const { t } = useLanguage()
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal({ delay: 100 })
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
+  const otherServices = getOtherServices(t)
 
   return (
     <section className="relative py-16 sm:py-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
-            Nielen reklamy
+            {t("otherServices.label")}
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-            Toto budete{" "}
+            {t("otherServices.label")}{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              tiež potrebovať
+              {t("otherServices.headline")}
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Meta reklamy a AI obsah sú naša špecializácia. Ale skutočný rast potrebuje kompletný systém. Tu je, čo ešte vieme.
+            {t("otherServices.description")}
           </p>
         </div>
 
