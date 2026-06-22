@@ -184,7 +184,7 @@ export default function LeadGenPage() {
               onClick={trackLead}
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
             >
-              Bezplatná stratégia
+              {t("leadgen.cta.button")}
             </Link>
           </div>
         </div>
@@ -228,22 +228,22 @@ export default function LeadGenPage() {
                   <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
                 </svg>
                 <span className="text-sm text-foreground font-medium underline decoration-green-500 decoration-2 underline-offset-4">
-                  Overené 10+ lead gen značkami
+                  {t("leadgen.trustmetrics.experience")}
                 </span>
               </div>
             </div>
 
             {/* Headline */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 max-w-5xl mx-auto leading-tight text-balance">
-              <span className="text-foreground">Pomáhame lead generation značkám získavať viac </span>
-              <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">kvalitných leadov</span>
-              <span className="text-foreground"> cez </span>
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Meta reklamy, kreatívnu stratégiu a lepšie funnely.</span>
+              <span className="text-foreground">We help lead generation brands get more </span>
+              <span className="bg-gradient-to-r from-accent via-primary to-[#9b4dca] bg-clip-text text-transparent">qualified leads</span>
+              <span className="text-foreground"> through </span>
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Meta ads, creative strategy and better funnels.</span>
             </h1>
 
             {/* Subheadline */}
             <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed text-balance">
-              Dolphin Wave Media buduje marketingové systémy, ktoré pomáhajú servisným biznisu generovať pozornosť, zachytávať dopyt a meniť traffic na reálne dopyty, hovory a klientov.
+              Dolphin Wave Media builds marketing systems that help service businesses generate attention, capture demand, and turn traffic into real leads, calls, and clients.
             </p>
 
             {/* CTAs */}
@@ -255,55 +255,55 @@ export default function LeadGenPage() {
                 onClick={trackLead}
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-6 sm:px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
               >
-                Chcem bezplatnú stratégiu
+                {t("leadgen.cta.button")}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <a
                 href="#how-we-work"
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-border bg-card/50 backdrop-blur-sm px-6 sm:px-8 py-4 text-base font-medium text-foreground hover:bg-card hover:border-primary/50 transition-all"
               >
-                Ako pracujeme
+                How We Work
               </a>
             </div>
 
             {/* Microcopy */}
             <p className="text-sm text-muted-foreground mb-16 text-balance">
-              15-minútový hovor. Stratégia v prezentácii. Na mieru pre vašu značku.
+              15-minute call. Strategy in presentation. Tailored for your brand.
             </p>
 
             {/* Trust Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-16">
               <div className="text-center">
                 <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">12+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Rokov skúseností</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Years Experience</p>
               </div>
               <div className="text-center">
                 <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">10+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Klientov</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Clients</p>
               </div>
               <div className="text-center">
                 <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">5 342+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Vygenerovaných leadov</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Leads Generated</p>
               </div>
               <div className="text-center">
                 <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">5+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Aktívnych partnerov</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Active Partners</p>
               </div>
             </div>
 
             {/* Results Section */}
             <div className="mt-10 pt-8 border-t border-border/30">
-              <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4 text-center">Reálne čísla</p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Aké výsledky vieme priniesť aj vám?</h3>
+              <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4 text-center">Real Numbers</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">What results can we deliver for you?</h3>
               
               {/* Meta Ads Manager Results */}
               <div className="w-full flex justify-center">
-                <iframe 
-                  src="https://drive.google.com/file/d/1h3GLDY8-O9XqdURLXjnl_rpL3apnvhbm/preview" 
-                  width="640" 
-                  height="480"
-                  className="rounded-lg border border-border"
-                  allowFullScreen
+                <Image 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-06-20%20at%2015.05.17-CEBLQqatUx6DXnNPNkHbBo9Za15SfM.png" 
+                  alt="Campaign analytics dashboard showing results"
+                  width={1200} 
+                  height={600}
+                  className="rounded-lg border border-border max-w-full h-auto"
                   loading="lazy"
                 />
               </div>
@@ -317,16 +317,16 @@ export default function LeadGenPage() {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-              Skutočný problém
+              The Real Problem
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Toto je v 99% prípadov dôvod, prečo váš{" "}
+              This is 99% why your{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                lead gen nefunguje
+                lead gen isn&apos;t working
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Veľa biznisov si myslí, že problém je jednoduchý: potrebujú len viac reklám, viac klikov alebo väčší rozpočet. V skutočnosti väčšina problémov s generovaním leadov pochádza zo slabšieho systému pod tým všetkým.
+              Many businesses think the problem is simple: they just need more ads, more clicks, or a bigger budget. In reality, most lead gen failures come from a weak system underlying it all.
             </p>
           </div>
 
@@ -368,16 +368,16 @@ export default function LeadGenPage() {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-              S čím pomáhame
+              {t("leadgen.services.intro")}
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Postavte{" "}
+              Build a{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                kompletný lead gen systém
+                Complete Lead Gen System
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Vedieme to cez platený traffic, ale skutočný výkon pochádza z toho, ako celý systém funguje spolu.
+              {t("leadgen.services.description")}
             </p>
           </div>
 
@@ -409,7 +409,7 @@ export default function LeadGenPage() {
               onClick={trackLead}
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
             >
-              Chcem bezplatnú konzultáciu
+              Get My Free Consultation
               <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
@@ -424,12 +424,12 @@ export default function LeadGenPage() {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-              Náš proces
+              {t("leadgen.process.title")}
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Ako{" "}
+              How We{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent italic">
-                spolupracujeme
+                Collaborate
               </span>
             </h2>
           </div>
@@ -438,18 +438,18 @@ export default function LeadGenPage() {
             {[
               {
                 step: "01",
-                title: "Discovery hovor",
-                description: "Začíname krátkym 15-minútovým hovorom, aby sme pochopili váš biznis, aktuálne nastavenie generovania leadov a vaše ciele.",
+                title: "Discovery Call",
+                description: "We start with a quick 15-minute call to understand your business, current lead gen setup, and goals.",
               },
               {
                 step: "02",
-                title: "Stratégia na mieru",
-                description: "Ak je tu silný fit, pripravíme marketingovú stratégiu na mieru v prezentačnom formáte - postavenú okolo vašej konkrétnej situácie.",
+                title: "Custom Strategy",
+                description: "If it&apos;s a strong fit, we&apos;ll prepare a custom marketing strategy in presentation format tailored to your specific situation.",
               },
               {
                 step: "03",
-                title: "Realizácia a rast",
-                description: "Po schválení realizujeme stratégiu, spúšťame kampane a neustále optimalizujeme pre lepšiu kvalitu a objem leadov.",
+                title: "Implementation & Growth",
+                description: "After approval, we implement the strategy, launch campaigns, and continuously optimize for better quality and volume of leads.",
               },
             ].map((item, index) => (
               <div key={index} className="relative p-6 sm:p-8 rounded-2xl bg-card/50 border border-border">
@@ -475,16 +475,16 @@ export default function LeadGenPage() {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-              Je to pre vás?
+              Is This For You?
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance mb-4">
-              Nie sme{" "}
+              We&apos;re not{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent italic">
-                pre každého
+                for everyone
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Najlepšie spolupracujeme s biznismi, ktoré sú pripravené budovať reálny systém generovania leadov.
+              We work best with businesses ready to build a real lead generation system.
             </p>
           </div>
 
@@ -497,7 +497,7 @@ export default function LeadGenPage() {
                     <path d="M20 6 9 17l-5-5"/>
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-foreground">Sedíme si</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">Good Fit</h3>
               </div>
               <ul className="space-y-3 sm:space-y-4">
                 {goodFit.map((item, index) => (
@@ -520,7 +520,7 @@ export default function LeadGenPage() {
                     <path d="m6 6 12 12"/>
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-foreground">Nesedíme si</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">Not a Fit</h3>
               </div>
               <ul className="space-y-3 sm:space-y-4">
                 {notFit.map((item, index) => (
@@ -543,7 +543,7 @@ export default function LeadGenPage() {
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
-              Kto za tým stojí
+              {t("leadgen.founder.title")}
             </p>
           </div>
 
@@ -565,13 +565,13 @@ export default function LeadGenPage() {
               {/* Content */}
               <div className="text-center sm:text-left flex-1">
                 <p className="text-xs font-medium text-primary uppercase tracking-wider mb-3">
-                  Zakladateľ
+                  Founder
                 </p>
                 <p className="text-gray-700 text-base sm:text-lg leading-relaxed italic">
-                  &quot;Začal som s plateným médiom, ale rýchlo som si uvedomil, že skutočný rast nikdy nepochádza len z reklám. Biznisy, ktoré rastú najlepšie, majú zvyčajne správnu správu, správny funnel, správnu kreatívu a správny systém za tým všetkým. Preto sa zameriavame na väčší obraz - nie len na nastavenie kampaní.&quot;
+                  {t("leadgen.founder.quote")}
                 </p>
-                <p className="mt-6 text-gray-900 font-semibold text-lg">Damian Drahovsky</p>
-                <p className="text-base text-gray-500">Zakladateľ, Dolphin Wave Media</p>
+                <p className="mt-6 text-gray-900 font-semibold text-lg">{t("leadgen.founder.name")}</p>
+                <p className="text-base text-gray-500">{t("leadgen.founder.role")}</p>
                 
                 {/* Instagram link */}
                 <a
@@ -590,7 +590,7 @@ export default function LeadGenPage() {
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center mt-10 sm:mt-12">
+          <div className="flex justify-center mt-12 sm:mt-16">
             <Link
               href={CALENDLY_URL}
               target="_blank"
@@ -598,7 +598,7 @@ export default function LeadGenPage() {
               onClick={trackLead}
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
             >
-              Chcem bezplatnú konzultáciu
+              Get My Free Consultation
               <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
@@ -613,12 +613,12 @@ export default function LeadGenPage() {
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
-              FAQ
+              {t("leadgen.faq.title")}
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Máte{" "}
+              Have{" "}
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                otázky?
+                questions?
               </span>
             </h2>
           </div>
@@ -672,13 +672,13 @@ export default function LeadGenPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
-            Pripravení získať viac{" "}
+            {t("leadgen.cta.title")}{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              kvalitných leadov?
+              {t("leadgen.fitSection.goodFit1")}
             </span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Bezplatný 15-minútový hovor. Pozrieme sa na vaše aktuálne nastavenie a ukážeme vám, kde je priestor na rast.
+            {t("leadgen.cta.description")}
           </p>
           <Link
             href={CALENDLY_URL}
