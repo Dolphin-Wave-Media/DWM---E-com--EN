@@ -545,7 +545,14 @@ const translations = {
   },
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+// Default context value - provides a fallback during SSR
+const defaultContextValue: LanguageContextType = {
+  language: 'sk',
+  setLanguage: () => {},
+  t: (key: string) => key,
+}
+
+const LanguageContext = createContext<LanguageContextType>(defaultContextValue)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>('sk')
@@ -553,13 +560,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Read language from cookie set by middleware
-    const cookie = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('NEXT_LOCALE='))
-    
-    const locale = cookie?.split('=')[1] as Language
-    if (locale === 'en' || locale === 'sk') {
-      setLanguageState(locale)
+    if (typeof document !== 'undefined') {
+      const cookie = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('NEXT_LOCALE='))
+      
+      const locale = cookie?.split('=')[1] as Language
+      if (locale === 'en' || locale === 'sk') {
+        setLanguageState(locale)
+      }
     }
     setMounted(true)
   }, [])
@@ -567,16 +576,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
     // Also update the cookie when language is manually changed
-    document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`
+    if (typeof document !== 'undefined') {
+      document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`
+    }
   }
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key
-  }
-
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>
   }
 
   return (
@@ -588,8 +594,5 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext)
-  if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider")
-  }
   return context
 }
