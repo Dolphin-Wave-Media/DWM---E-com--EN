@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, ReactNode, useEffect } from "react"
 
 type Language = "en" | "sk"
 
@@ -291,6 +291,45 @@ const translations = {
     "leadgen.cta.title": "Ready for More Qualified Leads?",
     "leadgen.cta.description": "Free 15-minute call. We'll look at your current setup and show you where your growth opportunities are.",
     "leadgen.cta.button": "Book My Free Strategy",
+    "leadgen.footer.description": "We help lead generation brands build marketing systems that attract quality leads, capture demand, and turn traffic into real opportunities.",
+    "leadgen.footer.navigation": "Navigation",
+    "leadgen.footer.services": "Services",
+    "leadgen.footer.howWeWork": "How We Work",
+    "leadgen.footer.about": "About",
+    "leadgen.footer.faq": "FAQ",
+    "leadgen.footer.ecommerce": "E-commerce Services",
+    "leadgen.footer.contact": "Contact",
+    "leadgen.footer.rights": "© {year} Dolphin Wave Media. All rights reserved.",
+    "cta.freeConsultation": "Book My Free Consultation",
+    "testimonials.label": "Client Testimonials",
+    "testimonials.quote": "What our e-commerce partners say",
+    "testimonials.founder": "Founder",
+    "testimonials.t1.name": "Robert Stefanco",
+    "testimonials.t1.company": "Pánska Elegancia",
+    "testimonials.t1.quote": "Finally an agency that understands e-commerce. They don't just do ads - they think about the entire funnel.",
+    "testimonials.t2.name": "Matej Časár",
+    "testimonials.t2.company": "Bomba Zľava",
+    "testimonials.t2.quote": "Communication is excellent. Proactive, transparent, always coming with new ideas. It's like having an internal team, not an external agency.",
+    "testimonials.t3.name": "Juraj Habala",
+    "testimonials.t3.company": "Habala",
+    "testimonials.t3.quote": "Creative strategy changed everything for us. Our ads finally stand out. The results speak for themselves - best decision of the year.",
+    "otherServices.label": "Not Just Ads",
+    "otherServices.headline": "You will also need this",
+    "otherServices.description": "Meta ads and AI content are our specialization. But real growth needs a complete system. Here is what else we can do.",
+    "otherServices.service1.title": "Website Optimization",
+    "otherServices.service1.description": "We will improve the UX and design of your website so that it converts better. Landing pages, e-shops - we make sure every visitor counts.",
+    "otherServices.service2.title": "Email Marketing",
+    "otherServices.service2.description": "Automated emails, newsletters, campaigns. We build systems that sell even while you sleep.",
+    "otherServices.service3.title": "Social Media Content",
+    "otherServices.service3.description": "We create and publish content for your social media. Strategy, graphics, texts, planning - we handle everything.",
+    "otherServices.service4.title": "Custom AI Solutions",
+    "otherServices.service4.description": "AI chatbots, automated workflows, custom tools. We save time and scale your operations.",
+    "otherServices.cta": "I want a free consultation",
+    "aiWork.label": "Our AI Work",
+    "aiWork.headline": "AI content that sells",
+    "aiWork.subtitle": "Real examples from cooperation with a local nutritional supplement brand. They wanted to delegate content creation - this is what we delivered.",
+    "aiWork.createdFor": "Created for:",
+    "aiWork.bannerTitle": "Product banners",
   },
   sk: {
     "nav.services": "Služby",
@@ -508,14 +547,83 @@ const translations = {
     "leadgen.cta.title": "Pripravení získať viac kvalitných leadov?",
     "leadgen.cta.description": "Bezplatný 15-minútový hovor. Pozrieme sa na vaše aktuálne nastavenie a ukážeme vám, kde je priestor na rast.",
     "leadgen.cta.button": "Chcem bezplatnú stratégiu",
+    "leadgen.footer.description": "Pomáhame lead generation značkám budovať marketingové systémy, ktoré priťahujú kvalitné leady, zachytávajú dopyt a menia traffic na reálne príležitosti.",
+    "leadgen.footer.navigation": "Navigácia",
+    "leadgen.footer.services": "Služby",
+    "leadgen.footer.howWeWork": "Ako pracujeme",
+    "leadgen.footer.about": "O nás",
+    "leadgen.footer.faq": "FAQ",
+    "leadgen.footer.ecommerce": "E-commerce služby",
+    "leadgen.footer.contact": "Kontakt",
+    "leadgen.footer.rights": "© {year} Dolphin Wave Media. Všetky práva vyhradené.",
+    "cta.freeConsultation": "Chcem bezplatnú konzultáciu",
+    "testimonials.label": "Referencie",
+    "testimonials.quote": "Čo hovoria naši e-commerce partneri",
+    "testimonials.founder": "Zakladateľ",
+    "testimonials.t1.name": "Robert Stefanco",
+    "testimonials.t1.company": "Pánska Elegancia",
+    "testimonials.t1.quote": "Konečne agentúra, čo rozumie e-commerce. Nerobia len reklamy - premýšľajú nad celým funnelom.",
+    "testimonials.t2.name": "Matej Časár",
+    "testimonials.t2.company": "Bomba Zľava",
+    "testimonials.t2.quote": "Komunikácia je super. Proaktívni, transparentní, vždy prídu s novými nápadmi. Akoby som mal interný tím, nie externú agentúru.",
+    "testimonials.t3.name": "Juraj Habala",
+    "testimonials.t3.company": "Habala",
+    "testimonials.t3.quote": "Kreatívna stratégia nám zmenila všetko. Naše reklamy konečne vyčnievajú. Výsledky hovoria za seba - najlepšie rozhodnutie tohto roka.",
+    "otherServices.label": "Nielen reklamy",
+    "otherServices.headline": "Toto budete tiež potrebovať",
+    "otherServices.description": "Meta reklamy a AI obsah sú naša špecializácia. Ale skutočný rast potrebuje kompletný systém. Tu je, čo ešte vieme.",
+    "otherServices.service1.title": "Optimalizácia webu",
+    "otherServices.service1.description": "Vylepšíme UX a dizajn vášho webu, aby lepšie konvertoval. Landing pages, e-shopy - postaráme sa, aby každý návštevník počítal.",
+    "otherServices.service2.title": "Email marketing",
+    "otherServices.service2.description": "Automatizované emaily, newslettre, kampane. Budujeme systémy, ktoré predávajú aj keď spíte.",
+    "otherServices.service3.title": "Obsah na sociálne siete",
+    "otherServices.service3.description": "Tvoríme a publikujeme obsah na vaše sociálne siete. Stratégia, grafiky, texty, plánovanie - všetko vybavíme.",
+    "otherServices.service4.title": "AI riešenia na mieru",
+    "otherServices.service4.description": "AI chatboty, automatizované workflowy, vlastné nástroje. Šetríme čas a škálujeme operácie.",
+    "otherServices.cta": "Chcem bezplatnú konzultáciu",
+    "aiWork.label": "Naša AI práca",
+    "aiWork.headline": "AI obsah,",
+    "aiWork.subtitle": "ktorý predáva",
+    "aiWork.createdFor": "Vytvorené pre:",
+    "aiWork.bannerTitle": "Produktové bannery",
   },
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+// Default context value - provides a fallback during SSR
+const defaultContextValue: LanguageContextType = {
+  language: 'sk',
+  setLanguage: () => {},
+  t: (key: string) => key,
+}
+
+const LanguageContext = createContext<LanguageContextType>(defaultContextValue)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Always default to 'sk' (Slovak) - no hydration mismatches
-  const [language, setLanguage] = useState<Language>('sk')
+  const [language, setLanguageState] = useState<Language>('sk')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    // Read language from cookie set by middleware
+    if (typeof document !== 'undefined') {
+      const cookie = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('NEXT_LOCALE='))
+      
+      const locale = cookie?.split('=')[1] as Language
+      if (locale === 'en' || locale === 'sk') {
+        setLanguageState(locale)
+      }
+    }
+    setMounted(true)
+  }, [])
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang)
+    // Also update the cookie when language is manually changed
+    if (typeof document !== 'undefined') {
+      document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`
+    }
+  }
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key
@@ -530,8 +638,5 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext)
-  if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider")
-  }
   return context
 }
