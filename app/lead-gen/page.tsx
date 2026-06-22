@@ -687,7 +687,7 @@ export default function LeadGenPage() {
             onClick={trackLead}
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
           >
-            Chcem bezplatnú stratégiu
+            {t("leadgen.cta.button")}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -709,7 +709,7 @@ export default function LeadGenPage() {
                 />
               </Link>
               <p className="text-muted-foreground mb-6 max-w-md text-sm sm:text-base">
-                Pomáhame lead generation značkám budovať marketingové systémy, ktoré priťahujú kvalitné leady, zachytávajú dopyt a menia traffic na reálne príležitosti.
+                {t("leadgen.footer.description")}
               </p>
               {/* Social links */}
               <div className="flex items-center gap-3">
@@ -742,19 +742,19 @@ export default function LeadGenPage() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Navigácia</h4>
+              <h4 className="font-semibold text-foreground mb-4">{t("leadgen.footer.navigation")}</h4>
               <nav className="flex flex-col gap-3">
-                <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">Služby</a>
-                <a href="#how-we-work" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">Ako pracujeme</a>
-                <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">O nás</a>
-                <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">FAQ</a>
-                <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">E-commerce služby</Link>
+                <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">{t("leadgen.footer.services")}</a>
+                <a href="#how-we-work" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">{t("leadgen.footer.howWeWork")}</a>
+                <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">{t("leadgen.footer.about")}</a>
+                <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">{t("leadgen.footer.faq")}</a>
+                <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base">{t("leadgen.footer.ecommerce")}</Link>
               </nav>
             </div>
 
             {/* Contact */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Kontakt</h4>
+              <h4 className="font-semibold text-foreground mb-4">{t("leadgen.footer.contact")}</h4>
               <div className="flex flex-col gap-3 text-sm sm:text-base">
                 <a
                   href="mailto:info@dolphinwave-media.com"
@@ -775,7 +775,7 @@ export default function LeadGenPage() {
           {/* Bottom bar */}
           <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
-              © {new Date().getFullYear()} Dolphin Wave Media. Všetky práva vyhradené.
+              {t("leadgen.footer.rights").replace("{year}", new Date().getFullYear().toString())}
             </p>
             <div className="flex items-center gap-4 sm:gap-6">
               <span className="text-xs sm:text-sm text-muted-foreground">Ochrana súkromia</span>

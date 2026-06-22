@@ -8,29 +8,34 @@ import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 
-const testimonials = [
+const getTestimonials = (t: any) => [
   {
-    quote: "Konečne agentúra, čo rozumie e-commerce. Nerobia len reklamy - premýšľajú nad celým funnelom.",
-    name: "Robert Stefanco",
-    title: "Zakladateľ, Pánska Elegancia",
+    quoteKey: "testimonials.t1.quote",
+    nameKey: "testimonials.t1.name",
+    companyKey: "testimonials.t1.company",
   },
   {
-    quote: "Komunikácia je super. Proaktívni, transparentní, vždy prídu s novými nápadmi. Akoby som mal interný tím, nie externú agentúru.",
-    name: "Matej Časár",
-    title: "Zakladateľ, Bomba Zľava",
+    quoteKey: "testimonials.t2.quote",
+    nameKey: "testimonials.t2.name",
+    companyKey: "testimonials.t2.company",
   },
   {
-    quote: "Kreatívna stratégia nám zmenila všetko. Naše reklamy konečne vyčnievajú. Výsledky hovoria za seba - najlepšie rozhodnutie tohto roka.",
-    name: "Juraj Habala",
-    title: "Zakladateľ, Habala",
+    quoteKey: "testimonials.t3.quote",
+    nameKey: "testimonials.t3.name",
+    companyKey: "testimonials.t3.company",
   },
-]
+].map(item => ({
+  quote: t(item.quoteKey),
+  name: t(item.nameKey),
+  company: t(item.companyKey),
+}))
 
 export function Testimonials() {
   const { t } = useLanguage()
   const { trackLead } = useMetaPixel()
   const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal({ delay: 100 })
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ delay: 200 })
+  const testimonials = getTestimonials(t)
 
   return (
     <section id="testimonials" className="relative py-16 sm:py-24 scroll-mt-16 overflow-hidden">
@@ -58,7 +63,7 @@ export function Testimonials() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-            Referencie
+            {t("testimonials.label")}
           </p>
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground tracking-tight text-balance mb-4 max-w-4xl mx-auto px-4 italic">
             {t("testimonials.quote")}
@@ -100,7 +105,7 @@ export function Testimonials() {
               {/* Author */}
               <div>
                 <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                <p className="text-sm text-muted-foreground">{t("testimonials.founder")}, {testimonial.company}</p>
               </div>
             </div>
           ))}
@@ -118,7 +123,7 @@ export function Testimonials() {
             onClick={trackLead}
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-primary px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
           >
-            Chcem bezplatnú konzultáciu
+            {t("cta.freeConsultation")}
             <svg className="ml-2 w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
