@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, ReactNode, useEffect } from "react"
 
 type Language = "en" | "sk"
 
@@ -548,11 +548,35 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Always default to 'sk' (Slovak) - no hydration mismatches
-  const [language, setLanguage] = useState<Language>('sk')
+  const [language, setLanguageState] = useState<Language>('sk')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    // Read language from cookie set by middleware
+    const cookie = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('NEXT_LOCALE='))
+    
+    const locale = cookie?.split('=')[1] as Language
+    if (locale === 'en' || locale === 'sk') {
+      setLanguageState(locale)
+    }
+    setMounted(true)
+  }, [])
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang)
+    // Also update the cookie when language is manually changed
+    document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`
+  }
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key
+  }
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return <>{children}</>
   }
 
   return (
