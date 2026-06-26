@@ -2,19 +2,17 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const host = request.headers.get('host') || ''
-  const pathname = request.nextUrl.pathname
-  
-  // Set language cookie based on pathname first, then domain
   const response = NextResponse.next()
-  let locale = 'en' // default
   
-  // Check pathname for explicit language
-  if (pathname.startsWith('/sk/') || pathname === '/sk') {
+  // Set language cookie based ONLY on domain
+  let locale = 'en' // default for .com
+  
+  if (host.includes('dolphinwave-media.sk')) {
     locale = 'sk'
-  } else if (pathname.startsWith('/en/') || pathname === '/en') {
+  } else if (host.includes('dolphinwave-media.com')) {
     locale = 'en'
-  } else if (host.includes('dolphinwave-media.sk')) {
-    // Fall back to domain-based detection
+  } else if (host.includes('localhost')) {
+    // For localhost development, default to Slovak
     locale = 'sk'
   }
   
