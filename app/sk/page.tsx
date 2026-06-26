@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/navigation"
-import { Hero } from "@/components/hero"
+import { HeroSK } from "@/components/hero-sk"
 import { Founder } from "@/components/founder"
 import { Services } from "@/components/services"
 import { OtherServices } from "@/components/other-services"
@@ -21,7 +21,7 @@ export default function Home() {
       <BackgroundPattern />
       <Navigation />
       <main className="relative z-10">
-        <Hero />
+        <HeroSK />
         <Services />
         <OtherServices />
         <WhyUs />
