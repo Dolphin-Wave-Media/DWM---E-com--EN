@@ -296,7 +296,6 @@ export default function LeadGenPage() {
                   height="480"
                   allow="autoplay"
                   className="rounded-lg border border-border"
-                  loading="lazy"
                 />
               </div>
             </div>
