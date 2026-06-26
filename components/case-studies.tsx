@@ -2,51 +2,52 @@
 
 import { useLanguage } from "@/lib/language-context"
 
-const caseStudies = [
+const getCaseStudies = (t: any) => [
   {
-    title: "Detská móda",
-    description: "Silný produkt. Lojálni zákazníci. Ale žiadny systém na platenej reklamy. Postavili sme Meta Ads a z existujúceho dopytu sme urobili škálovateľný obrat.",
+    title: t("caseStudies.case1.title"),
+    description: t("caseStudies.case1.description"),
     metrics: [
-      { label: "Investícia", value: "€1,459" },
-      { label: "Obrat", value: "€18,579" },
-      { label: "ROAS", value: "12.73" },
-      { label: "Cena/nákup", value: "~€5" },
+      { label: t("caseStudies.case1.investment"), value: "€1,459" },
+      { label: t("caseStudies.case1.revenue"), value: "€18,579" },
+      { label: t("caseStudies.case1.roas"), value: "12.73" },
+      { label: t("caseStudies.case1.cpc"), value: "~€5" },
     ],
   },
   {
-    title: "Módny e-shop",
-    description: "Dopyt bol, ale chýbal čas a systém na správny rast. Prevzali sme kampane a sezónu sme premenili na reálne čísla.",
+    title: t("caseStudies.case2.title"),
+    description: t("caseStudies.case2.description"),
     metrics: [
-      { label: "Investícia", value: "€7,020" },
-      { label: "Obrat", value: "€39,223" },
-      { label: "ROAS", value: "5.59" },
-      { label: "Zameranie", value: "Meta Ads" },
+      { label: t("caseStudies.case2.investment"), value: "€7,020" },
+      { label: t("caseStudies.case2.revenue"), value: "€39,223" },
+      { label: t("caseStudies.case2.roas"), value: "5.59" },
+      { label: t("caseStudies.case2.channel"), value: "Meta Ads" },
     ],
   },
   {
-    title: "Powersports e-shop",
-    description: "Majiteľ riešil reklamy sám, čo brzdilo rast. Zlepšili sme výkon, ušetrili čas a vybudovali silnejší akvizičný systém.",
+    title: t("caseStudies.case3.title"),
+    description: t("caseStudies.case3.description"),
     metrics: [
-      { label: "Investícia", value: "€1,008" },
-      { label: "Obrat", value: "€19,003" },
-      { label: "ROAS", value: "18.85" },
-      { label: "Priem. obj.", value: "€100.63" },
+      { label: t("caseStudies.case3.investment"), value: "€1,008" },
+      { label: t("caseStudies.case3.revenue"), value: "€19,003" },
+      { label: t("caseStudies.case3.roas"), value: "18.85" },
+      { label: t("caseStudies.case3.aov"), value: "€100.63" },
     ],
   },
   {
-    title: "Rast cez Google Ads",
-    description: "Spustili a optimalizovali sme search kampane na najlepšie produkty. Zachytili sme ľudí, čo aktívne hľadali.",
+    title: t("caseStudies.case4.title"),
+    description: t("caseStudies.case4.description"),
     metrics: [
-      { label: "Investícia", value: "€1,847" },
-      { label: "Obrat", value: "€11,656" },
-      { label: "Konverzie", value: "126" },
-      { label: "Návratnosť", value: "630%" },
+      { label: t("caseStudies.case4.investment"), value: "€1,847" },
+      { label: t("caseStudies.case4.revenue"), value: "€11,656" },
+      { label: t("caseStudies.case4.conversions"), value: "126" },
+      { label: t("caseStudies.case4.roi"), value: "630%" },
     ],
   },
 ]
 
 export function CaseStudies() {
   const { t } = useLanguage()
+  const caseStudies = getCaseStudies(t)
 
   return (
     <section id="case-studies" className="relative py-16 sm:py-24 bg-card/30 scroll-mt-16 overflow-hidden">

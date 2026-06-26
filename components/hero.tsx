@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useRef } from "react"
+import { usePathname } from "next/navigation"
 import { ClientLogos } from "./client-logos"
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedCounter } from "./animated-counter"
@@ -13,6 +14,8 @@ const CALENDLY_URL = "https://calendly.com/dolphinwave-media/30min"
 export function Hero() {
   const { t } = useLanguage()
   const { trackLead } = useMetaPixel()
+  const pathname = usePathname()
+  const isEnglish = pathname.startsWith('/en') || !pathname.startsWith('/sk')
   const { ref: statsRef, isVisible: statsVisible } = useScrollReveal({ delay: 100 })
   const { ref: videoRef, isVisible: videoVisible } = useScrollReveal({ delay: 200 })
 
@@ -145,7 +148,7 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div className="relative w-full overflow-hidden" style={{ paddingBottom: '56.25%' }}>
                 <iframe 
-                  src="https://drive.google.com/file/d/1f_1qXjH-JC7MzHNqRPZxWgZL6v2EZEgd/preview" 
+                  src={isEnglish ? "https://drive.google.com/file/d/1-wPMUzkQy2DEHTr9ZdC5l1jp_S7u4A6E/preview" : "https://drive.google.com/file/d/1f_1qXjH-JC7MzHNqRPZxWgZL6v2EZEgd/preview"}
                   frameBorder="0" 
                   allow="autoplay; fullscreen"
                   className="absolute inset-[-2px] w-[calc(100%+4px)] h-[calc(100%+4px)] scale-[1.01]"
